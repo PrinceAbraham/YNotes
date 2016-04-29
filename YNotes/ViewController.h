@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate>
+
+@property NSMutableArray *list;
+
+@property (nonatomic, weak) NSUserDefaults *userDefaults;
 
 
 @end
