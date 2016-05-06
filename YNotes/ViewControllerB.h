@@ -8,8 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewControllerB : UIViewController
+@interface ViewControllerB : UIViewController <UITextViewDelegate>
 
-@property NSMutableArray* title;
+@property NSMutableArray *messageArr;
+
+@property NSMutableArray *titleArr;
+
+@property NSMutableDictionary *userFile;
+
+@property (nonatomic, weak) NSUserDefaults *userDefaults;
+
+@property (weak, nonatomic) IBOutlet UITextField *titleField;
+
+@property bool isEditing;
+
+@property NSInteger indexForTable;
+
+@property NSString *messageString;
+
+@property NSString *titleString;
+
+@property (weak, nonatomic) IBOutlet UITextView *messageField;
 
 @end

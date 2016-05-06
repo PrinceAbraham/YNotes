@@ -18,6 +18,8 @@
 
 @property (nonatomic, weak) NSUserDefaults *userDefaults;
 
+@property bool edit;
+
 
 @end
 
