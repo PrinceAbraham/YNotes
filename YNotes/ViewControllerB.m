@@ -48,6 +48,8 @@ NSMutableArray *stringTitleArr;
     if(self.isEditing){
     self.titleField.text = self.titleString;
     self.messageField.text = self.messageString;
+    isEditing = self.isEditing;
+    indexForTable = self.indexForTable;
     }
 }
 
@@ -90,6 +92,7 @@ NSMutableArray *stringTitleArr;
                                                                messageField.text = @"Add Message:";
                                                                messageField.textColor = [UIColor grayColor];
                                                                [self.view endEditing:true];
+                                                               [self callDismiss];
                                                            }];
     
     for(int i=0; i<[titleArr count]; i++){
