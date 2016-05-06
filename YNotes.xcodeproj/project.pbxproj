@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A350DA721CDBDFB8009A12ED /* ViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = A350DA711CDBDFB8009A12ED /* ViewControllerB.m */; };
 		A3BA12B81CD3940100AB76B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BA12B71CD3940100AB76B4 /* main.m */; };
 		A3BA12BB1CD3940200AB76B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BA12BA1CD3940200AB76B4 /* AppDelegate.m */; };
 		A3BA12BE1CD3940200AB76B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BA12BD1CD3940200AB76B4 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A350DA701CDBDFB8009A12ED /* ViewControllerB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerB.h; sourceTree = "<group>"; };
+		A350DA711CDBDFB8009A12ED /* ViewControllerB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerB.m; sourceTree = "<group>"; };
 		A3BA12B31CD3940100AB76B4 /* YNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BA12B71CD3940100AB76B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A3BA12B91CD3940100AB76B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				A3BA12C41CD3940200AB76B4 /* LaunchScreen.storyboard */,
 				A3BA12C71CD3940200AB76B4 /* Info.plist */,
 				A3BA12B61CD3940100AB76B4 /* Supporting Files */,
+				A350DA701CDBDFB8009A12ED /* ViewControllerB.h */,
+				A350DA711CDBDFB8009A12ED /* ViewControllerB.m */,
 			);
 			path = YNotes;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3BA12BE1CD3940200AB76B4 /* ViewController.m in Sources */,
+				A350DA721CDBDFB8009A12ED /* ViewControllerB.m in Sources */,
 				A3BA12BB1CD3940200AB76B4 /* AppDelegate.m in Sources */,
 				A3BA12B81CD3940100AB76B4 /* main.m in Sources */,
 			);
@@ -496,6 +502,7 @@
 				A3BA12E21CD3940200AB76B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A3BA12E31CD3940200AB76B4 /* Build configuration list for PBXNativeTarget "YNotesTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +511,7 @@
 				A3BA12E51CD3940200AB76B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A3BA12E61CD3940200AB76B4 /* Build configuration list for PBXNativeTarget "YNotesUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +520,7 @@
 				A3BA12E81CD3940200AB76B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

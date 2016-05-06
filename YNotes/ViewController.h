@@ -10,7 +10,11 @@
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate>
 
-@property NSMutableArray *list;
+@property NSMutableArray *desc;
+
+@property NSMutableArray *title;
+
+@property NSMutableDictionary *userFile;
 
 @property (nonatomic, weak) NSUserDefaults *userDefaults;
 
