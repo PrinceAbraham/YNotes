@@ -53,6 +53,17 @@ NSMutableArray *stringTitleArr;
     }
 }
 
+- (IBAction)back:(id)sender {
+    if(!isEditing){
+    if([titleField.text isEqualToString:@""] || [messageField.text isEqualToString:@""]){
+    [self callDismiss];
+    }
+    }else{
+        if([titleField.text isEqualToString:[titleArr objectAtIndex:indexForTable]] && [messageField.text isEqualToString:[messageArr objectAtIndex:indexForTable]]){
+            [self callDismiss];
+        }
+    }
+}
 
 - (IBAction)save:(id)sender {
     
