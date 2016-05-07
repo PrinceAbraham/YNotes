@@ -66,39 +66,11 @@ NSMutableArray *tempTitle;
     //[self performSegueWithIdentifier:@"addOrEditSegue" sender:self];
 }
 
-- (IBAction)deleteNote:(id)sender {
-    
-    if(edit){
-        //[desc removeObjectAtIndex:currentIndex];
-        
-        [userFile removeObjectForKey:[title objectAtIndex:currentIndex]];
-        
-        [title removeObjectAtIndex:currentIndex];
-        [desc removeObjectAtIndex:currentIndex];
-        
-        //[userFile setValue:[desc objectAtIndex:currentIndex] forKeyPath:[title objectAtIndex:currentIndex]];
-        
-        
-        [self.table reloadData];
-        
-        [_addOrSave setImage:[UIImage imageNamed:@"addNote.png"] forState:UIControlStateNormal];
-        
-        [userDefaults setObject:userFile forKey:userDefaultKey];
-        [userDefaults setObject:title forKey:userTitleKey];
-        [userDefaults setObject:desc forKey:userDescriptionKey];
-        edit = false;
-        
-    }
-    
-}
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     //_noteTitle.text = title[indexPath.row];
     
     edit = true;
-    [_addOrSave setImage:[UIImage imageNamed:@"saveNote.png"] forState:UIControlStateNormal];
-    
     
     currentIndex = indexPath.row;
     
