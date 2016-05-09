@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewControllerB : UIViewController <UITextViewDelegate>
+@interface ViewControllerB : UIViewController <UITextViewDelegate, UIImagePickerControllerDelegate>
 
 @property NSMutableArray *messageArr;
 

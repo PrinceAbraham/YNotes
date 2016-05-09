@@ -15,6 +15,8 @@
 
 @interface ViewControllerB ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @end
 
 @implementation ViewControllerB
@@ -100,18 +102,22 @@ NSMutableArray *stringTitleArr;
         if([titleField.text isEqualToString:@""] || [messageField.text isEqualToString:@""]){
             [self callDismiss];
         }else{
-            [backController addAction:cancel];
-            [backController addAction:okToChanges];
-            [self presentViewController:backController animated:YES completion:nil];
+            if(didEdit){
+                [backController addAction:cancel];
+                [backController addAction:okToChanges];
+                [self presentViewController:backController animated:YES completion:nil];
+            }else{
+                [self callDismiss];
+            }
         }
     }else{
         if([titleField.text isEqualToString:[titleArr objectAtIndex:indexForTable]] && [messageField.text isEqualToString:[messageArr objectAtIndex:indexForTable]]){
             [self callDismiss];
         }else{
             if(!([titleField.text isEqualToString:@""] || [messageField.text isEqualToString:@""])){
-            [backController addAction:cancel];
-            [backController addAction:okToChanges];
-            [self presentViewController:backController animated:YES completion:nil];
+                [backController addAction:cancel];
+                [backController addAction:okToChanges];
+                [self presentViewController:backController animated:YES completion:nil];
             }else{
                 //change it
                 [alertController addAction:ok];
@@ -219,6 +225,24 @@ NSMutableArray *stringTitleArr;
         isEditing = false;
         [self callDismiss];
     }
+    
+}
+- (IBAction)cameraButton:(id)sender {
+    
+    UIImagePickerController *imageController = [[UIImagePickerController alloc]init];
+    imageController.delegate = self;
+    imageController.allowsEditing = true;
+    imageController.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:imageController animated:YES completion:nil];
+
+}
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
+    UIImage *img = info[UIImagePickerControllerEditedImage];
+    self.imageView.image = img;
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
