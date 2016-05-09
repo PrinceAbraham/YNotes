@@ -21,11 +21,13 @@
 
 @implementation ViewControllerB
 
-@synthesize messageArr, titleArr , userFile, userDefaults,titleField,messageField;
+@synthesize messageArr, titleArr , userFile, userDefaults,titleField, messageField, messageStringWAttachments, messageData;
+
 
 bool isEditing = false, didEdit=false;
 
 int indexForTable=0;
+
 
 NSMutableArray *stringTitleArr;
 
@@ -42,13 +44,16 @@ NSMutableArray *stringTitleArr;
     
     stringTitleArr = [[NSMutableArray alloc]init];
     
+    messageStringWAttachments = [[NSMutableAttributedString alloc]init];
+    
     if([userDefaults objectForKey:userDefaultKey]!=nil){
         [self getInfo];
     }
     messageField.delegate = self;
     if(self.isEditing){
         self.titleField.text = self.titleString;
-        self.messageField.text = self.messageString;
+        self.messageField.attributedText = [self getAttributeForData: self.messageData];
+        messageStringWAttachments = self.messageField.attributedText;
         isEditing = self.isEditing;
         indexForTable = self.indexForTable;
     }
@@ -99,7 +104,7 @@ NSMutableArray *stringTitleArr;
                                                    NSLog(@"Ok");
                                                }];
     if(!isEditing){
-        if([titleField.text isEqualToString:@""] || [messageField.text isEqualToString:@""]){
+        if([titleField.text isEqualToString:@""] || [[NSString stringWithFormat:@"%@",messageStringWAttachments] isEqualToString:@""]){
             [self callDismiss];
         }else{
             if(didEdit){
@@ -111,10 +116,10 @@ NSMutableArray *stringTitleArr;
             }
         }
     }else{
-        if([titleField.text isEqualToString:[titleArr objectAtIndex:indexForTable]] && [messageField.text isEqualToString:[messageArr objectAtIndex:indexForTable]]){
+        if([titleField.text isEqualToString:[titleArr objectAtIndex:indexForTable]] && [[NSString stringWithFormat:@"%@",messageStringWAttachments] isEqualToString:[messageArr objectAtIndex:indexForTable]]){
             [self callDismiss];
         }else{
-            if(!([titleField.text isEqualToString:@""] || [messageField.text isEqualToString:@""])){
+            if(!([titleField.text isEqualToString:@""] || [[NSString stringWithFormat:@"%@",messageStringWAttachments] isEqualToString:@""])){
                 [backController addAction:cancel];
                 [backController addAction:okToChanges];
                 [self presentViewController:backController animated:YES completion:nil];
@@ -166,7 +171,7 @@ NSMutableArray *stringTitleArr;
     //If it's edting
     if(isEditing){
         //if titleArr and description is not empty
-        if(![messageField.text isEqualToString:@""] && ![titleField.text isEqualToString:@""]){
+        if( ![[NSString stringWithFormat:@"%@",messageStringWAttachments] isEqualToString:@""] && ![titleField.text isEqualToString:@""]){
             //if titleArr hasn't been changed
             if([titleField.text isEqualToString:[titleArr objectAtIndex:indexForTable]]){
                 [self savingEditWithUnchangedTitle];
@@ -187,7 +192,7 @@ NSMutableArray *stringTitleArr;
         }
     }else{//since its not editing
         //if the string is not empty after being touched
-        if((![messageField.text isEqualToString:@""] && ![titleField.text isEqualToString:@""]) && didEdit){
+        if((![[NSString stringWithFormat:@"%@",messageStringWAttachments] isEqualToString:@""] && ![titleField.text isEqualToString:@""]) && didEdit){
             //if it the titleArr is unique
             if(![stringTitleArr containsObject:[titleField.text lowercaseString]]){
                 [self savingWithUniqueTitle];
@@ -235,12 +240,30 @@ NSMutableArray *stringTitleArr;
     imageController.sourceType = UIImagePickerControllerSourceTypeCamera;
     
     [self presentViewController:imageController animated:YES completion:nil];
-
+    
 }
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     
-    UIImage *img = info[UIImagePickerControllerEditedImage];
-    self.imageView.image = img;
+    UIImage *unImg = info[UIImagePickerControllerEditedImage];
+    UIImage *img = [UIImage imageWithCGImage:[unImg CGImage]
+                                scale:(unImg.scale * 2.5)
+                                 orientation:unImg.imageOrientation];
+    
+    UIGraphicsBeginImageContext( CGSizeMake(128, 128));
+    [unImg drawInRect:CGRectMake(0,0,128,128)];
+    img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSTextAttachment *imgAttachment = [[NSTextAttachment alloc]init];
+    imgAttachment.image = img;
+    NSAttributedString *atString = [NSAttributedString attributedStringWithAttachment:imgAttachment];
+    
+    [messageStringWAttachments appendAttributedString:atString];
+    //[messageStringWAttachments att]
+    
+//    NSData *imgData = [[NSData alloc]init];
+//    imgData = [NSKeyedArchiver archivedDataWithRootObject:messageStringWAttachments];
+//    NSData *s = [ NSKeyedUnarchiver unarchiveObjectWithData:imgData];
+    messageField.attributedText = messageStringWAttachments;
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -263,22 +286,23 @@ NSMutableArray *stringTitleArr;
     
 }
 
+-(void) textViewDidChange:(UITextView *)textView{
+    messageStringWAttachments = messageField.attributedText;
+}
+
 -(void) getInfo{
-    NSLog(@"%@", [userDefaults objectForKey:userDefaultKey]);
+    //NSLog(@"%@", [userDefaults objectForKey:userDefaultKey]);
     userFile = [[userDefaults objectForKey:userDefaultKey]mutableCopy];//add mutable copy to retrieve properly. User default always returns immutable copy
     titleArr = [[userDefaults objectForKey:userTitleKey]mutableCopy];
     messageArr = [[userDefaults objectForKey:userDescriptionKey]mutableCopy];
 }
 
 -(void) savingWithUniqueTitle{
+    messageData = [self getDataForAttributedString:messageStringWAttachments];
     [(NSMutableArray *) titleArr insertObject:titleField.text atIndex:0];
-    [(NSMutableArray *) messageArr insertObject:messageField.text atIndex:0];
-    [(NSDictionary *) userFile setValue:messageField.text forKey:titleField.text];
+    [(NSMutableArray *) messageArr insertObject:messageData atIndex:0];
+    [(NSDictionary *) userFile setValue:messageData forKey:titleField.text];
     [self.view endEditing:true];
-    NSLog(@"%@",userFile);
-    titleField.text = @"";
-    messageField.text = @"Add Message:";
-    messageField.textColor = [UIColor grayColor];
     [titleField endEditing:true];
     [userDefaults setObject:userFile forKey:userDefaultKey];
     [userDefaults setObject:titleArr forKey:userTitleKey];
@@ -287,16 +311,15 @@ NSMutableArray *stringTitleArr;
 }
 
 -(void) savingEditWithUnchangedTitle{
-    [messageArr replaceObjectAtIndex:indexForTable withObject:messageField.text];
+     messageData = [self getDataForAttributedString:messageStringWAttachments];
+    [messageArr replaceObjectAtIndex:indexForTable withObject:messageData];
     [userFile setValue:[messageArr objectAtIndex:indexForTable] forKey:[titleArr objectAtIndex:indexForTable]];
     [self.view endEditing:true];
-    NSLog(@"%@",userFile);
+    //NSLog(@"%@",userFile);
     //store in User Defaults
     [userDefaults setObject:userFile forKey:userDefaultKey];
     [userDefaults setObject:titleArr forKey:userTitleKey];
     [userDefaults setObject:messageArr forKey:userDescriptionKey];
-    messageField.text = @"Add Message:";
-    messageField.textColor = [UIColor grayColor];
     [self callDismiss];
     titleField.text = @"";
 }
@@ -304,13 +327,11 @@ NSMutableArray *stringTitleArr;
 -(void) savingEditWithUniqueTitle{
     [userFile removeObjectForKey:[titleArr objectAtIndex:indexForTable]];
     [titleArr replaceObjectAtIndex:indexForTable withObject: titleField.text];
-    [messageArr replaceObjectAtIndex:indexForTable withObject:messageField.text];
+     messageData = [self getDataForAttributedString:messageStringWAttachments];
+    [messageArr replaceObjectAtIndex:indexForTable withObject:messageData];
     [userFile setValue:[messageArr objectAtIndex:indexForTable] forKey:[titleArr objectAtIndex:indexForTable]];
     [self.view endEditing:true];
-    NSLog(@"%@",userFile);
-    titleField.text = @"";
-    messageField.text = @"Add Message:";
-    messageField.textColor = [UIColor grayColor];
+    //NSLog(@"%@",userFile);
     [titleField endEditing:true];
     [userDefaults setObject:userFile forKey:userDefaultKey];
     [userDefaults setObject:titleArr forKey:userTitleKey];
@@ -319,8 +340,8 @@ NSMutableArray *stringTitleArr;
 }
 -(void) overwriteMatchedWithEditing{
     int matchedInt = (int) [stringTitleArr indexOfObject:[titleField.text lowercaseString]];
-    //[titleArr  replaceObjectAtIndex:matchedInt withObject:titleField.text];
-    [messageArr replaceObjectAtIndex:matchedInt withObject:messageField.text];
+    messageData = [self getDataForAttributedString:messageStringWAttachments];
+    [messageArr replaceObjectAtIndex:matchedInt withObject:messageData];
     [messageArr removeObjectAtIndex:indexForTable];
     [titleArr removeObjectAtIndex:indexForTable];
     
@@ -329,17 +350,14 @@ NSMutableArray *stringTitleArr;
     [userDefaults setObject:userFile forKey:userDefaultKey];
     [userDefaults setObject:titleArr forKey:userTitleKey];
     [userDefaults setObject:messageArr forKey:userDescriptionKey];
-    titleField.text = @"";
-    messageField.text = @"Add Message:";
-    messageField.textColor = [UIColor grayColor];
     [self.view endEditing:true];
     [self callDismiss];
 }
 
 -(void) overwriteMatchedWithoutEditing{
     int matchedInt = (int) [stringTitleArr indexOfObject:[titleField.text lowercaseString]];
-    //[titleArr  replaceObjectAtIndex:matchedInt withObject:titleField.text];
-    [messageArr replaceObjectAtIndex:matchedInt withObject:messageField.text];
+    messageData = [self getDataForAttributedString:messageStringWAttachments];
+    [messageArr replaceObjectAtIndex:matchedInt withObject:messageData];
     [userFile removeObjectForKey:[titleArr objectAtIndex:matchedInt]];
     [userFile setValue:[messageArr objectAtIndex:matchedInt] forKey:[titleArr objectAtIndex:matchedInt]];
     [userDefaults setObject:userFile forKey:userDefaultKey];
@@ -352,4 +370,22 @@ NSMutableArray *stringTitleArr;
     [self callDismiss];
 }
 
+-(NSAttributedString *) messageDecoder:(NSData*) data{
+    NSAttributedString *s;
+    
+    
+    return s;
+}
+
+-(NSMutableData *) getDataForAttributedString:(NSMutableAttributedString *) attrString{
+    NSMutableData *msgData = [[NSMutableData alloc]init];
+    msgData = [[NSKeyedArchiver archivedDataWithRootObject:attrString]mutableCopy];
+    return msgData;
+}
+
+-(NSMutableAttributedString *) getAttributeForData:(NSMutableData *) data{
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc]init];
+    attrString = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    return attrString;
+}
 @end

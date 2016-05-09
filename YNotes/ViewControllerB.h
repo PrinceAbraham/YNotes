@@ -24,10 +24,14 @@
 
 @property NSInteger indexForTable;
 
-@property NSString *messageString;
+//@property NSString *messageString;// will use NSMutableAttributedString instead of this
 
 @property NSString *titleString;
 
 @property (weak, nonatomic) IBOutlet UITextView *messageField;
+
+@property NSMutableAttributedString *messageStringWAttachments;
+
+@property NSMutableData *messageData;
 
 @end

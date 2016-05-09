@@ -101,7 +101,7 @@ NSMutableArray *tempTitle;
 }
 
 -(void) getInfo{
-    NSLog(@"%@", [userDefaults objectForKey:userDefaultKey]);
+    //NSLog(@"%@", [userDefaults objectForKey:userDefaultKey]);
     userFile = [[userDefaults objectForKey:userDefaultKey]mutableCopy];//add mutable copy to retrieve properly. User default always returns immutable copy
     title = [[userDefaults objectForKey:userTitleKey]mutableCopy];
     desc = [[userDefaults objectForKey:userDescriptionKey]mutableCopy];
@@ -111,14 +111,14 @@ NSMutableArray *tempTitle;
     
     if([[segue identifier] isEqualToString:@"addOrEditSegue"]){
         
-        NSLog(@"Got addOrEditSegue %@",[segue identifier]);
+        //NSLog(@"Got addOrEditSegue %@",[segue identifier]);
         
         ViewControllerB *vc = [segue destinationViewController];
         
         NSIndexPath *path = [self.table indexPathForSelectedRow];
         vc.isEditing = true;
         vc.titleString = [title objectAtIndex:path.row];
-        vc.messageString= [desc objectAtIndex:path.row];
+        vc.messageData = [desc objectAtIndex:path.row];
         vc.indexForTable = path.row;
         //ViewControllerB *detail = [self detailForIndexPath:path];
         //[segue.destinationViewController setDetail:detail];
