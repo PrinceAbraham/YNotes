@@ -17,19 +17,30 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+@property (nonatomic, assign) CGFloat animatedDistance;
+
 @end
 
 @implementation ViewControllerB
 
-@synthesize messageArr, titleArr , userFile, userDefaults,titleField, messageField, messageStringWAttachments, messageData;
+@synthesize messageArr, titleArr , userFile, userDefaults,titleField, messageField, messageStringWAttachments, messageData, animatedDistance;
 
+static const CGFloat KEYBOARD_ANIMATION_DURATION = 0.3;
+static const CGFloat MINIMUM_SCROLL_FRACTION = 0.2;
+static const CGFloat MAXIMUM_SCROLL_FRACTION = 0.8;
+//static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 216;
+static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 264;
+static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
 bool isEditing = false, didEdit=false;
 
 int indexForTable=0;
 
+NSAttributedString *tempAttributedString;
 
 NSMutableArray *stringTitleArr;
+
+UITextView *activeField = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,11 +67,17 @@ NSMutableArray *stringTitleArr;
         messageStringWAttachments = self.messageField.attributedText;
         isEditing = self.isEditing;
         indexForTable = self.indexForTable;
+        tempAttributedString = messageStringWAttachments;
+    }
+    
+    for(int i=0; i<[titleArr count]; i++){
+        [stringTitleArr addObject:[[titleArr objectAtIndex:i] lowercaseString]];
     }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     didEdit = false;
+    //[self registerForKeyboardNotifications];
 }
 
 -(void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -69,7 +86,7 @@ NSMutableArray *stringTitleArr;
 - (IBAction)back:(id)sender {
     UIAlertController *backController = [UIAlertController
                                          alertControllerWithTitle:@"Save Changes?"
-                                         message:@"Clicking ok will save the changes."
+                                         message:@"Clicking Ok will save the changes."
                                          preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okToChanges = [UIAlertAction
                                   actionWithTitle:@"Ok"
@@ -119,7 +136,7 @@ NSMutableArray *stringTitleArr;
             }
         }
     }else{
-        if([titleField.text isEqualToString:[titleArr objectAtIndex:indexForTable]] && [[NSString stringWithFormat:@"%@",messageStringWAttachments] isEqualToString:[messageArr objectAtIndex:indexForTable]]){
+        if([titleField.text isEqualToString:[titleArr objectAtIndex:indexForTable]] && [messageStringWAttachments isEqualToAttributedString:tempAttributedString]){
             [self callDismiss];
         }else{
             if(!([titleField.text isEqualToString:@""] || [[NSString stringWithFormat:@"%@",messageStringWAttachments] isEqualToString:@""])){
@@ -134,7 +151,6 @@ NSMutableArray *stringTitleArr;
         }
     }
 }
-
 - (IBAction)save:(id)sender {
     
     UIAlertController *alertController = [UIAlertController
@@ -168,9 +184,6 @@ NSMutableArray *stringTitleArr;
                                                                }
                                                            }];
     
-    for(int i=0; i<[titleArr count]; i++){
-        [stringTitleArr addObject:[[titleArr objectAtIndex:i] lowercaseString]];
-    }
     //If it's edting
     if(isEditing){
         //if titleArr and description is not empty
@@ -241,7 +254,6 @@ NSMutableArray *stringTitleArr;
     imageController.delegate = self;
     imageController.allowsEditing = true;
     imageController.sourceType = UIImagePickerControllerSourceTypeCamera;
-    
     [self presentViewController:imageController animated:YES completion:nil];
     
 }
@@ -281,6 +293,66 @@ NSMutableArray *stringTitleArr;
     if(!isEditing && [[textView text] isEqualToString:@"Add Message:"]){
         [textView setText:@""];
     }
+    activeField = self.messageField;
+    
+    CGRect textFieldRect =
+    [self.view.window convertRect:messageField.bounds fromView:messageField];
+    CGRect viewRect =
+    [self.view.window convertRect:self.view.bounds fromView:self.view];
+    
+    CGFloat midline = textFieldRect.origin.y + 0.5 * textFieldRect.size.height;
+    CGFloat numerator =
+    midline - viewRect.origin.y
+    - MINIMUM_SCROLL_FRACTION * viewRect.size.height;
+    CGFloat denominator =
+    (MAXIMUM_SCROLL_FRACTION - MINIMUM_SCROLL_FRACTION)
+    * viewRect.size.height;
+    CGFloat heightFraction = numerator / denominator;
+    
+    if (heightFraction < 0.0)
+    {
+        heightFraction = 0.0;
+    }
+    else if (heightFraction > 1.0)
+    {
+        heightFraction = 1.0;
+    }
+    
+    UIInterfaceOrientation orientation =
+    [[UIApplication sharedApplication] statusBarOrientation];
+    if (orientation == UIInterfaceOrientationPortrait ||
+        orientation == UIInterfaceOrientationPortraitUpsideDown)
+    {
+        animatedDistance = floor(PORTRAIT_KEYBOARD_HEIGHT * heightFraction);
+    }
+    else
+    {
+        animatedDistance = floor(LANDSCAPE_KEYBOARD_HEIGHT * heightFraction);
+    }
+    
+    CGRect viewFrame = self.view.frame;
+    viewFrame.origin.y -= animatedDistance;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
+    
+    [self.view setFrame:viewFrame];
+    
+    [UIView commitAnimations];
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    CGRect viewFrame = self.view.frame;
+    viewFrame.origin.y += animatedDistance;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
+    
+    [self.view setFrame:viewFrame];
+    
+    [UIView commitAnimations];
 }
 
 -(void) callDismiss{
@@ -392,5 +464,30 @@ NSMutableArray *stringTitleArr;
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc]init];
     attrString = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     return attrString;
+}
+-(void) registerForKeyboardNotifications{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+}
+- (void)keyboardWasShown:(NSNotification*)aNotification {
+    
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    CGRect bkgndRect = activeField.superview.frame;
+    bkgndRect.size.height += kbSize.height;
+    [activeField.superview setFrame:bkgndRect];
+//    if(mess
+    [messageField setContentOffset:CGPointMake(0.0, activeField.frame.origin.y+kbSize.height) animated:YES];
+}
+
+-(void)keyboardWillBeHidden:(NSNotification *) aNotification{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    messageField.contentInset = contentInsets;
+    messageField.scrollIndicatorInsets = contentInsets;
 }
 @end
