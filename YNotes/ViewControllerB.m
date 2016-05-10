@@ -63,6 +63,9 @@ NSMutableArray *stringTitleArr;
     didEdit = false;
 }
 
+-(void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:true];
+}
 - (IBAction)back:(id)sender {
     UIAlertController *backController = [UIAlertController
                                          alertControllerWithTitle:@"Save Changes?"
@@ -246,24 +249,25 @@ NSMutableArray *stringTitleArr;
     
     UIImage *unImg = info[UIImagePickerControllerEditedImage];
     UIImage *img = [UIImage imageWithCGImage:[unImg CGImage]
-                                scale:(unImg.scale * 2.5)
+                                       scale:(unImg.scale * 2.5)
                                  orientation:unImg.imageOrientation];
     
-    UIGraphicsBeginImageContext( CGSizeMake(128, 128));
-    [unImg drawInRect:CGRectMake(0,0,128,128)];
+    UIGraphicsBeginImageContext( CGSizeMake(320, 320));
+    [unImg drawInRect:CGRectMake(0,0,320,320)];
     img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     NSTextAttachment *imgAttachment = [[NSTextAttachment alloc]init];
     imgAttachment.image = img;
-    NSAttributedString *atString = [NSAttributedString attributedStringWithAttachment:imgAttachment];
+    //had to initialize another NSMutableAttributedString
+    NSMutableAttributedString *originString = [[[NSAttributedString alloc]initWithAttributedString:messageStringWAttachments]mutableCopy];
     
-    [messageStringWAttachments appendAttributedString:atString];
-    //[messageStringWAttachments att]
+    NSAttributedString *atString  = [NSAttributedString attributedStringWithAttachment:imgAttachment];
     
-//    NSData *imgData = [[NSData alloc]init];
-//    imgData = [NSKeyedArchiver archivedDataWithRootObject:messageStringWAttachments];
-//    NSData *s = [ NSKeyedUnarchiver unarchiveObjectWithData:imgData];
-    messageField.attributedText = messageStringWAttachments;
+    [originString appendAttributedString:atString];
+    
+    messageStringWAttachments = originString;
+    
+    messageField.attributedText = originString;
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -287,6 +291,7 @@ NSMutableArray *stringTitleArr;
 }
 
 -(void) textViewDidChange:(UITextView *)textView{
+    messageField.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:24.0];
     messageStringWAttachments = messageField.attributedText;
 }
 
@@ -311,7 +316,7 @@ NSMutableArray *stringTitleArr;
 }
 
 -(void) savingEditWithUnchangedTitle{
-     messageData = [self getDataForAttributedString:messageStringWAttachments];
+    messageData = [self getDataForAttributedString:messageStringWAttachments];
     [messageArr replaceObjectAtIndex:indexForTable withObject:messageData];
     [userFile setValue:[messageArr objectAtIndex:indexForTable] forKey:[titleArr objectAtIndex:indexForTable]];
     [self.view endEditing:true];
@@ -327,7 +332,7 @@ NSMutableArray *stringTitleArr;
 -(void) savingEditWithUniqueTitle{
     [userFile removeObjectForKey:[titleArr objectAtIndex:indexForTable]];
     [titleArr replaceObjectAtIndex:indexForTable withObject: titleField.text];
-     messageData = [self getDataForAttributedString:messageStringWAttachments];
+    messageData = [self getDataForAttributedString:messageStringWAttachments];
     [messageArr replaceObjectAtIndex:indexForTable withObject:messageData];
     [userFile setValue:[messageArr objectAtIndex:indexForTable] forKey:[titleArr objectAtIndex:indexForTable]];
     [self.view endEditing:true];
