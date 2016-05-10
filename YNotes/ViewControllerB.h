@@ -34,4 +34,6 @@
 
 @property NSMutableData *messageData;
 
+@property NSDate *date;
+
 @end

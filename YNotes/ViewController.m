@@ -14,9 +14,10 @@
 
 @interface ViewController ()
 
-@property (strong, nonatomic) IBOutlet UITableView *table;
+@property (weak, nonatomic) IBOutlet UITableView *table;
 
 @property (weak, nonatomic) IBOutlet UIButton *addOrSave;
+
 
 @end
 
@@ -65,6 +66,7 @@ NSMutableArray *tempTitle;
     
     //[self performSegueWithIdentifier:@"addOrEditSegue" sender:self];
 }
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     

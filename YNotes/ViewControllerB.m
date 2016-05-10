@@ -15,15 +15,13 @@
 
 @interface ViewControllerB ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
 @property (nonatomic, assign) CGFloat animatedDistance;
 
 @end
 
 @implementation ViewControllerB
 
-@synthesize messageArr, titleArr , userFile, userDefaults,titleField, messageField, messageStringWAttachments, messageData, animatedDistance;
+@synthesize messageArr, titleArr , userFile, userDefaults,titleField, messageField, messageStringWAttachments, messageData, animatedDistance, date;
 
 static const CGFloat KEYBOARD_ANIMATION_DURATION = 0.3;
 static const CGFloat MINIMUM_SCROLL_FRACTION = 0.2;
@@ -35,6 +33,8 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 bool isEditing = false, didEdit=false;
 
 int indexForTable=0;
+
+UIDatePicker *datePicker;
 
 NSAttributedString *tempAttributedString;
 
@@ -56,6 +56,8 @@ UITextView *activeField = nil;
     stringTitleArr = [[NSMutableArray alloc]init];
     
     messageStringWAttachments = [[NSMutableAttributedString alloc]init];
+    
+    datePicker = [[UIDatePicker alloc]init];
     
     if([userDefaults objectForKey:userDefaultKey]!=nil){
         [self getInfo];
@@ -81,8 +83,87 @@ UITextView *activeField = nil;
 }
 
 -(void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
     [self.view endEditing:true];
+    
 }
+
+
+-(void) textViewDidBeginEditing:(UITextView *)textView{
+    
+    didEdit = true;
+    
+    textView.textColor = [UIColor blackColor];
+    if(!isEditing && [[textView text] isEqualToString:@"Add Message:"]){
+        [textView setText:@""];
+    }
+    activeField = self.messageField;
+    
+    CGRect textFieldRect =
+    [self.view.window convertRect:messageField.bounds fromView:messageField];
+    CGRect viewRect =
+    [self.view.window convertRect:self.view.bounds fromView:self.view];
+    
+    CGFloat midline = textFieldRect.origin.y + 0.5 * textFieldRect.size.height;
+    CGFloat numerator =
+    midline - viewRect.origin.y
+    - MINIMUM_SCROLL_FRACTION * viewRect.size.height;
+    CGFloat denominator =
+    (MAXIMUM_SCROLL_FRACTION - MINIMUM_SCROLL_FRACTION)
+    * viewRect.size.height;
+    CGFloat heightFraction = numerator / denominator;
+    
+    if (heightFraction < 0.0)
+    {
+        heightFraction = 0.0;
+    }
+    else if (heightFraction > 1.0)
+    {
+        heightFraction = 1.0;
+    }
+    
+    UIInterfaceOrientation orientation =
+    [[UIApplication sharedApplication] statusBarOrientation];
+    if (orientation == UIInterfaceOrientationPortrait ||
+        orientation == UIInterfaceOrientationPortraitUpsideDown)
+    {
+        animatedDistance = floor(PORTRAIT_KEYBOARD_HEIGHT * heightFraction);
+    }
+    else
+    {
+        animatedDistance = floor(LANDSCAPE_KEYBOARD_HEIGHT * heightFraction);
+    }
+    
+    CGRect viewFrame = self.view.frame;
+    viewFrame.origin.y -= animatedDistance;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
+    
+    [self.view setFrame:viewFrame];
+    
+    [UIView commitAnimations];
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    CGRect viewFrame = self.view.frame;
+    viewFrame.origin.y += animatedDistance;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
+    
+    [self.view setFrame:viewFrame];
+    
+    [UIView commitAnimations];
+}
+
+-(void) textViewDidChange:(UITextView *)textView{
+    messageField.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:24.0];
+    messageStringWAttachments = messageField.attributedText;
+}
+
 - (IBAction)back:(id)sender {
     UIAlertController *backController = [UIAlertController
                                          alertControllerWithTitle:@"Save Changes?"
@@ -285,88 +366,43 @@ UITextView *activeField = nil;
     
 }
 
--(void) textViewDidBeginEditing:(UITextView *)textView{
+- (IBAction)reminder:(id)sender {
     
-    didEdit = true;
+    UIAlertController *actionSheetForDate = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
     
-    textView.textColor = [UIColor blackColor];
-    if(!isEditing && [[textView text] isEqualToString:@"Add Message:"]){
-        [textView setText:@""];
-    }
-    activeField = self.messageField;
-    
-    CGRect textFieldRect =
-    [self.view.window convertRect:messageField.bounds fromView:messageField];
-    CGRect viewRect =
-    [self.view.window convertRect:self.view.bounds fromView:self.view];
-    
-    CGFloat midline = textFieldRect.origin.y + 0.5 * textFieldRect.size.height;
-    CGFloat numerator =
-    midline - viewRect.origin.y
-    - MINIMUM_SCROLL_FRACTION * viewRect.size.height;
-    CGFloat denominator =
-    (MAXIMUM_SCROLL_FRACTION - MINIMUM_SCROLL_FRACTION)
-    * viewRect.size.height;
-    CGFloat heightFraction = numerator / denominator;
-    
-    if (heightFraction < 0.0)
-    {
-        heightFraction = 0.0;
-    }
-    else if (heightFraction > 1.0)
-    {
-        heightFraction = 1.0;
-    }
-    
-    UIInterfaceOrientation orientation =
-    [[UIApplication sharedApplication] statusBarOrientation];
-    if (orientation == UIInterfaceOrientationPortrait ||
-        orientation == UIInterfaceOrientationPortraitUpsideDown)
-    {
-        animatedDistance = floor(PORTRAIT_KEYBOARD_HEIGHT * heightFraction);
-    }
-    else
-    {
-        animatedDistance = floor(LANDSCAPE_KEYBOARD_HEIGHT * heightFraction);
-    }
-    
-    CGRect viewFrame = self.view.frame;
-    viewFrame.origin.y -= animatedDistance;
-    
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
-    
-    [self.view setFrame:viewFrame];
-    
-    [UIView commitAnimations];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:^(UIAlertAction *action) {
+                                                       NSLog(@"Cancel");
+                                                   }];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok"
+                                                 style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction *action) {
+                                                   NSLog(@"Ok");
+                                               }];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIDatePicker *picker = [[UIDatePicker alloc] init];
+    [picker setDatePickerMode:UIDatePickerModeDateAndTime];
+    [picker setTimeZone:[NSTimeZone defaultTimeZone]];
+    [alertController.view addSubview:picker];
+    [alertController addAction:({
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            NSLog(@"OK");
+            NSLog(@"%@ HH:MM:SS",[NSDateFormatter localizedStringFromDate:picker.date dateStyle:NSDateFormatterShortStyle timeStyle:NSTimeZoneNameStyleShortStandard]);
+        }];
+        action;
+    })];
+//    UIPopoverPresentationController *popoverController = alertController.popoverPresentationController;
+//    popoverController.sourceView = sender;
+//    popoverController.sourceRect = [sender bounds];
+    [self presentViewController:alertController  animated:YES completion:nil];
 }
-
--(void)textViewDidEndEditing:(UITextView *)textView{
-    CGRect viewFrame = self.view.frame;
-    viewFrame.origin.y += animatedDistance;
-    
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
-    
-    [self.view setFrame:viewFrame];
-    
-    [UIView commitAnimations];
-}
-
 -(void) callDismiss{
     
     isEditing =false;
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
-
--(void) textViewDidChange:(UITextView *)textView{
-    messageField.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:24.0];
-    messageStringWAttachments = messageField.attributedText;
-}
-
 -(void) getInfo{
     //NSLog(@"%@", [userDefaults objectForKey:userDefaultKey]);
     userFile = [[userDefaults objectForKey:userDefaultKey]mutableCopy];//add mutable copy to retrieve properly. User default always returns immutable copy
@@ -468,7 +504,7 @@ UITextView *activeField = nil;
 -(void) registerForKeyboardNotifications{
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWasShown:)
-                                                 name:UIKeyboardDidShowNotification object:nil];
+                                                 name:UIKeyboardWillShowNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillBeHidden:)
@@ -481,7 +517,7 @@ UITextView *activeField = nil;
     CGRect bkgndRect = activeField.superview.frame;
     bkgndRect.size.height += kbSize.height;
     [activeField.superview setFrame:bkgndRect];
-//    if(mess
+
     [messageField setContentOffset:CGPointMake(0.0, activeField.frame.origin.y+kbSize.height) animated:YES];
 }
 
