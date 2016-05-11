@@ -13,24 +13,23 @@
 
 @import UIKit;
 
+
 @interface ViewControllerB ()
 
 @property (nonatomic, assign) CGFloat animatedDistance;
+
+@property (weak, nonatomic) IBOutlet UIButton *reminderButton;
+
+@property (weak, nonatomic) IBOutlet UILabel *reminderTime;
 
 @end
 
 @implementation ViewControllerB
 
-@synthesize messageArr, titleArr , userFile, userDefaults,titleField, messageField, messageStringWAttachments, messageData, animatedDistance, date;
 
-static const CGFloat KEYBOARD_ANIMATION_DURATION = 0.3;
-static const CGFloat MINIMUM_SCROLL_FRACTION = 0.2;
-static const CGFloat MAXIMUM_SCROLL_FRACTION = 0.8;
-//static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 216;
-static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 264;
-static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
+@synthesize messageArr, titleArr , userFile, userDefaults,titleField, messageField, messageStringWAttachments, messageData, animatedDistance, date, nReminder, reminderTime;
 
-bool isEditing = false, didEdit=false;
+bool isEditing = false, didEdit=false, reminderIsSet=false;
 
 int indexForTable=0;
 
@@ -38,9 +37,13 @@ UIDatePicker *datePicker;
 
 NSAttributedString *tempAttributedString;
 
-NSMutableArray *stringTitleArr;
+NSMutableArray *stringTitleArr, *reminderList;
 
 UITextView *activeField = nil;
+
+EKCalendar *newCalendar;
+
+EKAlarm *newAlarm;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -59,6 +62,18 @@ UITextView *activeField = nil;
     
     datePicker = [[UIDatePicker alloc]init];
     
+    self.eventStoreInstance = [[EKEventStore alloc]init];
+    
+    newCalendar = [_eventStoreInstance defaultCalendarForNewReminders];
+    
+    nReminder =  [EKReminder reminderWithEventStore:self.eventStoreInstance];
+    
+    newAlarm = [[EKAlarm alloc]init];
+    
+    [self.eventStoreInstance requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
+        NSLog(@"%@", error);
+    }];
+    
     if([userDefaults objectForKey:userDefaultKey]!=nil){
         [self getInfo];
     }
@@ -68,12 +83,29 @@ UITextView *activeField = nil;
         self.messageField.attributedText = [self getAttributeForData: self.messageData];
         messageStringWAttachments = self.messageField.attributedText;
         isEditing = self.isEditing;
+        reminderIsSet = self.reminderIsSet;
         indexForTable = self.indexForTable;
         tempAttributedString = messageStringWAttachments;
     }
     
     for(int i=0; i<[titleArr count]; i++){
         [stringTitleArr addObject:[[titleArr objectAtIndex:i] lowercaseString]];
+    }
+    if(reminderIsSet){
+    NSPredicate *predicate = [_eventStoreInstance predicateForRemindersInCalendars:nil];
+    
+    [_eventStoreInstance fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders) {
+        for (EKReminder *reminder in reminders) {
+            if([reminder.title isEqualToString:titleField.text]){
+                nReminder = reminder;
+                reminderTime.text = (NSString *) [newAlarm absoluteDate];
+            }
+        }
+    }];
+        [_reminderButton setImage:[UIImage imageNamed:@"reminderSelected"] forState:UIControlStateNormal];
+    }else{
+        [_reminderButton setImage:[UIImage imageNamed:@"reminderNotSelected"] forState:UIControlStateNormal];
+        reminderTime.text = @"No Alarm Set!";
     }
 }
 
@@ -374,27 +406,42 @@ UITextView *activeField = nil;
                                                      style:UIAlertActionStyleCancel
                                                    handler:^(UIAlertAction *action) {
                                                        NSLog(@"Cancel");
+                                                       //reminderIsSet = false;
                                                    }];
+    UIAlertAction *delete = [UIAlertAction actionWithTitle:@"Delete"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction *action) {
+                                                       NSLog(@"Delete");
+                                                       reminderIsSet = false;
+                                                       [_reminderButton setImage:[UIImage imageNamed:@"reminderNotSelected"] forState:UIControlStateNormal];
+                                                       reminderTime.text = @"No Alarm Set!";
+                                                   }];
+    
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok"
                                                  style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction *action) {
                                                    NSLog(@"Ok");
+                                                   reminderTime.text = (NSString *) [newAlarm absoluteDate];
                                                }];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIDatePicker *picker = [[UIDatePicker alloc] init];
-    [picker setDatePickerMode:UIDatePickerModeDateAndTime];
-    [picker setTimeZone:[NSTimeZone defaultTimeZone]];
-    [alertController.view addSubview:picker];
+    [datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
+    [datePicker setTimeZone:[NSTimeZone defaultTimeZone]];
+    [alertController addAction:cancel];
+    if(reminderIsSet){
+    [alertController addAction:delete];
+    }
+    [alertController.view addSubview:datePicker];
     [alertController addAction:({
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            NSLog(@"OK");
-            NSLog(@"%@ HH:MM:SS",[NSDateFormatter localizedStringFromDate:picker.date dateStyle:NSDateFormatterShortStyle timeStyle:NSTimeZoneNameStyleShortStandard]);
+            reminderIsSet = true;
+             NSLog(@"OK");
+            [_reminderButton setImage:[UIImage imageNamed:@"reminderSelected"] forState:UIControlStateNormal];
         }];
         action;
     })];
-//    UIPopoverPresentationController *popoverController = alertController.popoverPresentationController;
-//    popoverController.sourceView = sender;
-//    popoverController.sourceRect = [sender bounds];
+    //    UIPopoverPresentationController *popoverController = alertController.popoverPresentationController;
+    //    popoverController.sourceView = sender;
+    //    popoverController.sourceRect = [sender bounds];
     [self presentViewController:alertController  animated:YES completion:nil];
 }
 -(void) callDismiss{
@@ -420,6 +467,11 @@ UITextView *activeField = nil;
     [userDefaults setObject:userFile forKey:userDefaultKey];
     [userDefaults setObject:titleArr forKey:userTitleKey];
     [userDefaults setObject:messageArr forKey:userDescriptionKey];
+    if(reminderIsSet){
+        [self createReminder];
+    }else{
+        [self deleteReminder];
+    }
     [self callDismiss];
 }
 
@@ -433,6 +485,11 @@ UITextView *activeField = nil;
     [userDefaults setObject:userFile forKey:userDefaultKey];
     [userDefaults setObject:titleArr forKey:userTitleKey];
     [userDefaults setObject:messageArr forKey:userDescriptionKey];
+    if(reminderIsSet){
+        [self createReminder];
+    }else{
+        [self deleteReminder];
+    }
     [self callDismiss];
     titleField.text = @"";
 }
@@ -449,6 +506,11 @@ UITextView *activeField = nil;
     [userDefaults setObject:userFile forKey:userDefaultKey];
     [userDefaults setObject:titleArr forKey:userTitleKey];
     [userDefaults setObject:messageArr forKey:userDescriptionKey];
+    if(reminderIsSet){
+        [self createReminder];
+    }else{
+        [self deleteReminder];
+    }
     [self callDismiss];
 }
 -(void) overwriteMatchedWithEditing{
@@ -482,14 +544,31 @@ UITextView *activeField = nil;
     [self.view endEditing:true];
     [self callDismiss];
 }
-
--(NSAttributedString *) messageDecoder:(NSData*) data{
-    NSAttributedString *s;
+-(void)createReminder{
+    
+    [newAlarm setAbsoluteDate:[datePicker date]];
+    nReminder.title = titleField.text;
+    //EKCalendar *newCalendar = [_eventStoreInstance defaultCalendarForNewReminders];
+    //newCalendar.title = @"Reminders";
+    nReminder.calendar = newCalendar;
+    nReminder.notes = messageField.text;
+    [nReminder addAlarm:newAlarm];
+    NSError *error = nil;
+    [self.eventStoreInstance saveReminder:nReminder commit:YES error:&error];
+    NSLog(@"%@",error);
     
     
-    return s;
 }
-
+-(void)deleteReminder{
+    NSError *error = nil;
+    
+    NSLog(@"%@",nReminder.title);
+    
+    BOOL success = [_eventStoreInstance removeReminder:nReminder commit:YES error:&error];
+    
+    NSLog(@"success, %d",success);
+    NSLog(@"%@", error);
+}
 -(NSMutableData *) getDataForAttributedString:(NSMutableAttributedString *) attrString{
     NSMutableData *msgData = [[NSMutableData alloc]init];
     msgData = [[NSKeyedArchiver archivedDataWithRootObject:attrString]mutableCopy];
@@ -517,7 +596,7 @@ UITextView *activeField = nil;
     CGRect bkgndRect = activeField.superview.frame;
     bkgndRect.size.height += kbSize.height;
     [activeField.superview setFrame:bkgndRect];
-
+    
     [messageField setContentOffset:CGPointMake(0.0, activeField.frame.origin.y+kbSize.height) animated:YES];
 }
 

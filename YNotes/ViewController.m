@@ -18,18 +18,21 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *addOrSave;
 
+@property EKEventStore *eStore;
 
 @end
 
 @implementation ViewController
 
-@synthesize desc, table, userDefaults, userFile, title,edit;
+@synthesize desc, table, userDefaults, userFile, title,edit, eStore;
 
  edit=false;
 
 bool didBeganEditing=false;
 
 int currentIndex=0;
+
+
 
 NSMutableArray *tempTitle;
 
@@ -46,9 +49,14 @@ NSMutableArray *tempTitle;
     
     tempTitle = [[NSMutableArray alloc]init];
     
+    eStore = [[EKEventStore alloc] init];
+    
     if([userDefaults objectForKey:userDefaultKey]!=nil){
         [self getInfo];
     }
+    [self.eStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
+        NSLog(@"%@", error);
+    }];
     
 }
 
@@ -122,6 +130,18 @@ NSMutableArray *tempTitle;
         vc.titleString = [title objectAtIndex:path.row];
         vc.messageData = [desc objectAtIndex:path.row];
         vc.indexForTable = path.row;
+        
+        NSPredicate *predicate = [eStore predicateForRemindersInCalendars:nil];
+        
+        [eStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *rem){
+            for(EKReminder *reminder in rem){
+                if([reminder.title isEqualToString: [title objectAtIndex:path.row]]){
+                    NSLog(@"matched");
+                    vc.reminderIsSet = true;
+                }
+            }
+        }];
+        
         //ViewControllerB *detail = [self detailForIndexPath:path];
         //[segue.destinationViewController setDetail:detail];
         

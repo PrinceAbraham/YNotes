@@ -253,11 +253,11 @@
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEW-f6-3Bv" userLabel="camera">
-                                <rect key="frame" x="539" y="515" width="41" height="46"/>
+                                <rect key="frame" x="547" y="520" width="35" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="41" id="D32-1P-Xi5"/>
+                                    <constraint firstAttribute="width" constant="35" id="D32-1P-Xi5"/>
                                     <constraint firstAttribute="height" constant="35" id="Jaa-Md-qnG"/>
-                                    <constraint firstAttribute="height" constant="46" id="Nwl-yr-iIq"/>
+                                    <constraint firstAttribute="height" constant="40" id="Nwl-yr-iIq"/>
                                     <constraint firstAttribute="width" constant="33" id="OHE-4d-gh9">
                                         <variation key="heightClass=regular-widthClass=compact" constant="35"/>
                                     </constraint>
@@ -280,16 +280,22 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4r-dQ-UH0" userLabel="reminder">
-                                <rect key="frame" x="475" y="520" width="41" height="41"/>
+                                <rect key="frame" x="473" y="520" width="41" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="41" id="N0y-y5-eLc"/>
                                     <constraint firstAttribute="height" constant="41" id="lqc-iZ-Tky"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="reminder"/>
+                                <state key="normal" title="Button" image="reminderNotSelected"/>
                                 <connections>
                                     <action selector="reminder:" destination="dXl-dn-kh4" eventType="touchUpInside" id="bxY-oC-byL"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mn7-Cm-vqW">
+                                <rect key="frame" x="20" y="530" width="422" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -299,17 +305,21 @@
                             <constraint firstItem="y9Q-8t-H6N" firstAttribute="leading" secondItem="NXQ-Nc-CiD" secondAttribute="trailing" constant="33" id="9XD-Op-bob"/>
                             <constraint firstItem="4Qk-5u-rcM" firstAttribute="top" secondItem="NXQ-Nc-CiD" secondAttribute="bottom" constant="30" id="9lj-0X-5VS"/>
                             <constraint firstAttribute="leadingMargin" secondItem="t1C-dw-WvE" secondAttribute="leading" id="EXz-eP-Ght"/>
-                            <constraint firstItem="oEW-f6-3Bv" firstAttribute="top" secondItem="t1C-dw-WvE" secondAttribute="bottom" constant="7" id="Jqx-TK-9ma"/>
+                            <constraint firstItem="oEW-f6-3Bv" firstAttribute="top" secondItem="t1C-dw-WvE" secondAttribute="bottom" constant="12" id="Jqx-TK-9ma"/>
                             <constraint firstItem="I4r-dQ-UH0" firstAttribute="top" secondItem="t1C-dw-WvE" secondAttribute="bottom" constant="12" id="Ngv-uy-Jsq"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ZLN-08-t4C" secondAttribute="leading" id="Oho-ZS-cd6"/>
+                            <constraint firstItem="xzE-4y-bYh" firstAttribute="top" secondItem="Mn7-Cm-vqW" secondAttribute="bottom" constant="49" id="Urt-kK-cp8"/>
                             <constraint firstItem="Goq-3U-qla" firstAttribute="leading" secondItem="H8a-QM-3Xh" secondAttribute="leadingMargin" constant="-20" id="VBF-yl-8Jn"/>
                             <constraint firstAttribute="leadingMargin" secondItem="4Qk-5u-rcM" secondAttribute="leading" id="W1W-B5-okU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="y9Q-8t-H6N" secondAttribute="trailing" id="ZXv-tz-aeW"/>
-                            <constraint firstItem="oEW-f6-3Bv" firstAttribute="leading" secondItem="I4r-dQ-UH0" secondAttribute="trailing" constant="23" id="b3a-tK-PGs"/>
+                            <constraint firstItem="oEW-f6-3Bv" firstAttribute="leading" secondItem="I4r-dQ-UH0" secondAttribute="trailing" constant="33" id="b3a-tK-PGs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4Qk-5u-rcM" secondAttribute="trailing" constant="-1" id="gt9-8z-G9c"/>
+                            <constraint firstItem="I4r-dQ-UH0" firstAttribute="leading" secondItem="Mn7-Cm-vqW" secondAttribute="trailing" constant="31" id="j89-HW-Rn0"/>
                             <constraint firstItem="NXQ-Nc-CiD" firstAttribute="top" secondItem="Goq-3U-qla" secondAttribute="bottom" constant="38" id="m4D-C4-Q86"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oEW-f6-3Bv" secondAttribute="trailing" id="mpy-dK-FDq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oEW-f6-3Bv" secondAttribute="trailing" constant="-2" id="mpy-dK-FDq"/>
+                            <constraint firstItem="Mn7-Cm-vqW" firstAttribute="leading" secondItem="H8a-QM-3Xh" secondAttribute="leadingMargin" id="qe7-T5-BFf"/>
                             <constraint firstItem="y9Q-8t-H6N" firstAttribute="top" secondItem="Goq-3U-qla" secondAttribute="bottom" constant="38" id="rIQ-md-Inr"/>
+                            <constraint firstItem="Mn7-Cm-vqW" firstAttribute="top" secondItem="t1C-dw-WvE" secondAttribute="bottom" constant="22" id="svJ-2M-PHH"/>
                             <constraint firstItem="t1C-dw-WvE" firstAttribute="top" secondItem="4Qk-5u-rcM" secondAttribute="bottom" constant="1" id="vyX-nv-lMh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Goq-3U-qla" secondAttribute="trailing" constant="-20" id="wEz-FC-XZX"/>
                             <constraint firstItem="Goq-3U-qla" firstAttribute="top" secondItem="zW5-qP-bMn" secondAttribute="bottom" constant="15" id="wsI-tU-pTd"/>
@@ -318,6 +328,8 @@
                     <navigationItem key="navigationItem" id="bXw-HL-39D"/>
                     <connections>
                         <outlet property="messageField" destination="t1C-dw-WvE" id="sZm-fM-2w9"/>
+                        <outlet property="reminderButton" destination="I4r-dQ-UH0" id="OXQ-N3-mv9"/>
+                        <outlet property="reminderTime" destination="Mn7-Cm-vqW" id="Q1Y-Lv-GyJ"/>
                         <outlet property="titleField" destination="4Qk-5u-rcM" id="BWV-5y-VLr"/>
                     </connections>
                 </viewController>
@@ -331,7 +343,7 @@
         <image name="back" width="128" height="128"/>
         <image name="camera" width="128" height="128"/>
         <image name="deleteNote" width="128" height="128"/>
-        <image name="reminder" width="128" height="128"/>
+        <image name="reminderNotSelected" width="128" height="128"/>
         <image name="saveNote" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>

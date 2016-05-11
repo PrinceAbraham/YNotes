@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <EventKit/EventKit.h>
 
 @interface ViewControllerB : UIViewController <UITextViewDelegate, UIImagePickerControllerDelegate>
 
@@ -20,7 +21,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 
-@property bool isEditing;
+@property bool isEditing, reminderIsSet;
 
 @property NSInteger indexForTable;
 
@@ -35,5 +36,10 @@
 @property NSMutableData *messageData;
 
 @property NSDate *date;
+
+@property EKReminder *nReminder;
+
+@property EKEventStore *eventStoreInstance;
+
 
 @end
