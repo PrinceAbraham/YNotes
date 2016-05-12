@@ -7,6 +7,8 @@ target 'YNotes' do
 
   # Pods for YNotes
 
+pod 'ActionSheetPicker-3.0', '~> 2.0.5'
+
   target 'YNotesTests' do
     inherit! :search_paths
     # Pods for testing
