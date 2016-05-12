@@ -120,8 +120,12 @@
                                     <constraint firstAttribute="width" constant="32" id="0LV-YP-3yd"/>
                                     <constraint firstAttribute="height" constant="32" id="5ut-Dy-gGr"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="Byk-X5-JIh"/>
-                                    <constraint firstAttribute="height" constant="43" id="Ncj-nS-aXY"/>
-                                    <constraint firstAttribute="width" constant="46" id="XPJ-U2-IJB"/>
+                                    <constraint firstAttribute="height" constant="43" id="Ncj-nS-aXY">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="39"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="46" id="XPJ-U2-IJB">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="43"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="39" id="fbr-BZ-fj9"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="q5W-38-yFd"/>
                                     <constraint firstAttribute="width" constant="32" id="sjf-zT-87A"/>
@@ -144,10 +148,10 @@
                                         <exclude reference="0LV-YP-3yd"/>
                                         <exclude reference="5ut-Dy-gGr"/>
                                         <exclude reference="Byk-X5-JIh"/>
-                                        <include reference="fbr-BZ-fj9"/>
+                                        <exclude reference="fbr-BZ-fj9"/>
                                         <exclude reference="q5W-38-yFd"/>
                                         <exclude reference="sjf-zT-87A"/>
-                                        <include reference="z3L-oL-Nrn"/>
+                                        <exclude reference="z3L-oL-Nrn"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -167,7 +171,9 @@
                                     <constraint firstAttribute="height" constant="32" id="Whr-JT-zLp"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="dpL-k5-vei"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="eVq-tO-wR9"/>
-                                    <constraint firstAttribute="height" constant="36" id="iaA-Yh-Qm3"/>
+                                    <constraint firstAttribute="height" constant="36" id="iaA-Yh-Qm3">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="32"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="32" id="onl-ad-D5D">
                                         <variation key="heightClass=regular-widthClass=compact" constant="32"/>
                                     </constraint>
@@ -185,12 +191,12 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="0uH-jm-2cE"/>
+                                        <exclude reference="0uH-jm-2cE"/>
                                         <exclude reference="CGe-VW-iUy"/>
                                         <exclude reference="Whr-JT-zLp"/>
                                         <exclude reference="dpL-k5-vei"/>
                                         <exclude reference="eVq-tO-wR9"/>
-                                        <include reference="onl-ad-D5D"/>
+                                        <exclude reference="onl-ad-D5D"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -230,7 +236,8 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="Jlv-am-cOj"/>
+                                        <exclude reference="Jlv-am-cOj"/>
+                                        <exclude reference="MMx-Qq-0jz"/>
                                         <exclude reference="X3N-bf-0zI"/>
                                         <exclude reference="Z5a-iP-Xqc"/>
                                         <exclude reference="aHo-9q-YLe"/>
@@ -271,7 +278,8 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="Jaa-Md-qnG"/>
+                                        <exclude reference="D32-1P-Xi5"/>
+                                        <exclude reference="Jaa-Md-qnG"/>
                                         <include reference="OHE-4d-gh9"/>
                                     </mask>
                                 </variation>
@@ -292,7 +300,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mn7-Cm-vqW">
                                 <rect key="frame" x="20" y="530" width="422" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

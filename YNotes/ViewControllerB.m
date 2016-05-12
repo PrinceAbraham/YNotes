@@ -29,7 +29,7 @@
 
 @synthesize messageArr, titleArr , userFile, userDefaults,titleField, messageField, messageStringWAttachments, messageData, animatedDistance, date, nReminder, reminderTime;
 
-bool isEditing = false, didEdit=false, reminderIsSet=false;
+bool isEditing = false, didEdit=false, reminderIsSet=false, tempCheckReminder=false;
 
 int indexForTable=0;
 
@@ -46,6 +46,8 @@ EKCalendar *newCalendar;
 EKAlarm *newAlarm;
 
 NSDateFormatter *outputFormatter;
+
+NSString *tempStringCheckTIme;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -99,23 +101,25 @@ NSDateFormatter *outputFormatter;
         [stringTitleArr addObject:[[titleArr objectAtIndex:i] lowercaseString]];
     }
     if(reminderIsSet){
-    NSPredicate *predicate = [_eventStoreInstance predicateForRemindersInCalendars:nil];
-    
-    [_eventStoreInstance fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders) {
-        for (EKReminder *reminder in reminders) {
-            if([reminder.title isEqualToString:titleField.text]){
-                nReminder = reminder;
-                reminderTime.text = [outputFormatter stringFromDate:[newAlarm absoluteDate]];
-                newAlarm = [[nReminder alarms ] objectAtIndex:0];
+        NSPredicate *predicate = [_eventStoreInstance predicateForRemindersInCalendars:nil];
+        
+        [_eventStoreInstance fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders) {
+            for (EKReminder *reminder in reminders) {
+                if([reminder.title isEqualToString:titleField.text]){
+                    nReminder = reminder;
+                    newAlarm = [[nReminder alarms ] objectAtIndex:0];
+                    reminderTime.text = [outputFormatter stringFromDate:[newAlarm absoluteDate]];
+                }
             }
-        }
-    }];
+        }];
         [_reminderButton setImage:[UIImage imageNamed:@"reminderSelected"] forState:UIControlStateNormal];
     }else{
         [_reminderButton setImage:[UIImage imageNamed:@"reminderNotSelected"] forState:UIControlStateNormal];
         reminderTime.text = @"No Alarm Set!";
     }
     //NSLog(@"%@", newAlarm);
+    tempCheckReminder=reminderIsSet;
+    tempCheckReminder=reminderTime.text;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -258,7 +262,7 @@ NSDateFormatter *outputFormatter;
             }
         }
     }else{
-        if([titleField.text isEqualToString:[titleArr objectAtIndex:indexForTable]] && [messageStringWAttachments isEqualToAttributedString:tempAttributedString]){
+        if([titleField.text isEqualToString:[titleArr objectAtIndex:indexForTable]] && [messageStringWAttachments isEqualToAttributedString:tempAttributedString] && ([tempStringCheckTIme isEqualToString:reminderTime.text] && (tempCheckReminder==reminderIsSet))){
             [self callDismiss];
         }else{
             if(!([titleField.text isEqualToString:@""] || [[NSString stringWithFormat:@"%@",messageStringWAttachments] isEqualToString:@""])){
@@ -430,20 +434,21 @@ NSDateFormatter *outputFormatter;
                                                  style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction *action) {
                                                    NSLog(@"Ok");
-                                                   reminderTime.text = [outputFormatter stringFromDate:[newAlarm absoluteDate]];
+                                                   
                                                }];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     [datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
     [datePicker setTimeZone:[NSTimeZone defaultTimeZone]];
     [alertController addAction:cancel];
     if(reminderIsSet){
-    [alertController addAction:delete];
+        [alertController addAction:delete];
     }
     [alertController.view addSubview:datePicker];
     [alertController addAction:({
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             reminderIsSet = true;
-             NSLog(@"OK");
+            NSLog(@"OK");
+            reminderTime.text = [outputFormatter stringFromDate:[datePicker date]];
             [_reminderButton setImage:[UIImage imageNamed:@"reminderSelected"] forState:UIControlStateNormal];
         }];
         action;
