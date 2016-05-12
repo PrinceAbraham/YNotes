@@ -45,6 +45,8 @@ EKCalendar *newCalendar;
 
 EKAlarm *newAlarm;
 
+NSDateFormatter *outputFormatter;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
@@ -60,6 +62,8 @@ EKAlarm *newAlarm;
     
     messageStringWAttachments = [[NSMutableAttributedString alloc]init];
     
+    outputFormatter = [[NSDateFormatter alloc] init];
+    
     datePicker = [[UIDatePicker alloc]init];
     
     self.eventStoreInstance = [[EKEventStore alloc]init];
@@ -70,8 +74,11 @@ EKAlarm *newAlarm;
     
     newAlarm = [[EKAlarm alloc]init];
     
+    [outputFormatter setDateStyle:NSDateFormatterShortStyle];
+    [outputFormatter setTimeStyle:NSDateFormatterShortStyle];
+    
     [self.eventStoreInstance requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
-        NSLog(@"%@", error);
+        //NSLog(@"%@", error);
     }];
     
     if([userDefaults objectForKey:userDefaultKey]!=nil){
@@ -98,7 +105,8 @@ EKAlarm *newAlarm;
         for (EKReminder *reminder in reminders) {
             if([reminder.title isEqualToString:titleField.text]){
                 nReminder = reminder;
-                reminderTime.text = (NSString *) [newAlarm absoluteDate];
+                reminderTime.text = [outputFormatter stringFromDate:[newAlarm absoluteDate]];
+                newAlarm = [[nReminder alarms ] objectAtIndex:0];
             }
         }
     }];
@@ -107,6 +115,7 @@ EKAlarm *newAlarm;
         [_reminderButton setImage:[UIImage imageNamed:@"reminderNotSelected"] forState:UIControlStateNormal];
         reminderTime.text = @"No Alarm Set!";
     }
+    //NSLog(@"%@", newAlarm);
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -421,7 +430,7 @@ EKAlarm *newAlarm;
                                                  style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction *action) {
                                                    NSLog(@"Ok");
-                                                   reminderTime.text = (NSString *) [newAlarm absoluteDate];
+                                                   reminderTime.text = [outputFormatter stringFromDate:[newAlarm absoluteDate]];
                                                }];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     [datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
