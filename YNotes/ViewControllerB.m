@@ -52,6 +52,7 @@ NSString *tempStringCheckTIme;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
+    
     titleArr = [[NSMutableArray alloc] init];
     
     messageArr = [[NSMutableArray alloc] init];
@@ -79,14 +80,11 @@ NSString *tempStringCheckTIme;
     [outputFormatter setDateStyle:NSDateFormatterShortStyle];
     [outputFormatter setTimeStyle:NSDateFormatterShortStyle];
     
-    [self.eventStoreInstance requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
-        //NSLog(@"%@", error);
-    }];
-    
     if([userDefaults objectForKey:userDefaultKey]!=nil){
         [self getInfo];
     }
     messageField.delegate = self;
+    //if it is editing then load data
     if(self.isEditing){
         self.titleField.text = self.titleString;
         self.messageField.attributedText = [self getAttributeForData: self.messageData];
@@ -97,9 +95,6 @@ NSString *tempStringCheckTIme;
         tempAttributedString = messageStringWAttachments;
     }
     
-    for(int i=0; i<[titleArr count]; i++){
-        [stringTitleArr addObject:[[titleArr objectAtIndex:i] lowercaseString]];
-    }
     if(reminderIsSet){
         NSPredicate *predicate = [_eventStoreInstance predicateForRemindersInCalendars:nil];
         
@@ -111,20 +106,29 @@ NSString *tempStringCheckTIme;
                     reminderTime.text = [outputFormatter stringFromDate:[newAlarm absoluteDate]];
                 }
             }
+            tempStringCheckTIme=reminderTime.text;
         }];
         [_reminderButton setImage:[UIImage imageNamed:@"reminderSelected"] forState:UIControlStateNormal];
     }else{
         [_reminderButton setImage:[UIImage imageNamed:@"reminderNotSelected"] forState:UIControlStateNormal];
         reminderTime.text = @"No Alarm Set!";
+        tempStringCheckTIme = reminderTime.text;
     }
+    
     //NSLog(@"%@", newAlarm);
     tempCheckReminder=reminderIsSet;
-    tempCheckReminder=reminderTime.text;
+    for(int i=0; i<[titleArr count]; i++){
+        [stringTitleArr addObject:[[titleArr objectAtIndex:i] lowercaseString]];
+    }
+    [self.eventStoreInstance requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
+        
+    }];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     didEdit = false;
-    //[self registerForKeyboardNotifications];
+    
 }
 
 -(void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -210,10 +214,44 @@ NSString *tempStringCheckTIme;
 }
 
 - (IBAction)back:(id)sender {
+    
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Empty Note"
+                                          message:@"Description cannot be empty!"
+                                          preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok"
+                                                 style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction *action) {
+                                                   NSLog(@"Ok");
+                                               }];
+    
+    
+    NSString *tempOverwriteTitle = [NSString stringWithFormat: @"Overwrite %@",titleField.text ];
+    
+    UIAlertController *overwriteController = [UIAlertController
+                                              alertControllerWithTitle:tempOverwriteTitle
+                                              message:@"Adding this will Overwrite the body"
+                                              preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    UIAlertAction *okForOverWrite = [UIAlertAction actionWithTitle:@"Ok"
+                                                             style:UIAlertActionStyleDefault
+                                                           handler:^(UIAlertAction *action) {
+                                                               if(!isEditing){
+                                                                   [self overwriteMatchedWithoutEditing];
+                                                               }else{
+                                                                   [self overwriteMatchedWithEditing];
+                                                               }
+                                                           }];
     UIAlertController *backController = [UIAlertController
                                          alertControllerWithTitle:@"Save Changes?"
                                          message:@"Clicking Ok will save the changes."
                                          preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:^(UIAlertAction *action) {
+                                                       NSLog(@"Cancel");
+                                                       [self callDismiss];
+                                                   }];
     UIAlertAction *okToChanges = [UIAlertAction
                                   actionWithTitle:@"Ok"
                                   style:UIAlertActionStyleDefault
@@ -226,33 +264,21 @@ NSString *tempStringCheckTIme;
                                               [self savingWithUniqueTitle];
                                           }
                                       }else{
-                                          //if title exists
-                                          if(isEditing){
-                                              [self overwriteMatchedWithEditing];
-                                          }else{
-                                              [self overwriteMatchedWithoutEditing];
-                                          }
+                                          [overwriteController addAction:cancel];
+                                          [overwriteController addAction:okForOverWrite];
+                                          [self presentViewController:overwriteController animated:YES completion:nil];
                                       }
                                   }];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
-                                                     style:UIAlertActionStyleCancel
-                                                   handler:^(UIAlertAction *action) {
-                                                       NSLog(@"Cancel");
-                                                       [self callDismiss];
-                                                   }];
-    UIAlertController *alertController = [UIAlertController
-                                          alertControllerWithTitle:@"Empty Note"
-                                          message:@"Description cannot be empty!"
-                                          preferredStyle:(UIAlertControllerStyleAlert)];
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok"
-                                                 style:UIAlertActionStyleDefault
-                                               handler:^(UIAlertAction *action) {
-                                                   NSLog(@"Ok");
-                                               }];
+
+
+    
+    
     if(!isEditing){
+        //if title or message is empty
         if([titleField.text isEqualToString:@""] || [[NSString stringWithFormat:@"%@",messageStringWAttachments] isEqualToString:@""]){
             [self callDismiss];
         }else{
+            //message was touched
             if(didEdit){
                 [backController addAction:cancel];
                 [backController addAction:okToChanges];
@@ -453,9 +479,6 @@ NSString *tempStringCheckTIme;
         }];
         action;
     })];
-    //    UIPopoverPresentationController *popoverController = alertController.popoverPresentationController;
-    //    popoverController.sourceView = sender;
-    //    popoverController.sourceRect = [sender bounds];
     [self presentViewController:alertController  animated:YES completion:nil];
 }
 -(void) callDismiss{
@@ -465,8 +488,8 @@ NSString *tempStringCheckTIme;
     
 }
 -(void) getInfo{
-    //NSLog(@"%@", [userDefaults objectForKey:userDefaultKey]);
-    userFile = [[userDefaults objectForKey:userDefaultKey]mutableCopy];//add mutable copy to retrieve properly. User default always returns immutable copy
+    //add mutable copy to retrieve properly. User default always returns immutable copy
+    userFile = [[userDefaults objectForKey:userDefaultKey]mutableCopy];
     titleArr = [[userDefaults objectForKey:userTitleKey]mutableCopy];
     messageArr = [[userDefaults objectForKey:userDescriptionKey]mutableCopy];
 }
@@ -531,15 +554,21 @@ NSString *tempStringCheckTIme;
     int matchedInt = (int) [stringTitleArr indexOfObject:[titleField.text lowercaseString]];
     messageData = [self getDataForAttributedString:messageStringWAttachments];
     [messageArr replaceObjectAtIndex:matchedInt withObject:messageData];
-    [messageArr removeObjectAtIndex:indexForTable];
-    [titleArr removeObjectAtIndex:indexForTable];
-    
-    [userFile removeObjectForKey:[titleArr objectAtIndex:matchedInt]];
+    if(indexForTable!=matchedInt){
+        [messageArr removeObjectAtIndex:indexForTable];
+        [titleArr removeObjectAtIndex:indexForTable];
+        [userFile removeObjectForKey:[titleArr objectAtIndex:matchedInt]];
+    }
     [userFile setValue:[messageArr objectAtIndex:matchedInt] forKey:[titleArr objectAtIndex:matchedInt]];
     [userDefaults setObject:userFile forKey:userDefaultKey];
     [userDefaults setObject:titleArr forKey:userTitleKey];
     [userDefaults setObject:messageArr forKey:userDescriptionKey];
     [self.view endEditing:true];
+    if(reminderIsSet){
+        [self createReminder];
+    }else{
+        [self deleteReminder];
+    }
     [self callDismiss];
 }
 
@@ -556,13 +585,19 @@ NSString *tempStringCheckTIme;
     messageField.text = @"Add Message:";
     messageField.textColor = [UIColor grayColor];
     [self.view endEditing:true];
+    
+    if(reminderIsSet){
+        [self createReminder];
+    }else{
+        [self deleteReminder];
+    }
     [self callDismiss];
 }
 -(void)createReminder{
     
     [newAlarm setAbsoluteDate:[datePicker date]];
     nReminder.title = titleField.text;
-    //EKCalendar *newCalendar = [_eventStoreInstance defaultCalendarForNewReminders];
+    EKCalendar *newCalendar = [_eventStoreInstance defaultCalendarForNewReminders];
     //newCalendar.title = @"Reminders";
     nReminder.calendar = newCalendar;
     nReminder.notes = messageField.text;

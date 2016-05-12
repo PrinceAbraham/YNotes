@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -293,7 +293,7 @@
                                     <constraint firstAttribute="width" constant="41" id="N0y-y5-eLc"/>
                                     <constraint firstAttribute="height" constant="41" id="lqc-iZ-Tky"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="reminderNotSelected"/>
+                                <state key="normal" title="Button" image="reminderSelected"/>
                                 <connections>
                                     <action selector="reminder:" destination="dXl-dn-kh4" eventType="touchUpInside" id="bxY-oC-byL"/>
                                 </connections>
@@ -351,7 +351,7 @@
         <image name="back" width="128" height="128"/>
         <image name="camera" width="128" height="128"/>
         <image name="deleteNote" width="128" height="128"/>
-        <image name="reminderNotSelected" width="128" height="128"/>
+        <image name="reminderSelected" width="128" height="128"/>
         <image name="saveNote" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>

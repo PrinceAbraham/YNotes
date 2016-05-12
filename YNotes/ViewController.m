@@ -51,9 +51,12 @@ NSMutableArray *tempTitle;
     
     eStore = [[EKEventStore alloc] init];
     
+    //User has info stored in the User Defaults
     if([userDefaults objectForKey:userDefaultKey]!=nil){
         [self getInfo];
     }
+    
+    //Get Access To Reminders
     [self.eStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
         NSLog(@"%@", error);
     }];
