@@ -13,7 +13,7 @@
 NSString *const userDefaultKey = @"UserFileData";
 NSString *const userTitleKey = @"UserTitleData";
 NSString *const userDescriptionKey= @"UserDescData";
-CGFloat const KEYBOARD_ANIMATION_DURATION = 0.2;
+CGFloat const KEYBOARD_ANIMATION_DURATION = 0.4;
 CGFloat const MINIMUM_SCROLL_FRACTION = 0.2;
 CGFloat const MAXIMUM_SCROLL_FRACTION = 0.8;
 //static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 216;

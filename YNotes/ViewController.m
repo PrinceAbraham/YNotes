@@ -26,12 +26,9 @@
 
 @synthesize desc, table, userDefaults, userFile, title,edit, eStore;
 
- edit=false;
-
 bool didBeganEditing=false;
 
 int currentIndex=0;
-
 
 
 NSMutableArray *tempTitle;
@@ -64,6 +61,7 @@ NSMutableArray *tempTitle;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    //Retrieves Data and Loads the Table
     [self getInfo];
     [self.table reloadData];
 }
@@ -81,10 +79,7 @@ NSMutableArray *tempTitle;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    //_noteTitle.text = title[indexPath.row];
-    
-    edit = true;
-    
+    //Gets the index number of the selected table
     currentIndex = indexPath.row;
     
     [self performSegueWithIdentifier:@"addOrEditSegue" sender:nil];
@@ -95,6 +90,7 @@ NSMutableArray *tempTitle;
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    //Sets the number of rows
     return [title count];
 }
 
@@ -120,11 +116,11 @@ NSMutableArray *tempTitle;
     desc = [[userDefaults objectForKey:userDescriptionKey]mutableCopy];
 }
 
+//Sends info while the segue is prepared
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
+    //Required to have segue identifier
     if([[segue identifier] isEqualToString:@"addOrEditSegue"]){
-        
-        //NSLog(@"Got addOrEditSegue %@",[segue identifier]);
         
         ViewControllerB *vc = [segue destinationViewController];
         
@@ -135,7 +131,7 @@ NSMutableArray *tempTitle;
         vc.indexForTable = path.row;
         
         NSPredicate *predicate = [eStore predicateForRemindersInCalendars:nil];
-        
+        //Checks for any reminder with the name == title
         [eStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *rem){
             for(EKReminder *reminder in rem){
                 if([reminder.title isEqualToString: [title objectAtIndex:path.row]]){
@@ -144,10 +140,6 @@ NSMutableArray *tempTitle;
                 }
             }
         }];
-        
-        //ViewControllerB *detail = [self detailForIndexPath:path];
-        //[segue.destinationViewController setDetail:detail];
-        
     }
     
 }

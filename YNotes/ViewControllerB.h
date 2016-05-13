@@ -25,8 +25,6 @@
 
 @property NSInteger indexForTable;
 
-//@property NSString *messageString;// will use NSMutableAttributedString instead of this
-
 @property NSString *titleString;
 
 @property (weak, nonatomic) IBOutlet UITextView *messageField;

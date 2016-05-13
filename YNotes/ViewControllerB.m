@@ -39,8 +39,6 @@ NSAttributedString *tempAttributedString;
 
 NSMutableArray *stringTitleArr, *reminderList;
 
-UITextView *activeField = nil;
-
 EKCalendar *newCalendar;
 
 EKAlarm *newAlarm;
@@ -71,19 +69,25 @@ NSString *tempStringCheckTIme;
     
     self.eventStoreInstance = [[EKEventStore alloc]init];
     
-    newCalendar = [_eventStoreInstance defaultCalendarForNewReminders];
-    
-    nReminder =  [EKReminder reminderWithEventStore:self.eventStoreInstance];
-    
     newAlarm = [[EKAlarm alloc]init];
     
+    //sets the calendar to the default calendar for reminders
+    newCalendar = [_eventStoreInstance defaultCalendarForNewReminders];
+    
+    //connects the event store with the reminder
+    nReminder =  [EKReminder reminderWithEventStore:self.eventStoreInstance];
+    
+    //Formats the date and time format for the label
     [outputFormatter setDateStyle:NSDateFormatterShortStyle];
     [outputFormatter setTimeStyle:NSDateFormatterShortStyle];
     
+    //checks if theres a user defaults so that info could be retrived
     if([userDefaults objectForKey:userDefaultKey]!=nil){
         [self getInfo];
     }
+    //set the delegate of the textview to self
     messageField.delegate = self;
+    
     //if it is editing then load data
     if(self.isEditing){
         self.titleField.text = self.titleString;
@@ -95,17 +99,22 @@ NSString *tempStringCheckTIme;
         tempAttributedString = messageStringWAttachments;
     }
     
+    //if a reminder is set
     if(reminderIsSet){
         NSPredicate *predicate = [_eventStoreInstance predicateForRemindersInCalendars:nil];
         
         [_eventStoreInstance fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders) {
+            //Gets all the reminders in the reminder app
             for (EKReminder *reminder in reminders) {
+                //If reminder exists
                 if([reminder.title isEqualToString:titleField.text]){
+                    //Get info for the reminder, Alarm and the reminderTime label
                     nReminder = reminder;
                     newAlarm = [[nReminder alarms ] objectAtIndex:0];
                     reminderTime.text = [outputFormatter stringFromDate:[newAlarm absoluteDate]];
                 }
             }
+            //sets tempStringCheckTIme to check if the user has changed the time of the reminder
             tempStringCheckTIme=reminderTime.text;
         }];
         [_reminderButton setImage:[UIImage imageNamed:@"reminderSelected"] forState:UIControlStateNormal];
@@ -114,12 +123,13 @@ NSString *tempStringCheckTIme;
         reminderTime.text = @"No Alarm Set!";
         tempStringCheckTIme = reminderTime.text;
     }
-    
-    //NSLog(@"%@", newAlarm);
     tempCheckReminder=reminderIsSet;
+    
+    //Makes an array of title in lowercase to check if titles exist
     for(int i=0; i<[titleArr count]; i++){
         [stringTitleArr addObject:[[titleArr objectAtIndex:i] lowercaseString]];
     }
+    //Prompts for Access to reminders if not allowed already
     [self.eventStoreInstance requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
         
     }];
@@ -127,12 +137,15 @@ NSString *tempStringCheckTIme;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    if([messageField.text isEqualToString:@"Add Message:"]){
+    //didEDit = false means the messageField hasn't been touched yet
     didEdit = false;
-    
+    }
 }
 
 -(void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
+    //Dismiss keyboard
     [self.view endEditing:true];
     
 }
@@ -140,14 +153,18 @@ NSString *tempStringCheckTIme;
 
 -(void) textViewDidBeginEditing:(UITextView *)textView{
     
+    //The messageField is touched
     didEdit = true;
     
+    //sets the text color
     textView.textColor = [UIColor blackColor];
+    
+    //Empties the messageField if it's a new note
     if(!isEditing && [[textView text] isEqualToString:@"Add Message:"]){
         [textView setText:@""];
     }
-    activeField = self.messageField;
     
+    //KEYBOARD SIZING FOR TEXT (NEED SOME WORK. THIS METHOD SINCE IT'S NOT A SCROLL VIEW)
     CGRect textFieldRect =
     [self.view.window convertRect:messageField.bounds fromView:messageField];
     CGRect viewRect =
@@ -193,9 +210,12 @@ NSString *tempStringCheckTIme;
     [self.view setFrame:viewFrame];
     
     [UIView commitAnimations];
+    
 }
 
 -(void)textViewDidEndEditing:(UITextView *)textView{
+    
+    //KEYBOARD IS SET NORMAL WHEN DISMISSED
     CGRect viewFrame = self.view.frame;
     viewFrame.origin.y += animatedDistance;
     
@@ -209,7 +229,10 @@ NSString *tempStringCheckTIme;
 }
 
 -(void) textViewDidChange:(UITextView *)textView{
+    //Keeps the font and size consistant
     messageField.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:24.0];
+    
+    //Keeps a track of attributeText in messageField
     messageStringWAttachments = messageField.attributedText;
 }
 
@@ -435,6 +458,9 @@ NSString *tempStringCheckTIme;
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
+    //Adding a picture is triggering didEdit = true
+    didEdit = true;
+    
 }
 
 - (IBAction)reminder:(id)sender {
@@ -628,30 +654,5 @@ NSString *tempStringCheckTIme;
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc]init];
     attrString = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     return attrString;
-}
--(void) registerForKeyboardNotifications{
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWasShown:)
-                                                 name:UIKeyboardWillShowNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillBeHidden:)
-                                                 name:UIKeyboardWillHideNotification object:nil];
-}
-- (void)keyboardWasShown:(NSNotification*)aNotification {
-    
-    NSDictionary* info = [aNotification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    CGRect bkgndRect = activeField.superview.frame;
-    bkgndRect.size.height += kbSize.height;
-    [activeField.superview setFrame:bkgndRect];
-    
-    [messageField setContentOffset:CGPointMake(0.0, activeField.frame.origin.y+kbSize.height) animated:YES];
-}
-
--(void)keyboardWillBeHidden:(NSNotification *) aNotification{
-    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
-    messageField.contentInset = contentInsets;
-    messageField.scrollIndicatorInsets = contentInsets;
 }
 @end
