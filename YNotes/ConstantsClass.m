@@ -13,6 +13,9 @@
 NSString *const userDefaultKey = @"UserFileData";
 NSString *const userTitleKey = @"UserTitleData";
 NSString *const userDescriptionKey= @"UserDescData";
+NSString *const userDateCreatedKey = @"userDateCreated";
+NSString *const userDateModifiedKey=@"userDateModified";
+NSString *const userAllInfoKey=@"userAllInfo";
 CGFloat const KEYBOARD_ANIMATION_DURATION = 0.4;
 CGFloat const MINIMUM_SCROLL_FRACTION = 0.2;
 CGFloat const MAXIMUM_SCROLL_FRACTION = 0.8;

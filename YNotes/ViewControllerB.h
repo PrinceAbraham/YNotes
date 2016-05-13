@@ -17,6 +17,10 @@
 
 @property NSMutableDictionary *userFile;
 
+@property NSMutableDictionary *totalNoteInfo;
+
+@property NSMutableArray *totalNoteInfoArr;
+
 @property (nonatomic, weak) NSUserDefaults *userDefaults;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
@@ -38,6 +42,8 @@
 @property EKReminder *nReminder;
 
 @property EKEventStore *eventStoreInstance;
+
+@property NSMutableArray *dateCreated, *dateModified;
 
 
 @end
