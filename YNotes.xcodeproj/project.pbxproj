@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		16287B2370DE287CE88BCA65 /* libPods-YNotes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED3EB4DAF2EA8F46F8FC309 /* libPods-YNotes.a */; };
-		45F3585A456B0AD08511DEA9 /* libPods-YNotesUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFED5BDDB39D8757729A53C6 /* libPods-YNotesUITests.a */; };
-		9DCC095B098F7585FA8B8FDE /* libPods-YNotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2EE15BF2267BDC44C1A206 /* libPods-YNotesTests.a */; };
+		22C8722722CF9B6637990E57 /* libPods-YNotesUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6469F771352C64C1554D0F9 /* libPods-YNotesUITests.a */; };
 		A350DA721CDBDFB8009A12ED /* ViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = A350DA711CDBDFB8009A12ED /* ViewControllerB.m */; };
 		A39235B91CDCE36600E045F9 /* ConstantsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A39235B81CDCE36600E045F9 /* ConstantsClass.m */; };
 		A3B988591CDCF9B700DE1B9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B988581CDCF9B700DE1B9D /* main.m */; };
@@ -21,6 +18,8 @@
 		A3BA12C61CD3940200AB76B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3BA12C41CD3940200AB76B4 /* LaunchScreen.storyboard */; };
 		A3BA12D11CD3940200AB76B4 /* YNotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BA12D01CD3940200AB76B4 /* YNotesTests.m */; };
 		A3BA12DC1CD3940200AB76B4 /* YNotesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BA12DB1CD3940200AB76B4 /* YNotesUITests.m */; };
+		CA25CA9BFE3773A98215B38B /* libPods-YNotes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9646DFA460DF2A3610EE18B /* libPods-YNotes.a */; };
+		EDE8B53A66E8C542357B1C1B /* libPods-YNotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6A70A95C3F8ADC0DD1DEAC /* libPods-YNotesTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,14 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2FEECF0E7CC614DEAB731513 /* Pods-YNotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNotesUITests/Pods-YNotesUITests.release.xcconfig"; sourceTree = "<group>"; };
-		372376E650C17AB5D9FEEB77 /* Pods-YNotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNotesUITests/Pods-YNotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		489B3F38716B1E0EC3564C80 /* Pods-YNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNotes/Pods-YNotes.debug.xcconfig"; sourceTree = "<group>"; };
-		4A2EE15BF2267BDC44C1A206 /* libPods-YNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5756A0047DE66D088453C580 /* Pods-YNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNotesTests/Pods-YNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		640E04B47D9F85B99ADA1733 /* Pods-YNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNotes/Pods-YNotes.release.xcconfig"; sourceTree = "<group>"; };
-		87556CDEB43E35BF8CC03C51 /* Pods-YNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNotesTests/Pods-YNotesTests.release.xcconfig"; sourceTree = "<group>"; };
-		9ED3EB4DAF2EA8F46F8FC309 /* libPods-YNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11FF5154920C5F89B8940F8C /* Pods-YNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNotesTests/Pods-YNotesTests.release.xcconfig"; sourceTree = "<group>"; };
+		2E6A70A95C3F8ADC0DD1DEAC /* libPods-YNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4757E065A893E4A427A44535 /* Pods-YNotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNotesUITests/Pods-YNotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		76D9044A20416FF108CBD4F4 /* Pods-YNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNotes/Pods-YNotes.release.xcconfig"; sourceTree = "<group>"; };
 		A350DA701CDBDFB8009A12ED /* ViewControllerB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerB.h; sourceTree = "<group>"; };
 		A350DA711CDBDFB8009A12ED /* ViewControllerB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerB.m; sourceTree = "<group>"; };
 		A39235B71CDCE36600E045F9 /* ConstantsClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsClass.h; sourceTree = "<group>"; };
@@ -69,7 +64,11 @@
 		A3BA12D71CD3940200AB76B4 /* YNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BA12DB1CD3940200AB76B4 /* YNotesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNotesUITests.m; sourceTree = "<group>"; };
 		A3BA12DD1CD3940200AB76B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFED5BDDB39D8757729A53C6 /* libPods-YNotesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6469F771352C64C1554D0F9 /* libPods-YNotesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD73DF20C50B650C10E7314C /* Pods-YNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNotesTests/Pods-YNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E30ADE81DD8962C00C64D781 /* Pods-YNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNotes/Pods-YNotes.debug.xcconfig"; sourceTree = "<group>"; };
+		F087AD3262C930FAAA745A49 /* Pods-YNotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNotesUITests/Pods-YNotesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F9646DFA460DF2A3610EE18B /* libPods-YNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16287B2370DE287CE88BCA65 /* libPods-YNotes.a in Frameworks */,
+				CA25CA9BFE3773A98215B38B /* libPods-YNotes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DCC095B098F7585FA8B8FDE /* libPods-YNotesTests.a in Frameworks */,
+				EDE8B53A66E8C542357B1C1B /* libPods-YNotesTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,13 +92,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45F3585A456B0AD08511DEA9 /* libPods-YNotesUITests.a in Frameworks */,
+				22C8722722CF9B6637990E57 /* libPods-YNotesUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11814BF17518D28D4009027C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E30ADE81DD8962C00C64D781 /* Pods-YNotes.debug.xcconfig */,
+				76D9044A20416FF108CBD4F4 /* Pods-YNotes.release.xcconfig */,
+				DD73DF20C50B650C10E7314C /* Pods-YNotesTests.debug.xcconfig */,
+				11FF5154920C5F89B8940F8C /* Pods-YNotesTests.release.xcconfig */,
+				4757E065A893E4A427A44535 /* Pods-YNotesUITests.debug.xcconfig */,
+				F087AD3262C930FAAA745A49 /* Pods-YNotesUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A3BA12AA1CD3940100AB76B4 = {
 			isa = PBXGroup;
 			children = (
@@ -107,8 +119,8 @@
 				A3BA12CF1CD3940200AB76B4 /* YNotesTests */,
 				A3BA12DA1CD3940200AB76B4 /* YNotesUITests */,
 				A3BA12B41CD3940100AB76B4 /* Products */,
-				C4D2A909984F8CCCDBB1CAF4 /* Pods */,
-				D6A80F13CA25D6CE57DB8F78 /* Frameworks */,
+				11814BF17518D28D4009027C /* Pods */,
+				F63EB77CC57F65EA95327A66 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,25 +180,12 @@
 			path = YNotesUITests;
 			sourceTree = "<group>";
 		};
-		C4D2A909984F8CCCDBB1CAF4 /* Pods */ = {
+		F63EB77CC57F65EA95327A66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				489B3F38716B1E0EC3564C80 /* Pods-YNotes.debug.xcconfig */,
-				640E04B47D9F85B99ADA1733 /* Pods-YNotes.release.xcconfig */,
-				5756A0047DE66D088453C580 /* Pods-YNotesTests.debug.xcconfig */,
-				87556CDEB43E35BF8CC03C51 /* Pods-YNotesTests.release.xcconfig */,
-				372376E650C17AB5D9FEEB77 /* Pods-YNotesUITests.debug.xcconfig */,
-				2FEECF0E7CC614DEAB731513 /* Pods-YNotesUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		D6A80F13CA25D6CE57DB8F78 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9ED3EB4DAF2EA8F46F8FC309 /* libPods-YNotes.a */,
-				4A2EE15BF2267BDC44C1A206 /* libPods-YNotesTests.a */,
-				DFED5BDDB39D8757729A53C6 /* libPods-YNotesUITests.a */,
+				F9646DFA460DF2A3610EE18B /* libPods-YNotes.a */,
+				2E6A70A95C3F8ADC0DD1DEAC /* libPods-YNotesTests.a */,
+				C6469F771352C64C1554D0F9 /* libPods-YNotesUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -596,7 +595,7 @@
 		};
 		A3BA12E11CD3940200AB76B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 489B3F38716B1E0EC3564C80 /* Pods-YNotes.debug.xcconfig */;
+			baseConfigurationReference = E30ADE81DD8962C00C64D781 /* Pods-YNotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -612,7 +611,7 @@
 		};
 		A3BA12E21CD3940200AB76B4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 640E04B47D9F85B99ADA1733 /* Pods-YNotes.release.xcconfig */;
+			baseConfigurationReference = 76D9044A20416FF108CBD4F4 /* Pods-YNotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -628,7 +627,7 @@
 		};
 		A3BA12E41CD3940200AB76B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5756A0047DE66D088453C580 /* Pods-YNotesTests.debug.xcconfig */;
+			baseConfigurationReference = DD73DF20C50B650C10E7314C /* Pods-YNotesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = YNotesTests/Info.plist;
@@ -641,7 +640,7 @@
 		};
 		A3BA12E51CD3940200AB76B4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87556CDEB43E35BF8CC03C51 /* Pods-YNotesTests.release.xcconfig */;
+			baseConfigurationReference = 11FF5154920C5F89B8940F8C /* Pods-YNotesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = YNotesTests/Info.plist;
@@ -654,7 +653,7 @@
 		};
 		A3BA12E71CD3940200AB76B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 372376E650C17AB5D9FEEB77 /* Pods-YNotesUITests.debug.xcconfig */;
+			baseConfigurationReference = 4757E065A893E4A427A44535 /* Pods-YNotesUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = YNotesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -666,7 +665,7 @@
 		};
 		A3BA12E81CD3940200AB76B4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FEECF0E7CC614DEAB731513 /* Pods-YNotesUITests.release.xcconfig */;
+			baseConfigurationReference = F087AD3262C930FAAA745A49 /* Pods-YNotesUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = YNotesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
