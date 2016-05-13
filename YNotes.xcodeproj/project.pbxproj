@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
-=======
+
 		16287B2370DE287CE88BCA65 /* libPods-YNotes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED3EB4DAF2EA8F46F8FC309 /* libPods-YNotes.a */; };
->>>>>>> 0dac10c249af1fbbe5d00a71d5744780695428fa
 		45F3585A456B0AD08511DEA9 /* libPods-YNotesUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFED5BDDB39D8757729A53C6 /* libPods-YNotesUITests.a */; };
 		9DCC095B098F7585FA8B8FDE /* libPods-YNotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2EE15BF2267BDC44C1A206 /* libPods-YNotesTests.a */; };
 		A350DA721CDBDFB8009A12ED /* ViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = A350DA711CDBDFB8009A12ED /* ViewControllerB.m */; };
