@@ -235,6 +235,7 @@
             endingLineNumber = "315"
             landmarkName = "-back:"
             landmarkType = "5">
+<<<<<<< HEAD
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -251,6 +252,40 @@
             endingLineNumber = "54"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
+=======
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ViewControllerB back:]"
+                  moduleName = "YNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/prince/Desktop/YNotes/YNotes/ViewControllerB.m"
+                  timestampString = "484778628.108289"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "896">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__24-[ViewControllerB back:]_block_invoke.181"
+                  moduleName = "YNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/prince/Desktop/YNotes/YNotes/ViewControllerB.m"
+                  timestampString = "484778628.108386"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+>>>>>>> origin/master
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
