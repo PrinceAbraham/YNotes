@@ -68,9 +68,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TS8-ie-pa7">
-                                <rect key="frame" x="75" y="182" width="114" height="43"/>
+                                <rect key="frame" x="75" y="182" width="195" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="114" id="Cso-q3-B6e">
+                                    <constraint firstAttribute="width" constant="195" id="Cso-q3-B6e">
                                         <variation key="heightClass=regular-widthClass=compact" constant="197"/>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="43" id="iZ9-2E-3cH"/>
@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-237" y="379.5"/>
+            <point key="canvasLocation" x="-237" y="379"/>
         </scene>
         <!--View ControllerB-->
         <scene sceneID="Roe-38-3Wp">

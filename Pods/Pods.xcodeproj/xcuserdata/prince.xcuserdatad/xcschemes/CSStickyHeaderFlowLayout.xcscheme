@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8ECFAC059A755EC4A80F3DBA48AA3BFB'
-               BlueprintName = 'Pods-YNotes'
+               BlueprintIdentifier = '1376614EF3971FB1754445A70BF65873'
+               BlueprintName = 'CSStickyHeaderFlowLayout'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-YNotes.a'>
+               BuildableName = 'libCSStickyHeaderFlowLayout.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

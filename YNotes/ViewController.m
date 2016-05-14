@@ -141,9 +141,14 @@ NSMutableArray *tempTitle, *pickerData;
     [dateCreatedArr sortUsingSelector:@selector(compare:)];
     [displayArr removeAllObjects];
     for(int i=0; i < [dict count]; i++){
+        NSLog(@"%d",i);
         for( int j=0; j < [dict count]; j++){
-        if([[dateCreatedArr objectAtIndex:i] isEqual: [[dict objectAtIndex:j] objectForKey:@"Date Created"]]){
-            [displayArr addObject: [[dict objectAtIndex:i] objectForKey:@"Title"]];
+        NSLog(@"%d",j);
+        //if the dates match and the title is unique
+            NSLog(@"%@ = %@",[dateCreatedArr objectAtIndex:i],[[dict objectAtIndex:j] objectForKey:@"Date Created"]);
+        if(([[dateCreatedArr objectAtIndex:i] isEqual: [[dict objectAtIndex:j] objectForKey:@"Date Created"]]) && ![displayArr containsObject:[[dict objectAtIndex:j] objectForKey:@"Title"]]){
+            [displayArr addObject: [[dict objectAtIndex:j] objectForKey:@"Title"]];
+            NSLog(@"%@", [[dict objectAtIndex:j] objectForKey:@"Title"]);
         }
         }
     }
@@ -154,7 +159,7 @@ NSMutableArray *tempTitle, *pickerData;
     [displayArr removeAllObjects];
     for(int i=0; i < [dict count]; i++){
         for( int j=0; j < [dict count]; j++){
-            if([[dateModifiedArr objectAtIndex:i] isEqual: [[dict objectAtIndex:j] objectForKey:@"Date Modified"]]){
+            if(([[dateModifiedArr objectAtIndex:i] isEqual: [[dict objectAtIndex:j] objectForKey:@"Date Modified"]]) && ![displayArr containsObject:[[dict objectAtIndex:j] objectForKey:@"Title"]]){
                 [displayArr addObject: [[dict objectAtIndex:j] objectForKey:@"Title"]];
             }
         }

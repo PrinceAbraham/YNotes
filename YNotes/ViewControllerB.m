@@ -250,6 +250,8 @@ NSDate *dateForCreationandModification;
 
 - (IBAction)back:(id)sender {
     
+    int matchedInt = (int) [stringTitleArr indexOfObject:[titleField.text lowercaseString]];
+    
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@"Empty Note"
                                           message:@"Description cannot be empty!"
@@ -299,9 +301,13 @@ NSDate *dateForCreationandModification;
                                               [self savingWithUniqueTitle];
                                           }
                                       }else{
+                                          if(matchedInt==indexForTable){
+                                              [self overwriteMatchedWithEditing];
+                                          }else{
                                           [overwriteController addAction:cancel];
                                           [overwriteController addAction:okForOverWrite];
                                           [self presentViewController:overwriteController animated:YES completion:nil];
+                                          }
                                       }
                                   }];
     
@@ -339,6 +345,8 @@ NSDate *dateForCreationandModification;
     }
 }
 - (IBAction)save:(id)sender {
+    
+    int matchedInt = (int) [stringTitleArr indexOfObject:[titleField.text lowercaseString]];
     
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@"Empty Note"
@@ -382,10 +390,14 @@ NSDate *dateForCreationandModification;
                 if(![stringTitleArr containsObject:[titleField.text lowercaseString]]){
                     [self savingEditWithUniqueTitle];
                 }else{
+                    if(matchedInt == indexForTable){
+                        [self overwriteMatchedWithEditing];
+                    }else{
                     //overwrite alert
                     [overwriteController addAction:cancel];
                     [overwriteController addAction:okForOverWrite];
                     [self presentViewController:overwriteController animated:YES completion:nil];
+                    }
                 }
             }
         }else{
@@ -554,6 +566,9 @@ NSDate *dateForCreationandModification;
     [userDefaults setObject:totalNoteInfoArr forKey:userAllInfoKey];
     [userDefaults setObject:titleArr forKey:userTitleKey];
     [userDefaults setObject:messageArr forKey:userDescriptionKey];
+    [userDefaults setObject:dateCreated forKey:userDateCreatedKey];
+    [userDefaults setObject:dateModified forKey:userDateModifiedKey];
+
     if(reminderIsSet){
         [self createReminder];
     }else{
@@ -573,6 +588,7 @@ NSDate *dateForCreationandModification;
     [userDefaults setObject:totalNoteInfoArr forKey:userAllInfoKey];
     [userDefaults setObject:titleArr forKey:userTitleKey];
     [userDefaults setObject:messageArr forKey:userDescriptionKey];
+    [userDefaults setObject:dateModified forKey:userDateModifiedKey];
     if(reminderIsSet){
         [self createReminder];
     }else{
@@ -595,6 +611,7 @@ NSDate *dateForCreationandModification;
     [titleField endEditing:true];
     [userDefaults setObject:titleArr forKey:userTitleKey];
     [userDefaults setObject:messageArr forKey:userDescriptionKey];
+    [userDefaults setObject:dateModified forKey:userDateModifiedKey];
     if(reminderIsSet){
         [self createReminder];
     }else{
@@ -605,6 +622,8 @@ NSDate *dateForCreationandModification;
 -(void) overwriteMatchedWithEditing{
     int matchedInt = (int) [stringTitleArr indexOfObject:[titleField.text lowercaseString]];
     messageData = [self getDataForAttributedString:messageStringWAttachments];
+    
+    [titleArr replaceObjectAtIndex:matchedInt withObject:titleField.text];
     [messageArr replaceObjectAtIndex:matchedInt withObject:messageData];
     [self modifyDate:matchedInt];
     [self setNoteInfo:matchedInt];
@@ -613,6 +632,7 @@ NSDate *dateForCreationandModification;
         [messageArr removeObjectAtIndex:indexForTable];
         [titleArr removeObjectAtIndex:indexForTable];
         [dateModified removeObjectAtIndex:indexForTable];
+        [dateCreated removeObjectAtIndex:indexForTable];
         [totalNoteInfoArr removeObjectAtIndex:indexForTable];
         }
     [totalNoteInfoArr replaceObjectAtIndex:matchedInt withObject:totalNoteInfo];
@@ -620,6 +640,7 @@ NSDate *dateForCreationandModification;
     [userDefaults setObject:userFile forKey:userDefaultKey];
     [userDefaults setObject:titleArr forKey:userTitleKey];
     [userDefaults setObject:messageArr forKey:userDescriptionKey];
+    [userDefaults setObject:dateModified forKey:userDateModifiedKey];
     [self.view endEditing:true];
     if(reminderIsSet){
         [self createReminder];
@@ -639,6 +660,7 @@ NSDate *dateForCreationandModification;
     [userDefaults setObject:totalNoteInfoArr forKey:userAllInfoKey];
     [userDefaults setObject:titleArr forKey:userTitleKey];
     [userDefaults setObject:messageArr forKey:userDescriptionKey];
+    [userDefaults setObject:dateModified forKey:userDateModifiedKey];
     titleField.text = @"";
     messageField.text = @"Add Message:";
     messageField.textColor = [UIColor grayColor];
@@ -692,15 +714,12 @@ NSDate *dateForCreationandModification;
     NSDate *date = [NSDate date];
     [dateCreated insertObject:date atIndex:0];
     [dateModified insertObject:date atIndex:0];
-    [userDefaults setObject:dateCreated forKey:userDateCreatedKey];
-    [userDefaults setObject:dateModified forKey:userDateModifiedKey];
 }
 -(void) modifyDate:(NSInteger *) index{
     
     NSDate *date = [NSDate date];
     [dateModified replaceObjectAtIndex:index withObject:date];
-    [userDefaults setObject:dateCreated forKey:userDateCreatedKey];
-    [userDefaults setObject:dateModified forKey:userDateModifiedKey];
+
 }
 
 -(void) setNoteInfo:(NSInteger *) index{

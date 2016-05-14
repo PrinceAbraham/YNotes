@@ -8,29 +8,53 @@
 
 /* Begin PBXBuildFile section */
 		2212BED18AC89CDC5B330E0AA4AE47D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		2774DCA32888AC1F0B649E24ABAB3B4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		2D7511AE7895500790CC9B7D5E6187F4 /* Pods-YNotesTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4EB9E99F80C4CAF5C387DA3BDE0C98 /* Pods-YNotesTests-dummy.m */; };
-		308327B3529043D1D720E91E81EED6FE /* Pods-YNotes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3DBD67AD8E7C062C7227FB72D64F39 /* Pods-YNotes-dummy.m */; };
+		3D8E975333AB9CD7D849D116A5F0071C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		5269DF3EE0C631DAD548DAB44C78A6CA /* CSStickyHeaderFlowLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 779EE6654DB99C4A1AE961FE3800639D /* CSStickyHeaderFlowLayout-dummy.m */; };
+		57B65DCD38894FCFB21D6AC09566021E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		5D4E6BF4956C025C153964C5310A8BE5 /* CSStickyHeaderFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 8976E1064763EADD59A2A35FFA83CFBD /* CSStickyHeaderFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F80164D9899F39C17C609806812263D /* Pods-YNotes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3DBD67AD8E7C062C7227FB72D64F39 /* Pods-YNotes-dummy.m */; };
+		66D5776B69E5B6DD070B50C2BC524763 /* CSStickyHeaderFlowLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 97C99F810D478A9D2E8BCCA8FA0C7B9A /* CSStickyHeaderFlowLayoutAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		79DE6086CD749FEACD7E6145D3B134E3 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F47E97D058248591F18508EF1C6495E /* CSStickyHeaderFlowLayoutAttributes.m */; };
+		DFD5C6ED8DB81D88D31DA35D7E343321 /* CSStickyHeaderFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F3B72C255793AA71126FB336D8DDD /* CSStickyHeaderFlowLayout.m */; };
 		EC49B6FCF12F4F5AB00B8EF8627871E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		FE29C920023D70D0136BA16A00336F82 /* Pods-YNotesUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B2DB26FB875182B1DA7764BDB12E78 /* Pods-YNotesUITests-dummy.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		94E6736EB788549E38EB0B0BBD1D18D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1376614EF3971FB1754445A70BF65873;
+			remoteInfo = CSStickyHeaderFlowLayout;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		065B997B875B257DF00563E3BE2324EE /* libPods-YNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0805945308DE2BAAC23ED73E3C90430F /* Pods-YNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		0CE0B0C345E5B85DB4D0A98B5F58F221 /* Pods-YNotesTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YNotesTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		123703DA4E8B76DFA306C30F1A3135EA /* Pods-YNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotes.debug.xcconfig"; sourceTree = "<group>"; };
+		124F09992A9438DEEEA8E95E3B5642D6 /* libCSStickyHeaderFlowLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCSStickyHeaderFlowLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C17FBF2289BFFC3348D4D87D24AA4EE /* Pods-YNotes-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotes-resources.sh"; sourceTree = "<group>"; };
-		2BA8758F13E944CFD68B7FEE9A7F5AA1 /* libPods-YNotesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35CEFF090D4590377ACEF907866E2192 /* Pods-YNotes-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YNotes-acknowledgements.markdown"; sourceTree = "<group>"; };
 		46B2DB26FB875182B1DA7764BDB12E78 /* Pods-YNotesUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YNotesUITests-dummy.m"; sourceTree = "<group>"; };
 		4C1B1BAD6BD8038EB1B79C6060C97C04 /* Pods-YNotes-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YNotes-acknowledgements.plist"; sourceTree = "<group>"; };
+		5A03F3BA8F300134A43634078980A474 /* CSStickyHeaderFlowLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CSStickyHeaderFlowLayout-prefix.pch"; sourceTree = "<group>"; };
+		5E963EF4764A2A3070C9919C11BD450E /* libPods-YNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EB0AF1C483FE3DC35C980510EAF91B /* Pods-YNotes-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotes-frameworks.sh"; sourceTree = "<group>"; };
 		6630B1233D8AC9687853F40428B7A130 /* Pods-YNotesUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotesUITests-resources.sh"; sourceTree = "<group>"; };
 		693988991F3A665DDA9E49EC84B2C059 /* Pods-YNotesUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YNotesUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6E3DBD67AD8E7C062C7227FB72D64F39 /* Pods-YNotes-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YNotes-dummy.m"; sourceTree = "<group>"; };
+		779EE6654DB99C4A1AE961FE3800639D /* CSStickyHeaderFlowLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CSStickyHeaderFlowLayout-dummy.m"; sourceTree = "<group>"; };
+		7F47E97D058248591F18508EF1C6495E /* CSStickyHeaderFlowLayoutAttributes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSStickyHeaderFlowLayoutAttributes.m; path = Classes/CSStickyHeaderFlowLayoutAttributes.m; sourceTree = "<group>"; };
 		7F4EB9E99F80C4CAF5C387DA3BDE0C98 /* Pods-YNotesTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YNotesTests-dummy.m"; sourceTree = "<group>"; };
+		8254737F064259AC63B451F72F27F4AA /* libPods-YNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8976E1064763EADD59A2A35FFA83CFBD /* CSStickyHeaderFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSStickyHeaderFlowLayout.h; path = Classes/CSStickyHeaderFlowLayout.h; sourceTree = "<group>"; };
+		898F3B72C255793AA71126FB336D8DDD /* CSStickyHeaderFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSStickyHeaderFlowLayout.m; path = Classes/CSStickyHeaderFlowLayout.m; sourceTree = "<group>"; };
+		925A659EDD7288E1C5F47B9724D5B4FD /* libPods-YNotesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97C99F810D478A9D2E8BCCA8FA0C7B9A /* CSStickyHeaderFlowLayoutAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSStickyHeaderFlowLayoutAttributes.h; path = Classes/CSStickyHeaderFlowLayoutAttributes.h; sourceTree = "<group>"; };
 		98E1BCFA49D09EBAA6891042EC50CFEB /* Pods-YNotesTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotesTests-resources.sh"; sourceTree = "<group>"; };
 		9B41211D47014841C430104813400948 /* Pods-YNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotes.release.xcconfig"; sourceTree = "<group>"; };
 		A4EF574BC3089EB476C641E499EB0F59 /* Pods-YNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -38,26 +62,34 @@
 		AC0CDBCED14A885156470D868C606CE4 /* Pods-YNotesTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotesTests-frameworks.sh"; sourceTree = "<group>"; };
 		C7429776B51BFC9F19345A26876623C7 /* Pods-YNotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E5BFC4CAAC07EBFDF1891D978330D1DE /* CSStickyHeaderFlowLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CSStickyHeaderFlowLayout.xcconfig; sourceTree = "<group>"; };
 		EBB7D46FD7852A2620CE65088F64496F /* Pods-YNotesUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotesUITests-frameworks.sh"; sourceTree = "<group>"; };
-		F309C09B0D502489F4A8F8E3C90A1537 /* libPods-YNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6713CEEDDF83A2805E620B0E75106B3 /* Pods-YNotesUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YNotesUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F9B57511A38F72441FD26341FF407928 /* Pods-YNotesTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YNotesTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2F071B9A24BB6826418930377D654C8C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2774DCA32888AC1F0B649E24ABAB3B4C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6D10CA73CAAAD66A4EB154AFC3B4EFC5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EC49B6FCF12F4F5AB00B8EF8627871E1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		941A5D731C9BC54504CDC5DB62DBD504 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D8E975333AB9CD7D849D116A5F0071C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CB46BF68FB464E8521C51E1A07FF469 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57B65DCD38894FCFB21D6AC09566021E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +114,29 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		09B4016625E12AB26DB947390CBC5383 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				124F09992A9438DEEEA8E95E3B5642D6 /* libCSStickyHeaderFlowLayout.a */,
+				5E963EF4764A2A3070C9919C11BD450E /* libPods-YNotes.a */,
+				8254737F064259AC63B451F72F27F4AA /* libPods-YNotesTests.a */,
+				925A659EDD7288E1C5F47B9724D5B4FD /* libPods-YNotesUITests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37F9BB29CB23D040E3F8793547C2DA94 /* CSStickyHeaderFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				8976E1064763EADD59A2A35FFA83CFBD /* CSStickyHeaderFlowLayout.h */,
+				898F3B72C255793AA71126FB336D8DDD /* CSStickyHeaderFlowLayout.m */,
+				97C99F810D478A9D2E8BCCA8FA0C7B9A /* CSStickyHeaderFlowLayoutAttributes.h */,
+				7F47E97D058248591F18508EF1C6495E /* CSStickyHeaderFlowLayoutAttributes.m */,
+				8A0D1A3F398C63964010C43868FC1D61 /* Support Files */,
+			);
+			path = CSStickyHeaderFlowLayout;
+			sourceTree = "<group>";
+		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,19 +150,29 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				9C771B197DECD32A1CCA05CE222AC2D5 /* Products */,
+				9C4BFA60338AFE48FECF42E56B19EB5F /* Pods */,
+				09B4016625E12AB26DB947390CBC5383 /* Products */,
 				09686D0FB16B538FCEDC26ACAD688019 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		9C771B197DECD32A1CCA05CE222AC2D5 /* Products */ = {
+		8A0D1A3F398C63964010C43868FC1D61 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				065B997B875B257DF00563E3BE2324EE /* libPods-YNotes.a */,
-				F309C09B0D502489F4A8F8E3C90A1537 /* libPods-YNotesTests.a */,
-				2BA8758F13E944CFD68B7FEE9A7F5AA1 /* libPods-YNotesUITests.a */,
+				E5BFC4CAAC07EBFDF1891D978330D1DE /* CSStickyHeaderFlowLayout.xcconfig */,
+				779EE6654DB99C4A1AE961FE3800639D /* CSStickyHeaderFlowLayout-dummy.m */,
+				5A03F3BA8F300134A43634078980A474 /* CSStickyHeaderFlowLayout-prefix.pch */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/CSStickyHeaderFlowLayout";
+			sourceTree = "<group>";
+		};
+		9C4BFA60338AFE48FECF42E56B19EB5F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37F9BB29CB23D040E3F8793547C2DA94 /* CSStickyHeaderFlowLayout */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		ABC5F4DF87163109E5445D5F78A7498D /* Pods-YNotesTests */ = {
@@ -165,6 +230,18 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		B58703AAC0AC4E953134753F37688469 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D4E6BF4956C025C153964C5310A8BE5 /* CSStickyHeaderFlowLayout.h in Headers */,
+				66D5776B69E5B6DD070B50C2BC524763 /* CSStickyHeaderFlowLayoutAttributes.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		0BAD7FEE141F655668D5B12523823F3C /* Pods-YNotesUITests */ = {
 			isa = PBXNativeTarget;
@@ -179,7 +256,24 @@
 			);
 			name = "Pods-YNotesUITests";
 			productName = "Pods-YNotesUITests";
-			productReference = 2BA8758F13E944CFD68B7FEE9A7F5AA1 /* libPods-YNotesUITests.a */;
+			productReference = 925A659EDD7288E1C5F47B9724D5B4FD /* libPods-YNotesUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		1376614EF3971FB1754445A70BF65873 /* CSStickyHeaderFlowLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F7762132C140E689BCAE4C8A6E2610A /* Build configuration list for PBXNativeTarget "CSStickyHeaderFlowLayout" */;
+			buildPhases = (
+				007A81658878A978D9F2086A9CA33EB9 /* Sources */,
+				9CB46BF68FB464E8521C51E1A07FF469 /* Frameworks */,
+				B58703AAC0AC4E953134753F37688469 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CSStickyHeaderFlowLayout;
+			productName = CSStickyHeaderFlowLayout;
+			productReference = 124F09992A9438DEEEA8E95E3B5642D6 /* libCSStickyHeaderFlowLayout.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		14CB0DD5E0A80D362DE05ED1ED0875C4 /* Pods-YNotesTests */ = {
@@ -195,23 +289,24 @@
 			);
 			name = "Pods-YNotesTests";
 			productName = "Pods-YNotesTests";
-			productReference = F309C09B0D502489F4A8F8E3C90A1537 /* libPods-YNotesTests.a */;
+			productReference = 8254737F064259AC63B451F72F27F4AA /* libPods-YNotesTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		999BE2FEF3979CD14AB88FA423A5DE0E /* Pods-YNotes */ = {
+		8ECFAC059A755EC4A80F3DBA48AA3BFB /* Pods-YNotes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7A23BC08C53E462F971EE1C63A890F0 /* Build configuration list for PBXNativeTarget "Pods-YNotes" */;
+			buildConfigurationList = 98DDA3237D42A0BD968A830141A78FF5 /* Build configuration list for PBXNativeTarget "Pods-YNotes" */;
 			buildPhases = (
-				40AF9F1082F54A8B5AF8F943DE85C6B2 /* Sources */,
-				2F071B9A24BB6826418930377D654C8C /* Frameworks */,
+				04E0F434AF5FC8E68BFC28B9EEDF2DC6 /* Sources */,
+				941A5D731C9BC54504CDC5DB62DBD504 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4DBCF50ADB7A745AC3B0F759B0B28DEF /* PBXTargetDependency */,
 			);
 			name = "Pods-YNotes";
 			productName = "Pods-YNotes";
-			productReference = 065B997B875B257DF00563E3BE2324EE /* libPods-YNotes.a */;
+			productReference = 5E963EF4764A2A3070C9919C11BD450E /* libPods-YNotes.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -231,11 +326,12 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 9C771B197DECD32A1CCA05CE222AC2D5 /* Products */;
+			productRefGroup = 09B4016625E12AB26DB947390CBC5383 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				999BE2FEF3979CD14AB88FA423A5DE0E /* Pods-YNotes */,
+				1376614EF3971FB1754445A70BF65873 /* CSStickyHeaderFlowLayout */,
+				8ECFAC059A755EC4A80F3DBA48AA3BFB /* Pods-YNotes */,
 				14CB0DD5E0A80D362DE05ED1ED0875C4 /* Pods-YNotesTests */,
 				0BAD7FEE141F655668D5B12523823F3C /* Pods-YNotesUITests */,
 			);
@@ -243,11 +339,21 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		40AF9F1082F54A8B5AF8F943DE85C6B2 /* Sources */ = {
+		007A81658878A978D9F2086A9CA33EB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				308327B3529043D1D720E91E81EED6FE /* Pods-YNotes-dummy.m in Sources */,
+				5269DF3EE0C631DAD548DAB44C78A6CA /* CSStickyHeaderFlowLayout-dummy.m in Sources */,
+				DFD5C6ED8DB81D88D31DA35D7E343321 /* CSStickyHeaderFlowLayout.m in Sources */,
+				79DE6086CD749FEACD7E6145D3B134E3 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04E0F434AF5FC8E68BFC28B9EEDF2DC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F80164D9899F39C17C609806812263D /* Pods-YNotes-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,8 +375,17 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4DBCF50ADB7A745AC3B0F759B0B28DEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CSStickyHeaderFlowLayout;
+			target = 1376614EF3971FB1754445A70BF65873 /* CSStickyHeaderFlowLayout */;
+			targetProxy = 94E6736EB788549E38EB0B0BBD1D18D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		21F46A27320985F1A926C6F9775E17FF /* Release */ = {
+		068DF77A7650D587F68A34E6D4173EBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9B41211D47014841C430104813400948 /* Pods-YNotes.release.xcconfig */;
 			buildSettings = {
@@ -392,27 +507,6 @@
 			};
 			name = Debug;
 		};
-		6B6F63EEB1B80E743B73834F8E517F81 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 123703DA4E8B76DFA306C30F1A3135EA /* Pods-YNotes.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		72F8AF726C484D856C135917C19E791F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0805945308DE2BAAC23ED73E3C90430F /* Pods-YNotesTests.release.xcconfig */;
@@ -434,9 +528,51 @@
 			};
 			name = Release;
 		};
+		86B7C7108ECFB0DEB7130A0786D27078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5BFC4CAAC07EBFDF1891D978330D1DE /* CSStickyHeaderFlowLayout.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CSStickyHeaderFlowLayout/CSStickyHeaderFlowLayout-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 		88B75650D2E36F3E831246CDEB2A4477 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A6AC0A776C9D6061359A8919ABDF4098 /* Pods-YNotesUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8B062F8417984F621EB1CC3492DF1002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 123703DA4E8B76DFA306C30F1A3135EA /* Pods-YNotes.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -476,6 +612,27 @@
 			};
 			name = Debug;
 		};
+		99688F952AC93CDCB786E12A49BA337F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5BFC4CAAC07EBFDF1891D978330D1DE /* CSStickyHeaderFlowLayout.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CSStickyHeaderFlowLayout/CSStickyHeaderFlowLayout-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -488,11 +645,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A7A23BC08C53E462F971EE1C63A890F0 /* Build configuration list for PBXNativeTarget "Pods-YNotes" */ = {
+		3F7762132C140E689BCAE4C8A6E2610A /* Build configuration list for PBXNativeTarget "CSStickyHeaderFlowLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6B6F63EEB1B80E743B73834F8E517F81 /* Debug */,
-				21F46A27320985F1A926C6F9775E17FF /* Release */,
+				86B7C7108ECFB0DEB7130A0786D27078 /* Debug */,
+				99688F952AC93CDCB786E12A49BA337F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98DDA3237D42A0BD968A830141A78FF5 /* Build configuration list for PBXNativeTarget "Pods-YNotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B062F8417984F621EB1CC3492DF1002 /* Debug */,
+				068DF77A7650D587F68A34E6D4173EBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
