@@ -31,12 +31,13 @@
 bool didBeganEditing=false;
 
 int currentIndex=0;
+NSString *pickedData;
 
 NSMutableArray *displayArr, *dateCreatedArr, *dateModifiedArr;
 
 NSMutableArray *dict;
 
-NSMutableArray *tempTitle;
+NSMutableArray *tempTitle, *pickerData;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -59,6 +60,12 @@ NSMutableArray *tempTitle;
     
     dateModifiedArr = [[NSMutableArray alloc]init];
     
+    pickedData = [[NSString alloc]init];
+    
+    pickerData = @[@"Alphabetical",@"Date Created", @"Date Modified"];
+    
+    pickedData = @"Alphabetical";
+    
     dict = [[NSMutableArray alloc]init];
     
     //User has info stored in the User Defaults
@@ -80,6 +87,13 @@ NSMutableArray *tempTitle;
     //Retrieves Data and Loads the Table
     [self getInfo];
     [self.table reloadData];
+    if([pickedData isEqualToString:@"Alphabetical"]){
+        [self sortAlphabetical];
+    }else if ([pickedData isEqualToString:@"Date Created"]){
+        [self sortDateCreated];
+    }else{
+        [self sortDateModified];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,13 +117,27 @@ NSMutableArray *tempTitle;
     return 3;
 }
 
-- (IBAction)sortAlphabetical:(id)sender {
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return [pickerData objectAtIndex:row];
+}
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    pickedData = [pickerData objectAtIndex:row];
+    if([pickedData isEqualToString:@"Alphabetical"]){
+        [self sortAlphabetical];
+    }else if ([pickedData isEqualToString:@"Date Created"]){
+        [self sortDateCreated];
+    }else{
+        [self sortDateModified];
+    }
+    NSLog(@"%@", [pickerData objectAtIndex:row]);
+}
+
+- (void)sortAlphabetical{
     
-    displayArr = title;
     [displayArr sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     [self.table reloadData];
 }
-- (IBAction)sortDateCreated:(id)sender {
+- (void)sortDateCreated{
     [dateCreatedArr sortUsingSelector:@selector(compare:)];
     [displayArr removeAllObjects];
     for(int i=0; i < [dict count]; i++){
@@ -121,7 +149,7 @@ NSMutableArray *tempTitle;
     }
     [self.table reloadData];
 }
-- (IBAction)sortDateModified:(id)sender {
+- (void)sortDateModified{
     [dateModifiedArr sortUsingSelector:@selector(compare:)];
     [displayArr removeAllObjects];
     for(int i=0; i < [dict count]; i++){
@@ -178,7 +206,7 @@ NSMutableArray *tempTitle;
     userFile = [[userDefaults objectForKey:userDefaultKey]mutableCopy];//add mutable copy to retrieve properly. User default always returns immutable copy
     title = [[userDefaults objectForKey:userTitleKey]mutableCopy];
     desc = [[userDefaults objectForKey:userDescriptionKey]mutableCopy];
-    displayArr = title;
+    displayArr = [[userDefaults objectForKey:userTitleKey]mutableCopy];
     dateCreatedArr = [[userDefaults objectForKey:userDateCreatedKey]mutableCopy];
     dict = [[userDefaults objectForKey:userAllInfoKey]mutableCopy];
     dateModifiedArr = [[userDefaults objectForKey:userDateModifiedKey]mutableCopy];
@@ -191,8 +219,8 @@ NSMutableArray *tempTitle;
     if([[segue identifier] isEqualToString:@"addOrEditSegue"]){
         
         ViewControllerB *vc = [segue destinationViewController];
-        
-        NSInteger *path = [displayArr indexOfObject:[displayArr objectAtIndex:currentIndex]];
+        //Genius LOL
+        NSInteger *path = [title indexOfObject:[displayArr objectAtIndex:currentIndex]];
         vc.isEditing = true;
         vc.titleString = [title objectAtIndex:path];
         vc.messageData = [desc objectAtIndex:path];

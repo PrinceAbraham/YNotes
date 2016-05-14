@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -57,45 +57,22 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="nt4-K3-6FU"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgk-sg-63u">
-                                <rect key="frame" x="261" y="190" width="37" height="30"/>
-                                <state key="normal" title="Date Created"/>
-                                <connections>
-                                    <action selector="sortDateCreated:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ew8-0P-sXD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZQ-eK-KtJ">
-                                <rect key="frame" x="408" y="183" width="27" height="30"/>
-                                <state key="normal" title="Date Modified"/>
-                                <connections>
-                                    <action selector="sortDateModified:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xex-TZ-VWe"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort By:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNK-Ih-5JY">
                                 <rect key="frame" x="14" y="199" width="62" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="2Ei-4V-pgP"/>
                                     <constraint firstAttribute="height" constant="21" id="W0c-38-TP6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bF5-C2-qbq">
-                                <rect key="frame" x="160" y="139" width="64" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="SxS-DE-yR0"/>
-                                    <constraint firstAttribute="height" constant="30" id="s58-Ax-rsr"/>
-                                </constraints>
-                                <state key="normal" title="Alpha"/>
-                                <connections>
-                                    <action selector="sortAlphabetical:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Koo-hy-rEc"/>
-                                </connections>
-                            </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TS8-ie-pa7">
                                 <rect key="frame" x="75" y="182" width="114" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="114" id="Cso-q3-B6e"/>
+                                    <constraint firstAttribute="width" constant="114" id="Cso-q3-B6e">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="197"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="43" id="iZ9-2E-3cH"/>
                                 </constraints>
                             </pickerView>
@@ -104,18 +81,15 @@
                         <constraints>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="TS8-ie-pa7" secondAttribute="bottom" constant="8" id="1KZ-aM-WcZ"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="ZNK-Ih-5JY" secondAttribute="bottom" constant="13" id="7iU-EH-NFV"/>
-                            <constraint firstItem="bF5-C2-qbq" firstAttribute="leading" secondItem="ZNK-Ih-5JY" secondAttribute="trailing" constant="84" id="8v8-RT-z7M"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ttM-yO-C6w" secondAttribute="bottom" id="D9c-kv-ENe"/>
                             <constraint firstItem="H9p-ch-w6L" firstAttribute="top" secondItem="gCr-jr-mdx" secondAttribute="bottom" constant="21" id="DAX-o9-hgM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="H9p-ch-w6L" secondAttribute="trailing" id="Fba-MK-yLQ"/>
                             <constraint firstItem="gCr-jr-mdx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="G0p-zt-8Qn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gCr-jr-mdx" secondAttribute="trailing" constant="-20" id="GwU-Qw-DuN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ttM-yO-C6w" secondAttribute="trailing" constant="-20" id="MkV-If-NGA"/>
-                            <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="lgk-sg-63u" secondAttribute="bottom" constant="13" id="TYJ-0Y-bgc"/>
                             <constraint firstItem="ZNK-Ih-5JY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="Zps-lz-j9Y"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ofV-Fp-OTC"/>
                             <constraint firstItem="gCr-jr-mdx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="q3z-Rg-enQ"/>
-                            <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="bF5-C2-qbq" secondAttribute="bottom" constant="64" id="q5i-4L-tp8"/>
                             <constraint firstItem="TS8-ie-pa7" firstAttribute="leading" secondItem="ZNK-Ih-5JY" secondAttribute="trailing" constant="-1" id="rSV-68-ZGA"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="H9p-ch-w6L" secondAttribute="bottom" constant="97" id="zYL-or-VHw"/>
                         </constraints>
@@ -128,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-236" y="380"/>
+            <point key="canvasLocation" x="-237" y="379.5"/>
         </scene>
         <!--View ControllerB-->
         <scene sceneID="Roe-38-3Wp">
@@ -343,7 +317,7 @@
                                     <constraint firstAttribute="width" constant="41" id="N0y-y5-eLc"/>
                                     <constraint firstAttribute="height" constant="41" id="lqc-iZ-Tky"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="reminderSelected"/>
+                                <state key="normal" title="Button" image="reminderNotSelected"/>
                                 <connections>
                                     <action selector="reminder:" destination="dXl-dn-kh4" eventType="touchUpInside" id="bxY-oC-byL"/>
                                 </connections>
@@ -401,7 +375,7 @@
         <image name="back" width="128" height="128"/>
         <image name="camera" width="128" height="128"/>
         <image name="deleteNote" width="128" height="128"/>
-        <image name="reminderSelected" width="128" height="128"/>
+        <image name="reminderNotSelected" width="128" height="128"/>
         <image name="saveNote" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
