@@ -632,14 +632,16 @@ NSDate *dateForCreationandModification;
         [messageArr removeObjectAtIndex:indexForTable];
         [titleArr removeObjectAtIndex:indexForTable];
         [dateModified removeObjectAtIndex:indexForTable];
-        [dateCreated removeObjectAtIndex:indexForTable];
         [totalNoteInfoArr removeObjectAtIndex:indexForTable];
-        }
+    }else{
+    [dateCreated removeObjectAtIndex:indexForTable];
+    }
     [totalNoteInfoArr replaceObjectAtIndex:matchedInt withObject:totalNoteInfo];
     [userDefaults setObject:totalNoteInfoArr forKey:userAllInfoKey];
     [userDefaults setObject:userFile forKey:userDefaultKey];
     [userDefaults setObject:titleArr forKey:userTitleKey];
     [userDefaults setObject:messageArr forKey:userDescriptionKey];
+    [userDefaults setObject:dateCreated forKey:userDateCreatedKey];
     [userDefaults setObject:dateModified forKey:userDateModifiedKey];
     [self.view endEditing:true];
     if(reminderIsSet){

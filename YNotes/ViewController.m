@@ -22,13 +22,15 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *picker;
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 @end
 
 @implementation ViewController
 
-@synthesize desc, table, userDefaults, userFile, title,edit, eStore, picker;
+@synthesize desc, table, userDefaults, userFile, title,edit, eStore, picker, searchBar;
 
-bool didBeganEditing=false;
+bool didBeganEditing=false, searchIsEmpty=true;
 
 int currentIndex=0;
 NSString *pickedData;
@@ -38,6 +40,8 @@ NSMutableArray *displayArr, *dateCreatedArr, *dateModifiedArr;
 NSMutableArray *dict;
 
 NSMutableArray *tempTitle, *pickerData;
+
+NSMutableString *searchText;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -62,6 +66,8 @@ NSMutableArray *tempTitle, *pickerData;
     
     pickedData = [[NSString alloc]init];
     
+    searchText = [[NSMutableString alloc] init];
+    
     pickerData = @[@"Alphabetical",@"Date Created", @"Date Modified"];
     
     pickedData = @"Alphabetical";
@@ -77,9 +83,10 @@ NSMutableArray *tempTitle, *pickerData;
     [self.eStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
         NSLog(@"%@", error);
     }];
-    
+    //searchText = @"";
     picker.delegate = self;
     picker.dataSource = self;
+    searchBar.delegate = self;
     
 }
 
@@ -104,6 +111,31 @@ NSMutableArray *tempTitle, *pickerData;
     NSLog(@"add button clicked");
     
     //[self performSegueWithIdentifier:@"addOrEditSegue" sender:self];
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)sText{
+    searchText = searchBar.text;
+    searchIsEmpty = false;
+    NSLog(@"Search Begins");
+    NSArray *tempDisplayArr = [[NSArray alloc]initWithArray:displayArr];
+    [displayArr removeAllObjects];
+    for(int i=0; i <[tempDisplayArr count]; i++){
+        if([[[tempDisplayArr objectAtIndex:i]lowercaseString] hasPrefix:[searchBar.text lowercaseString]]){
+            [displayArr addObject:[tempDisplayArr objectAtIndex:i]];
+        }
+    }
+    if([searchBar.text isEqualToString:@""]){
+        [self getInfo];
+        searchText = @"";
+        searchIsEmpty = true;
+    }
+    [self.table reloadData];
+}
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+    searchBar.text = @"";
+    searchText = @"";
+    searchIsEmpty = true;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -146,7 +178,7 @@ NSMutableArray *tempTitle, *pickerData;
         NSLog(@"%d",j);
         //if the dates match and the title is unique
             NSLog(@"%@ = %@",[dateCreatedArr objectAtIndex:i],[[dict objectAtIndex:j] objectForKey:@"Date Created"]);
-        if(([[dateCreatedArr objectAtIndex:i] isEqual: [[dict objectAtIndex:j] objectForKey:@"Date Created"]]) && ![displayArr containsObject:[[dict objectAtIndex:j] objectForKey:@"Title"]]){
+        if(([[dateCreatedArr objectAtIndex:i] isEqual: [[dict objectAtIndex:j] objectForKey:@"Date Created"]]) && ![displayArr containsObject:[[dict objectAtIndex:j] objectForKey:@"Title"]] && ([[[[dict objectAtIndex:j] objectForKey:@"Title"] lowercaseString] hasPrefix:[searchText lowercaseString]] || searchIsEmpty)){
             [displayArr addObject: [[dict objectAtIndex:j] objectForKey:@"Title"]];
             NSLog(@"%@", [[dict objectAtIndex:j] objectForKey:@"Title"]);
         }
@@ -159,7 +191,7 @@ NSMutableArray *tempTitle, *pickerData;
     [displayArr removeAllObjects];
     for(int i=0; i < [dict count]; i++){
         for( int j=0; j < [dict count]; j++){
-            if(([[dateModifiedArr objectAtIndex:i] isEqual: [[dict objectAtIndex:j] objectForKey:@"Date Modified"]]) && ![displayArr containsObject:[[dict objectAtIndex:j] objectForKey:@"Title"]]){
+            if(([[dateModifiedArr objectAtIndex:i] isEqual: [[dict objectAtIndex:j] objectForKey:@"Date Modified"]]) && ![displayArr containsObject:[[dict objectAtIndex:j] objectForKey:@"Title"]] && ([[[[dict objectAtIndex:j] objectForKey:@"Title"]lowercaseString] hasPrefix:[searchText lowercaseString]] || searchIsEmpty)){
                 [displayArr addObject: [[dict objectAtIndex:j] objectForKey:@"Title"]];
             }
         }
@@ -188,7 +220,7 @@ NSMutableArray *tempTitle, *pickerData;
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     //Sets the number of rows
-    return [title count];
+    return [displayArr count];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

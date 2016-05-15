@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9p-ch-w6L">
-                                <rect key="frame" x="537" y="91" width="43" height="45"/>
+                                <rect key="frame" x="537" y="143" width="43" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="43" id="7Wb-sZ-Oes"/>
                                     <constraint firstAttribute="height" constant="45" id="ldr-x7-P9E"/>
@@ -76,33 +76,49 @@
                                     <constraint firstAttribute="height" constant="43" id="iZ9-2E-3cH"/>
                                 </constraints>
                             </pickerView>
+                            <searchBar contentMode="redraw" placeholder="Search Notes" translatesAutoresizingMaskIntoConstraints="NO" id="ic6-oE-p21">
+                                <rect key="frame" x="0.0" y="70" width="600" height="44"/>
+                                <offsetWrapper key="searchTextPositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="go"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xIp-nD-FIm"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="TS8-ie-pa7" secondAttribute="bottom" constant="8" id="1KZ-aM-WcZ"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="ZNK-Ih-5JY" secondAttribute="bottom" constant="13" id="7iU-EH-NFV"/>
+                            <constraint firstItem="ic6-oE-p21" firstAttribute="top" secondItem="gCr-jr-mdx" secondAttribute="bottom" id="8Ha-yB-Tcu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ttM-yO-C6w" secondAttribute="bottom" id="D9c-kv-ENe"/>
-                            <constraint firstItem="H9p-ch-w6L" firstAttribute="top" secondItem="gCr-jr-mdx" secondAttribute="bottom" constant="21" id="DAX-o9-hgM"/>
+                            <constraint firstItem="H9p-ch-w6L" firstAttribute="top" secondItem="gCr-jr-mdx" secondAttribute="bottom" constant="73" id="DAX-o9-hgM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="H9p-ch-w6L" secondAttribute="trailing" id="Fba-MK-yLQ"/>
                             <constraint firstItem="gCr-jr-mdx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="G0p-zt-8Qn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gCr-jr-mdx" secondAttribute="trailing" constant="-20" id="GwU-Qw-DuN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ttM-yO-C6w" secondAttribute="trailing" constant="-20" id="MkV-If-NGA"/>
+                            <constraint firstItem="ic6-oE-p21" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="UuP-5I-K0t"/>
                             <constraint firstItem="ZNK-Ih-5JY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="Zps-lz-j9Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ic6-oE-p21" secondAttribute="trailing" constant="-20" id="bIP-gq-piC"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ofV-Fp-OTC"/>
                             <constraint firstItem="gCr-jr-mdx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="q3z-Rg-enQ"/>
                             <constraint firstItem="TS8-ie-pa7" firstAttribute="leading" secondItem="ZNK-Ih-5JY" secondAttribute="trailing" constant="-1" id="rSV-68-ZGA"/>
-                            <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="H9p-ch-w6L" secondAttribute="bottom" constant="97" id="zYL-or-VHw"/>
+                            <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="H9p-ch-w6L" secondAttribute="bottom" constant="45" id="zYL-or-VHw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addOrSave" destination="H9p-ch-w6L" id="LVr-h0-i0e"/>
                         <outlet property="picker" destination="TS8-ie-pa7" id="bhd-Hg-XPI"/>
+                        <outlet property="searchBar" destination="ic6-oE-p21" id="d67-Jr-sl6"/>
                         <outlet property="table" destination="ttM-yO-C6w" id="pij-5E-1a6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-237" y="379"/>
+            <point key="canvasLocation" x="-585" y="365"/>
         </scene>
         <!--View ControllerB-->
         <scene sceneID="Roe-38-3Wp">
