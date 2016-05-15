@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIScrollView+APParallaxHeader.h"
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UISearchBarDelegate>
 

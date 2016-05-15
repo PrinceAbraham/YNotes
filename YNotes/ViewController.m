@@ -12,7 +12,9 @@
 
 @import UIKit;
 
-@interface ViewController ()
+@interface ViewController ()<APParallaxViewDelegate>{
+    BOOL parallaxWithView;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *table;
 
@@ -24,11 +26,13 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
+@property (weak, nonatomic) IBOutlet UIImageView *parralaximg;
+
 @end
 
 @implementation ViewController
 
-@synthesize desc, table, userDefaults, userFile, title,edit, eStore, picker, searchBar;
+@synthesize desc, table, userDefaults, userFile, title,edit, eStore, picker, searchBar, parralaximg;
 
 bool didBeganEditing=false, searchIsEmpty=true;
 
@@ -87,6 +91,8 @@ NSMutableString *searchText;
     picker.delegate = self;
     picker.dataSource = self;
     searchBar.delegate = self;
+    picker.hidden = true;
+    [self toggle:nil];
     
 }
 
@@ -112,6 +118,8 @@ NSMutableString *searchText;
     
     //[self performSegueWithIdentifier:@"addOrEditSegue" sender:self];
 }
+
+#pragma mark - Search Functionality
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)sText{
     searchText = searchBar.text;
@@ -142,28 +150,6 @@ NSMutableString *searchText;
     return 1;
 }
 
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 1;
-}
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return 3;
-}
-
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return [pickerData objectAtIndex:row];
-}
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    pickedData = [pickerData objectAtIndex:row];
-    if([pickedData isEqualToString:@"Alphabetical"]){
-        [self sortAlphabetical];
-    }else if ([pickedData isEqualToString:@"Date Created"]){
-        [self sortDateCreated];
-    }else{
-        [self sortDateModified];
-    }
-    NSLog(@"%@", [pickerData objectAtIndex:row]);
-}
-
 - (void)sortAlphabetical{
     
     [displayArr sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
@@ -175,13 +161,13 @@ NSMutableString *searchText;
     for(int i=0; i < [dict count]; i++){
         NSLog(@"%d",i);
         for( int j=0; j < [dict count]; j++){
-        NSLog(@"%d",j);
-        //if the dates match and the title is unique
+            NSLog(@"%d",j);
+            //if the dates match and the title is unique
             NSLog(@"%@ = %@",[dateCreatedArr objectAtIndex:i],[[dict objectAtIndex:j] objectForKey:@"Date Created"]);
-        if(([[dateCreatedArr objectAtIndex:i] isEqual: [[dict objectAtIndex:j] objectForKey:@"Date Created"]]) && ![displayArr containsObject:[[dict objectAtIndex:j] objectForKey:@"Title"]] && ([[[[dict objectAtIndex:j] objectForKey:@"Title"] lowercaseString] hasPrefix:[searchText lowercaseString]] || searchIsEmpty)){
-            [displayArr addObject: [[dict objectAtIndex:j] objectForKey:@"Title"]];
-            NSLog(@"%@", [[dict objectAtIndex:j] objectForKey:@"Title"]);
-        }
+            if(([[dateCreatedArr objectAtIndex:i] isEqual: [[dict objectAtIndex:j] objectForKey:@"Date Created"]]) && ![displayArr containsObject:[[dict objectAtIndex:j] objectForKey:@"Title"]] && ([[[[dict objectAtIndex:j] objectForKey:@"Title"] lowercaseString] hasPrefix:[searchText lowercaseString]] || searchIsEmpty)){
+                [displayArr addObject: [[dict objectAtIndex:j] objectForKey:@"Title"]];
+                NSLog(@"%@", [[dict objectAtIndex:j] objectForKey:@"Title"]);
+            }
         }
     }
     [self.table reloadData];
@@ -206,16 +192,8 @@ NSMutableString *searchText;
     currentIndex = indexPath.row;
     
     [self performSegueWithIdentifier:@"addOrEditSegue" sender:nil];
-
+    
 }
-
-//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-//    
-//    NSDate *dateRepresentingThisDay = [self.sortedDays objectAtIndex:section];
-//    
-//    return [self.sectionDateFormatter stringFromDate:dateRepresentingThisDay];
-//    
-//}
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -236,6 +214,33 @@ NSMutableString *searchText;
     cell.textLabel.text = displayArr[indexPath.row];
     
     return cell;
+}
+
+#pragma mark - Picker functionality
+- (IBAction)sortButtonAction:(id)sender {
+    picker.hidden = !picker.hidden;
+}
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return 3;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return [pickerData objectAtIndex:row];
+}
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    pickedData = [pickerData objectAtIndex:row];
+    if([pickedData isEqualToString:@"Alphabetical"]){
+        [self sortAlphabetical];
+    }else if ([pickedData isEqualToString:@"Date Created"]){
+        [self sortDateCreated];
+    }else{
+        [self sortDateModified];
+    }
+    NSLog(@"%@", [pickerData objectAtIndex:row]);
 }
 
 -(void) getInfo{
@@ -275,6 +280,48 @@ NSMutableString *searchText;
         }];
     }
     
+}
+
+- (void)toggle:(id)sender {
+    /**
+     *  For demo purposes this view controller either adds a parallaxView with a custom view
+     *  or a parallaxView with an image.
+     */
+    if(parallaxWithView == NO) {
+        
+        [self.table addParallaxWithView:parralaximg andHeight:240];
+        
+        parallaxWithView = YES;
+    }
+    else {
+        // add parallax with image
+        [self.table addParallaxWithImage:[UIImage imageNamed:@"parralaxImg.jpg"] andHeight:160 andShadow:YES];
+        parallaxWithView = NO;
+        
+        // Update the toggle button
+        //        UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"with view" style:UIBarButtonItemStylePlain target:self action:@selector(toggle:)];
+        //        [self.navigationItem setRightBarButtonItem:barButton];
+    }
+    
+    /**
+     *  Setting a delegate for the parallaxView will allow you to get callbacks for when the
+     *  frame of the parallaxView changes.
+     *  Totally optional thou.
+     */
+    self.table.parallaxView.delegate = self;
+    
+}
+
+#pragma mark - APParallaxViewDelegate
+
+- (void)parallaxView:(APParallaxView *)view willChangeFrame:(CGRect)frame {
+    // Do whatever you need to do to the parallaxView or your subview before its frame changes
+    NSLog(@"parallaxView:willChangeFrame: %@", NSStringFromCGRect(frame));
+}
+
+- (void)parallaxView:(APParallaxView *)view didChangeFrame:(CGRect)frame {
+    // Do whatever you need to do to the parallaxView or your subview after its frame changed
+    NSLog(@"parallaxView:didChangeFrame: %@", NSStringFromCGRect(frame));
 }
 
 @end
