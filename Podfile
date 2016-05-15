@@ -7,6 +7,7 @@ target 'YNotes' do
 
   # Pods for YNotes
 pod 'APParallaxHeader'
+pod 'IGLDropDownMenu'
 
   target 'YNotesTests' do
     inherit! :search_paths

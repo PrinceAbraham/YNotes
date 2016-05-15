@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '718B081053D64AAF615CDE17DC34B9F0'
-               BlueprintName = 'Pods-YNotes'
+               BlueprintIdentifier = 'F2FC0AF0815B5D127E0AA79352D5EB6A'
+               BlueprintName = 'IGLDropDownMenu'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-YNotes.a'>
+               BuildableName = 'libIGLDropDownMenu.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

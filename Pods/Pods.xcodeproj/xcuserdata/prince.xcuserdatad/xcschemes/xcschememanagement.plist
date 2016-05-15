@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>IGLDropDownMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-YNotes.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,7 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A77D31335FA5ED74772FF5E4F35E83B8</key>
+		<key>718B081053D64AAF615CDE17DC34B9F0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2FC0AF0815B5D127E0AA79352D5EB6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

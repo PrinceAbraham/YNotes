@@ -72,30 +72,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="parralaxImg" translatesAutoresizingMaskIntoConstraints="NO" id="h5S-zX-Se6">
                                 <rect key="frame" x="-40" y="179" width="720" height="5"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqE-qh-gNh">
-                                <rect key="frame" x="468" y="120" width="43" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="43" id="GO4-3f-omI"/>
-                                    <constraint firstAttribute="height" constant="45" id="Ga5-Gu-SkY"/>
-                                </constraints>
-                                <state key="normal" title="sortButton" image="sort"/>
-                                <connections>
-                                    <action selector="sortButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9jg-af-yjr"/>
-                                </connections>
-                            </button>
-                            <pickerView clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TS8-ie-pa7">
-                                <rect key="frame" x="251" y="128" width="195" height="43"/>
-                                <color key="backgroundColor" red="0.99721848831636495" green="1" blue="0.98122475140428289" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="195" id="3qr-lg-DOb"/>
-                                    <constraint firstAttribute="height" constant="43" id="7Zh-2j-cWI"/>
-                                </constraints>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ic6-oE-p21" firstAttribute="top" secondItem="gCr-jr-mdx" secondAttribute="bottom" id="8Ha-yB-Tcu"/>
                             <constraint firstItem="h5S-zX-Se6" firstAttribute="leading" secondItem="ic6-oE-p21" secondAttribute="leading" id="9FW-u0-m04"/>
+                            <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="ic6-oE-p21" secondAttribute="bottom" constant="59" id="AUO-Mu-tf6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h5S-zX-Se6" secondAttribute="trailing" constant="-100" id="B4m-fS-ZV5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h5S-zX-Se6" secondAttribute="trailing" constant="-20" id="C8y-Ox-3jt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ttM-yO-C6w" secondAttribute="bottom" id="D9c-kv-ENe"/>
@@ -103,27 +85,21 @@
                             <constraint firstItem="h5S-zX-Se6" firstAttribute="trailing" secondItem="gCr-jr-mdx" secondAttribute="trailing" id="DIO-5v-766"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="h5S-zX-Se6" secondAttribute="bottom" constant="2" id="DVd-32-NZi"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="h5S-zX-Se6" secondAttribute="bottom" constant="-1" id="DkG-ma-44e"/>
-                            <constraint firstItem="H9p-ch-w6L" firstAttribute="leading" secondItem="sqE-qh-gNh" secondAttribute="trailing" constant="26" id="FMd-nd-lGJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="H9p-ch-w6L" secondAttribute="trailing" id="Fba-MK-yLQ"/>
                             <constraint firstItem="gCr-jr-mdx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="G0p-zt-8Qn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gCr-jr-mdx" secondAttribute="trailing" constant="-20" id="GwU-Qw-DuN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ttM-yO-C6w" secondAttribute="trailing" constant="-20" id="MkV-If-NGA"/>
-                            <constraint firstItem="h5S-zX-Se6" firstAttribute="top" secondItem="sqE-qh-gNh" secondAttribute="bottom" constant="5" id="Mqg-o5-yQ2"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="h5S-zX-Se6" secondAttribute="bottom" constant="-11" id="Rpw-CR-AUx"/>
+                            <constraint firstItem="h5S-zX-Se6" firstAttribute="top" secondItem="ic6-oE-p21" secondAttribute="bottom" constant="65" id="S1h-0X-f3t"/>
                             <constraint firstItem="h5S-zX-Se6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="SNk-Ik-x1a"/>
-                            <constraint firstItem="sqE-qh-gNh" firstAttribute="top" secondItem="ic6-oE-p21" secondAttribute="bottom" constant="6" id="Tpv-JN-XLc"/>
                             <constraint firstItem="ic6-oE-p21" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="UuP-5I-K0t"/>
-                            <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="sqE-qh-gNh" secondAttribute="bottom" constant="8" id="Zzd-FD-cp5"/>
+                            <constraint firstItem="h5S-zX-Se6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-60" id="Yjd-2v-olE"/>
                             <constraint firstItem="h5S-zX-Se6" firstAttribute="top" secondItem="ic6-oE-p21" secondAttribute="bottom" id="bDI-nr-eGg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ic6-oE-p21" secondAttribute="trailing" constant="-20" id="bIP-gq-piC"/>
-                            <constraint firstItem="h5S-zX-Se6" firstAttribute="top" secondItem="sqE-qh-gNh" secondAttribute="bottom" constant="14" id="k4S-bn-8qA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h5S-zX-Se6" secondAttribute="trailing" constant="-100" id="m8K-9f-UCZ"/>
                             <constraint firstItem="h5S-zX-Se6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-60" id="md3-W4-0K9"/>
-                            <constraint firstItem="sqE-qh-gNh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="mhu-uw-iAX"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ofV-Fp-OTC"/>
                             <constraint firstItem="gCr-jr-mdx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="q3z-Rg-enQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="TS8-ie-pa7" secondAttribute="trailing" constant="134" id="ty9-aq-u8E"/>
-                            <constraint firstItem="TS8-ie-pa7" firstAttribute="top" secondItem="sqE-qh-gNh" secondAttribute="bottom" constant="-37" id="wQ0-Qq-Uba"/>
-                            <constraint firstItem="TS8-ie-pa7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="231" id="zW4-LK-81N"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="H9p-ch-w6L" secondAttribute="bottom" constant="11" id="zYL-or-VHw"/>
                         </constraints>
                         <variation key="default">
@@ -132,18 +108,18 @@
                                 <exclude reference="DkG-ma-44e"/>
                                 <exclude reference="zYL-or-VHw"/>
                                 <exclude reference="9FW-u0-m04"/>
+                                <exclude reference="B4m-fS-ZV5"/>
                                 <exclude reference="C8y-Ox-3jt"/>
                                 <exclude reference="DIO-5v-766"/>
-                                <exclude reference="Mqg-o5-yQ2"/>
                                 <exclude reference="SNk-Ik-x1a"/>
                                 <exclude reference="bDI-nr-eGg"/>
+                                <exclude reference="md3-W4-0K9"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="addOrSave" destination="H9p-ch-w6L" id="LVr-h0-i0e"/>
                         <outlet property="parralaximg" destination="h5S-zX-Se6" id="LfL-yl-fME"/>
-                        <outlet property="picker" destination="TS8-ie-pa7" id="bhd-Hg-XPI"/>
                         <outlet property="searchBar" destination="ic6-oE-p21" id="d67-Jr-sl6"/>
                         <outlet property="table" destination="ttM-yO-C6w" id="pij-5E-1a6"/>
                     </connections>
@@ -426,7 +402,6 @@
         <image name="parralaxImg" width="1920" height="1080"/>
         <image name="reminderNotSelected" width="128" height="128"/>
         <image name="saveNote" width="128" height="128"/>
-        <image name="sort" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="F5x-YP-sOQ"/>

@@ -1,12 +1,15 @@
 PODS:
   - APParallaxHeader (0.1.6)
+  - IGLDropDownMenu (1.5.0)
 
 DEPENDENCIES:
   - APParallaxHeader
+  - IGLDropDownMenu
 
 SPEC CHECKSUMS:
   APParallaxHeader: 854bc48a2487ca12c702f8a236fec0d89cdac5c3
+  IGLDropDownMenu: 1ce06c17b4846f784e2b610f90bd741ab2037f2c
 
-PODFILE CHECKSUM: cbb78212ed7626dd2be1b9b83e61d7beb0ff5511
+PODFILE CHECKSUM: 32963269a8b7c490a1998b01cc9dfc1e333041d5
 
 COCOAPODS: 1.0.0

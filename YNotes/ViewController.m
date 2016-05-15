@@ -47,6 +47,12 @@ NSMutableArray *tempTitle, *pickerData;
 
 NSMutableString *searchText;
 
+NSMutableArray *pickerDropDown;
+
+IGLDropDownItem *pickerItem[3];
+
+IGLDropDownMenu *pickerMenu;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -72,9 +78,32 @@ NSMutableString *searchText;
     
     searchText = [[NSMutableString alloc] init];
     
-    pickerData = @[@"Alphabetical",@"Date Created", @"Date Modified"];
-    
     pickedData = @"Alphabetical";
+    pickerItem[0] = [[IGLDropDownItem alloc]init];
+    pickerItem[1] = [[IGLDropDownItem alloc]init];
+    pickerItem[2] = [[IGLDropDownItem alloc]init];
+    
+    pickerMenu = [[IGLDropDownMenu alloc]init];
+    
+    pickerDropDown = [[NSMutableArray alloc]init];
+    
+    [pickerItem[0] setText:@"Alphabetical"];
+    [pickerDropDown addObject:pickerItem[0]];
+    [pickerItem[1] setText:@"Date Created"];
+    [pickerDropDown addObject:pickerItem[1]];
+    [pickerItem[2] setText:@"Date Modified"];
+    [pickerDropDown addObject:pickerItem[2]];
+    
+    [pickerMenu setFrame:CGRectMake(100, 120, 200, 45)];
+    pickerMenu.menuText = @"Sort";
+    //[pickerMenu setMenuIconImage:[UIImage imageNamed:@"sort.png"]];
+    pickerMenu.paddingLeft = 15;
+    pickerMenu.backgroundColor = [UIColor grayColor];
+    pickerMenu.type = IGLDropDownMenuTypeStack;
+    pickerMenu.gutterY = 5;
+    pickerMenu.itemAnimationDelay = 0.1;
+    //pickerMenu.rotate = IGLDropDownMenuRotateRandom;
+    [pickerMenu setDropDownItems:pickerDropDown];
     
     dict = [[NSMutableArray alloc]init];
     
@@ -88,10 +117,13 @@ NSMutableString *searchText;
         NSLog(@"%@", error);
     }];
     //searchText = @"";
-    picker.delegate = self;
-    picker.dataSource = self;
+//    picker.delegate = self;
+//    picker.dataSource = self;
     searchBar.delegate = self;
-    picker.hidden = true;
+    pickerMenu.delegate = self;
+//    picker.hidden = true;
+    [self.view addSubview:pickerMenu];
+    [pickerMenu reloadView];
     [self toggle:nil];
     
 }
@@ -146,9 +178,20 @@ NSMutableString *searchText;
     searchIsEmpty = true;
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+-(void)dropDownMenu:(IGLDropDownMenu *)dropDownMenu selectedItemAtIndex:(NSInteger)index{
+    pickedData = pickerItem[index];
+    if(index==0){
+        [self sortAlphabetical];
+    }else if (index==1){
+        [self sortDateCreated];
+    }else{
+        [self sortDateModified];
+    }
+    NSLog(@"DFDFFD");
+    
 }
+
+#pragma mark - Sorting Functions
 
 - (void)sortAlphabetical{
     
@@ -186,6 +229,12 @@ NSMutableString *searchText;
     
 }
 
+#pragma mark - Table functions
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     //Gets the index number of the selected table
@@ -217,31 +266,31 @@ NSMutableString *searchText;
 }
 
 #pragma mark - Picker functionality
-- (IBAction)sortButtonAction:(id)sender {
-    picker.hidden = !picker.hidden;
-}
-
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 1;
-}
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return 3;
-}
-
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return [pickerData objectAtIndex:row];
-}
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    pickedData = [pickerData objectAtIndex:row];
-    if([pickedData isEqualToString:@"Alphabetical"]){
-        [self sortAlphabetical];
-    }else if ([pickedData isEqualToString:@"Date Created"]){
-        [self sortDateCreated];
-    }else{
-        [self sortDateModified];
-    }
-    NSLog(@"%@", [pickerData objectAtIndex:row]);
-}
+//- (IBAction)sortButtonAction:(id)sender {
+//    picker.hidden = !picker.hidden;
+//}
+//
+//-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+//    return 1;
+//}
+//-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+//    return 3;
+//}
+//
+//-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+//    return [pickerData objectAtIndex:row];
+//}
+//-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+//    pickedData = [pickerData objectAtIndex:row];
+//    if([pickedData isEqualToString:@"Alphabetical"]){
+//        [self sortAlphabetical];
+//    }else if ([pickedData isEqualToString:@"Date Created"]){
+//        [self sortDateCreated];
+//    }else{
+//        [self sortDateModified];
+//    }
+//    NSLog(@"%@", [pickerData objectAtIndex:row]);
+//}
 
 -(void) getInfo{
     //NSLog(@"%@", [userDefaults objectForKey:userDefaultKey]);
@@ -282,6 +331,19 @@ NSMutableString *searchText;
     
 }
 
+
+#pragma mark - APParallaxViewDelegate
+
+- (void)parallaxView:(APParallaxView *)view willChangeFrame:(CGRect)frame {
+    // Do whatever you need to do to the parallaxView or your subview before its frame changes
+    NSLog(@"parallaxView:willChangeFrame: %@", NSStringFromCGRect(frame));
+}
+
+- (void)parallaxView:(APParallaxView *)view didChangeFrame:(CGRect)frame {
+    // Do whatever you need to do to the parallaxView or your subview after its frame changed
+    NSLog(@"parallaxView:didChangeFrame: %@", NSStringFromCGRect(frame));
+}
+
 - (void)toggle:(id)sender {
     /**
      *  For demo purposes this view controller either adds a parallaxView with a custom view
@@ -310,18 +372,6 @@ NSMutableString *searchText;
      */
     self.table.parallaxView.delegate = self;
     
-}
-
-#pragma mark - APParallaxViewDelegate
-
-- (void)parallaxView:(APParallaxView *)view willChangeFrame:(CGRect)frame {
-    // Do whatever you need to do to the parallaxView or your subview before its frame changes
-    NSLog(@"parallaxView:willChangeFrame: %@", NSStringFromCGRect(frame));
-}
-
-- (void)parallaxView:(APParallaxView *)view didChangeFrame:(CGRect)frame {
-    // Do whatever you need to do to the parallaxView or your subview after its frame changed
-    NSLog(@"parallaxView:didChangeFrame: %@", NSStringFromCGRect(frame));
 }
 
 @end

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "UIScrollView+APParallaxHeader.h"
+#import "IGLDropDownMenu.h"
+#import "IGLDropDownItem.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UISearchBarDelegate>
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UISearchBarDelegate, IGLDropDownMenuDelegate>
 
 @property NSMutableArray *desc;
 
