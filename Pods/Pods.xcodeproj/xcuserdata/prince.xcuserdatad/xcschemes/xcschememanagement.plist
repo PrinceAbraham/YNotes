@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CSStickyHeaderFlowLayout.xcscheme</key>
+		<key>APParallaxHeader.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,22 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1376614EF3971FB1754445A70BF65873</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>14CB0DD5E0A80D362DE05ED1ED0875C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8ECFAC059A755EC4A80F3DBA48AA3BFB</key>
+		<key>5DF21164C6E1DC7DEE4CA35AD0FD7B25</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>999BE2FEF3979CD14AB88FA423A5DE0E</key>
+		<key>A77D31335FA5ED74772FF5E4F35E83B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

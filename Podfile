@@ -6,7 +6,7 @@ target 'YNotes' do
   # use_frameworks!
 
   # Pods for YNotes
-pod "CSStickyHeaderFlowLayout"
+pod 'APParallaxHeader'
 
   target 'YNotesTests' do
     inherit! :search_paths

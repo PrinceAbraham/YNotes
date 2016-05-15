@@ -1,12 +1,12 @@
 PODS:
-  - CSStickyHeaderFlowLayout (0.2.10)
+  - APParallaxHeader (0.1.6)
 
 DEPENDENCIES:
-  - CSStickyHeaderFlowLayout
+  - APParallaxHeader
 
 SPEC CHECKSUMS:
-  CSStickyHeaderFlowLayout: 5366582779d8b7c9ba9b9cc729c218cc23888776
+  APParallaxHeader: 854bc48a2487ca12c702f8a236fec0d89cdac5c3
 
-PODFILE CHECKSUM: 1adf97c7ea4df15545ccd4fa4c523a8c34a01f3c
+PODFILE CHECKSUM: cbb78212ed7626dd2be1b9b83e61d7beb0ff5511
 
 COCOAPODS: 1.0.0
