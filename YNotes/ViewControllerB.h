@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <EventKit/EventKit.h>
+#import "Note.h"
 
 
 @interface ViewControllerB : UIViewController <UITextViewDelegate, UIImagePickerControllerDelegate>
@@ -20,7 +21,7 @@
 
 @property NSMutableDictionary *totalNoteInfo;
 
-@property NSMutableArray *totalNoteInfoArr;
+@property NSMutableArray *notesInfo;
 
 @property (nonatomic, weak) NSUserDefaults *userDefaults;
 
@@ -45,6 +46,9 @@
 @property EKEventStore *eventStoreInstance;
 
 @property NSMutableArray *dateCreated, *dateModified;
+
+@property Note *note;
+
 
 
 @end

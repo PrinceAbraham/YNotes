@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22C8722722CF9B6637990E57 /* libPods-YNotesUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6469F771352C64C1554D0F9 /* libPods-YNotesUITests.a */; };
+		A315F1161CEA4C79001AA557 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = A315F1151CEA4C79001AA557 /* Note.m */; };
 		A350DA721CDBDFB8009A12ED /* ViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = A350DA711CDBDFB8009A12ED /* ViewControllerB.m */; };
 		A36AAB611CEA2DB6005D41F4 /* headerForTable.m in Sources */ = {isa = PBXBuildFile; fileRef = A36AAB601CEA2DB6005D41F4 /* headerForTable.m */; };
 		A39235B91CDCE36600E045F9 /* ConstantsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A39235B81CDCE36600E045F9 /* ConstantsClass.m */; };
@@ -45,6 +46,8 @@
 		2E6A70A95C3F8ADC0DD1DEAC /* libPods-YNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4757E065A893E4A427A44535 /* Pods-YNotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNotesUITests/Pods-YNotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		76D9044A20416FF108CBD4F4 /* Pods-YNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNotes/Pods-YNotes.release.xcconfig"; sourceTree = "<group>"; };
+		A315F1141CEA4C79001AA557 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		A315F1151CEA4C79001AA557 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		A350DA701CDBDFB8009A12ED /* ViewControllerB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerB.h; sourceTree = "<group>"; };
 		A350DA711CDBDFB8009A12ED /* ViewControllerB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerB.m; sourceTree = "<group>"; };
 		A36AAB5F1CEA2DB6005D41F4 /* headerForTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headerForTable.h; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				A350DA711CDBDFB8009A12ED /* ViewControllerB.m */,
 				A36AAB5F1CEA2DB6005D41F4 /* headerForTable.h */,
 				A36AAB601CEA2DB6005D41F4 /* headerForTable.m */,
+				A315F1141CEA4C79001AA557 /* Note.h */,
+				A315F1151CEA4C79001AA557 /* Note.m */,
 			);
 			path = YNotes;
 			sourceTree = "<group>";
@@ -462,6 +467,7 @@
 				A350DA721CDBDFB8009A12ED /* ViewControllerB.m in Sources */,
 				A39235B91CDCE36600E045F9 /* ConstantsClass.m in Sources */,
 				A3BA12BB1CD3940200AB76B4 /* AppDelegate.m in Sources */,
+				A315F1161CEA4C79001AA557 /* Note.m in Sources */,
 				A36AAB611CEA2DB6005D41F4 /* headerForTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,7 +27,7 @@
 @implementation ViewControllerB
 
 
-@synthesize messageArr, titleArr , userFile, userDefaults,titleField, messageField, messageStringWAttachments, messageData, animatedDistance, date, nReminder, reminderTime, dateCreated, dateModified, totalNoteInfo, totalNoteInfoArr;
+@synthesize messageArr, titleArr , userFile, userDefaults,titleField, messageField, messageStringWAttachments, messageData, animatedDistance, date, nReminder, reminderTime, dateCreated, dateModified, totalNoteInfo, notesInfo, note;
 
 bool isEditing = false, didEdit=false, reminderIsSet=false, tempCheckReminder=false;
 
@@ -53,13 +53,9 @@ NSDate *dateForCreationandModification;
     [super viewDidLoad];
     // Do view setup here.
     
-    titleArr = [[NSMutableArray alloc] init];
-    
-    messageArr = [[NSMutableArray alloc] init];
+    note= [[Note alloc]init];
     
     userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    userFile = [[NSMutableDictionary alloc]init];
     
     stringTitleArr = [[NSMutableArray alloc]init];
     
@@ -69,13 +65,7 @@ NSDate *dateForCreationandModification;
     
     datePicker = [[UIDatePicker alloc]init];
     
-    dateCreated = [[NSMutableArray alloc]init];
-    
-    dateModified = [[NSMutableArray alloc]init];
-    
-    totalNoteInfoArr = [[NSMutableArray alloc]init];
-    
-    totalNoteInfo = [[NSMutableDictionary alloc]init];
+    notesInfo = [[NSMutableArray alloc]init];
     
     self.eventStoreInstance = [[EKEventStore alloc]init];
     
@@ -102,7 +92,11 @@ NSDate *dateForCreationandModification;
     
     //if it is editing then load data
     if(self.isEditing){
+        note.noteTitle = self.titleString;
+        
         self.titleField.text = self.titleString;
+        
+        //note.noteMessage =
         self.messageField.attributedText = [self getAttributeForData: self.messageData];
         messageStringWAttachments = self.messageField.attributedText;
         isEditing = self.isEditing;
@@ -150,7 +144,8 @@ NSDate *dateForCreationandModification;
 
 -(void)viewWillAppear:(BOOL)animated{
     if([messageField.text isEqualToString:@"Add Message:"]){
-        //didEDit = false means the messageField hasn't been touched yet
+        
+        //didEdit = false means the messageField hasn't been touched yet
         didEdit = false;
     }
 }
@@ -541,31 +536,28 @@ NSDate *dateForCreationandModification;
     
 }
 -(void) getInfo{
-    //add mutable copy to retrieve properly. User default always returns immutable copy
-    userFile = [[userDefaults objectForKey:userDefaultKey]mutableCopy];
-    titleArr = [[userDefaults objectForKey:userTitleKey]mutableCopy];
-    messageArr = [[userDefaults objectForKey:userDescriptionKey]mutableCopy];
-    dateCreated = [[userDefaults objectForKey:userDateCreatedKey]mutableCopy];
-    dateModified =[[userDefaults objectForKey:userDateModifiedKey]mutableCopy];
-    totalNoteInfoArr = [[userDefaults objectForKey:userAllInfoKey]mutableCopy];
+
+    notesInfo = [[userDefaults objectForKey:userAllInfoKey]mutableCopy];
 }
 
 -(void) savingWithUniqueTitle{
     
     NSInteger index=0;
     
-    messageData = [self getDataForAttributedString:messageStringWAttachments];
+    [note setNoteTitle:[titleField.text mutableCopy]];
     
-    [(NSMutableArray *) titleArr insertObject:titleField.text atIndex:index];
-    [(NSMutableArray *) messageArr insertObject:messageData atIndex:index];
+    //[(NSMutableArray *) messageArr insertObject:messageData atIndex:index];
+    
+    [note setNoteMessage:messageStringWAttachments];
+    
     [self createDate];
-    [self setNoteInfo: index];
-    [totalNoteInfoArr insertObject:totalNoteInfo atIndex:index];
+    
+    [notesInfo insertObject:note atIndex:index];
+    
     [self.view endEditing:true];
     [titleField endEditing:true];
-    [userDefaults setObject:totalNoteInfoArr forKey:userAllInfoKey];
-    [userDefaults setObject:titleArr forKey:userTitleKey];
-    [userDefaults setObject:messageArr forKey:userDescriptionKey];
+    [userDefaults setObject:notesInfo forKey:userAllInfoKey];
+    
     [userDefaults setObject:dateCreated forKey:userDateCreatedKey];
     [userDefaults setObject:dateModified forKey:userDateModifiedKey];
 
@@ -578,17 +570,16 @@ NSDate *dateForCreationandModification;
 }
 
 -(void) savingEditWithUnchangedTitle{
-    messageData = [self getDataForAttributedString:messageStringWAttachments];
-    [messageArr replaceObjectAtIndex:indexForTable withObject:messageData];
+
+    [note setNoteTitle:[titleField.text mutableCopy]];
     [self modifyDate:indexForTable];
     [self setNoteInfo: indexForTable];
+    [note setNoteMessage:messageStringWAttachments];
     [self.view endEditing:true];
-    [totalNoteInfoArr replaceObjectAtIndex:indexForTable withObject:totalNoteInfo];
+    [notesInfo replaceObjectAtIndex:indexForTable withObject:note];
     //store in User Defaults
-    [userDefaults setObject:totalNoteInfoArr forKey:userAllInfoKey];
-    [userDefaults setObject:titleArr forKey:userTitleKey];
-    [userDefaults setObject:messageArr forKey:userDescriptionKey];
-    [userDefaults setObject:dateModified forKey:userDateModifiedKey];
+    [userDefaults setObject:notesInfo forKey:userAllInfoKey];
+    
     if(reminderIsSet){
         [self createReminder];
     }else{
@@ -600,18 +591,14 @@ NSDate *dateForCreationandModification;
 
 -(void) savingEditWithUniqueTitle{
     //[totalNoteInfoArr removeObjectAtIndex:indexForTable];
-    [titleArr replaceObjectAtIndex:indexForTable withObject: titleField.text];
-    messageData = [self getDataForAttributedString:messageStringWAttachments];
-    [messageArr replaceObjectAtIndex:indexForTable withObject:messageData];
+    [note setNoteTitle:[titleField.text mutableCopy]];
+    [note setNoteMessage:messageStringWAttachments];
     [self modifyDate:indexForTable];
     [self setNoteInfo:indexForTable];
-    [totalNoteInfoArr replaceObjectAtIndex:indexForTable withObject:totalNoteInfo];
-    [userDefaults setObject:totalNoteInfoArr forKey:userAllInfoKey];
+    [notesInfo replaceObjectAtIndex:indexForTable withObject:note];
+    [userDefaults setObject:notesInfo forKey:userAllInfoKey];
     [self.view endEditing:true];
     [titleField endEditing:true];
-    [userDefaults setObject:titleArr forKey:userTitleKey];
-    [userDefaults setObject:messageArr forKey:userDescriptionKey];
-    [userDefaults setObject:dateModified forKey:userDateModifiedKey];
     if(reminderIsSet){
         [self createReminder];
     }else{
@@ -623,8 +610,9 @@ NSDate *dateForCreationandModification;
     int matchedInt = (int) [stringTitleArr indexOfObject:[titleField.text lowercaseString]];
     messageData = [self getDataForAttributedString:messageStringWAttachments];
     
-    [titleArr replaceObjectAtIndex:matchedInt withObject:titleField.text];
-    [messageArr replaceObjectAtIndex:matchedInt withObject:messageData];
+    [note setNoteMessage:messageStringWAttachments];
+    
+    [note setNoteTitle:[titleField.text mutableCopy]];
     [self modifyDate:matchedInt];
     [self setNoteInfo:matchedInt];
     
@@ -632,17 +620,11 @@ NSDate *dateForCreationandModification;
         [messageArr removeObjectAtIndex:indexForTable];
         [titleArr removeObjectAtIndex:indexForTable];
         [dateModified removeObjectAtIndex:indexForTable];
-        [totalNoteInfoArr removeObjectAtIndex:indexForTable];
-    }else{
-    [dateCreated removeObjectAtIndex:indexForTable];
+        [notesInfo removeObjectAtIndex:indexForTable];
     }
-    [totalNoteInfoArr replaceObjectAtIndex:matchedInt withObject:totalNoteInfo];
-    [userDefaults setObject:totalNoteInfoArr forKey:userAllInfoKey];
-    [userDefaults setObject:userFile forKey:userDefaultKey];
-    [userDefaults setObject:titleArr forKey:userTitleKey];
-    [userDefaults setObject:messageArr forKey:userDescriptionKey];
-    [userDefaults setObject:dateCreated forKey:userDateCreatedKey];
-    [userDefaults setObject:dateModified forKey:userDateModifiedKey];
+    [notesInfo replaceObjectAtIndex:matchedInt withObject:note];
+    [userDefaults setObject:notesInfo forKey:userAllInfoKey];
+    
     [self.view endEditing:true];
     if(reminderIsSet){
         [self createReminder];
@@ -656,13 +638,12 @@ NSDate *dateForCreationandModification;
     int matchedInt = (int) [stringTitleArr indexOfObject:[titleField.text lowercaseString]];
     messageData = [self getDataForAttributedString:messageStringWAttachments];
     [messageArr replaceObjectAtIndex:matchedInt withObject:messageData];
+    [note setNoteTitle:[titleField.text mutableCopy]];
+    [note setNoteMessage:messageStringWAttachments];
     [self modifyDate:matchedInt];
     [self setNoteInfo:matchedInt];
-    [totalNoteInfoArr replaceObjectAtIndex:matchedInt withObject:totalNoteInfo];
-    [userDefaults setObject:totalNoteInfoArr forKey:userAllInfoKey];
-    [userDefaults setObject:titleArr forKey:userTitleKey];
-    [userDefaults setObject:messageArr forKey:userDescriptionKey];
-    [userDefaults setObject:dateModified forKey:userDateModifiedKey];
+    [notesInfo replaceObjectAtIndex:matchedInt withObject:note];
+    [userDefaults setObject:notesInfo forKey:userAllInfoKey];
     titleField.text = @"";
     messageField.text = @"Add Message:";
     messageField.textColor = [UIColor grayColor];
@@ -675,6 +656,7 @@ NSDate *dateForCreationandModification;
     }
     [self callDismiss];
 }
+
 -(void)createReminder{
     
     [newAlarm setAbsoluteDate:[datePicker date]];
@@ -714,13 +696,20 @@ NSDate *dateForCreationandModification;
 
 -(void) createDate{
     NSDate *date = [NSDate date];
-    [dateCreated insertObject:date atIndex:0];
-    [dateModified insertObject:date atIndex:0];
+    
+    [note setNoteCreated:date];
+    [note setNoteModified:date];
+    
+    //[dateCreated insertObject:date atIndex:0];
+    //[dateModified insertObject:date atIndex:0];
 }
 -(void) modifyDate:(NSInteger *) index{
     
     NSDate *date = [NSDate date];
-    [dateModified replaceObjectAtIndex:index withObject:date];
+    
+    [note setNoteModified:date];
+    
+    //[dateModified replaceObjectAtIndex:index withObject:date];
 
 }
 
