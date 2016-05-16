@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,18 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9p-ch-w6L">
-                                <rect key="frame" x="537" y="117" width="43" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="43" id="7Wb-sZ-Oes"/>
-                                    <constraint firstAttribute="height" constant="45" id="ldr-x7-P9E"/>
-                                </constraints>
-                                <state key="normal" image="addNote"/>
-                                <connections>
-                                    <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nKk-ka-ogR"/>
-                                    <segue destination="dXl-dn-kh4" kind="show" identifier="" id="F5x-YP-sOQ"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YNotes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCr-jr-mdx">
                                 <rect key="frame" x="0.0" y="35" width="600" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
@@ -72,6 +60,18 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="parralaxImg" translatesAutoresizingMaskIntoConstraints="NO" id="h5S-zX-Se6">
                                 <rect key="frame" x="-40" y="179" width="720" height="5"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9p-ch-w6L">
+                                <rect key="frame" x="549" y="35" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="7Wb-sZ-Oes"/>
+                                    <constraint firstAttribute="height" constant="28" id="ldr-x7-P9E"/>
+                                </constraints>
+                                <state key="normal" image="addNote"/>
+                                <connections>
+                                    <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nKk-ka-ogR"/>
+                                    <segue destination="dXl-dn-kh4" kind="show" identifier="" id="F5x-YP-sOQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -81,11 +81,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="h5S-zX-Se6" secondAttribute="trailing" constant="-100" id="B4m-fS-ZV5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h5S-zX-Se6" secondAttribute="trailing" constant="-20" id="C8y-Ox-3jt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ttM-yO-C6w" secondAttribute="bottom" id="D9c-kv-ENe"/>
-                            <constraint firstItem="H9p-ch-w6L" firstAttribute="top" secondItem="gCr-jr-mdx" secondAttribute="bottom" constant="47" id="DAX-o9-hgM"/>
+                            <constraint firstItem="H9p-ch-w6L" firstAttribute="top" secondItem="gCr-jr-mdx" secondAttribute="bottom" constant="-35" id="DAX-o9-hgM"/>
                             <constraint firstItem="h5S-zX-Se6" firstAttribute="trailing" secondItem="gCr-jr-mdx" secondAttribute="trailing" id="DIO-5v-766"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="h5S-zX-Se6" secondAttribute="bottom" constant="2" id="DVd-32-NZi"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="h5S-zX-Se6" secondAttribute="bottom" constant="-1" id="DkG-ma-44e"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="H9p-ch-w6L" secondAttribute="trailing" id="Fba-MK-yLQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H9p-ch-w6L" secondAttribute="trailing" constant="3" id="Fba-MK-yLQ"/>
                             <constraint firstItem="gCr-jr-mdx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="G0p-zt-8Qn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gCr-jr-mdx" secondAttribute="trailing" constant="-20" id="GwU-Qw-DuN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ttM-yO-C6w" secondAttribute="trailing" constant="-20" id="MkV-If-NGA"/>
@@ -126,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-698" y="323"/>
+            <point key="canvasLocation" x="-691" y="380"/>
         </scene>
         <!--View ControllerB-->
         <scene sceneID="Roe-38-3Wp">
@@ -404,6 +404,6 @@
         <image name="saveNote" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="F5x-YP-sOQ"/>
+        <segue reference="m1m-W9-OgA"/>
     </inferredMetricsTieBreakers>
 </document>

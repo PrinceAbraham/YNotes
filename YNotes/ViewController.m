@@ -94,14 +94,15 @@ IGLDropDownMenu *pickerMenu;
     [pickerItem[2] setText:@"Date Modified"];
     [pickerDropDown addObject:pickerItem[2]];
     
-    [pickerMenu setFrame:CGRectMake(100, 120, 200, 45)];
-    pickerMenu.menuText = @"Sort";
+    [pickerMenu setFrame:CGRectMake(0, 120, self.view.frame.size.width, 45)];
+    pickerMenu.menuText = @"       Sort";
     //[pickerMenu setMenuIconImage:[UIImage imageNamed:@"sort.png"]];
-    pickerMenu.paddingLeft = 15;
-    pickerMenu.backgroundColor = [UIColor grayColor];
-    pickerMenu.type = IGLDropDownMenuTypeStack;
+    pickerMenu.paddingLeft = self.view.frame.size.width/2.6;
+    pickerMenu.backgroundColor = [UIColor clearColor];
+    pickerMenu.type = IGLDropDownMenuTypeNormal;
     pickerMenu.gutterY = 5;
     pickerMenu.itemAnimationDelay = 0.1;
+    pickerMenu.menuButtonStatic = NO;
     //pickerMenu.rotate = IGLDropDownMenuRotateRandom;
     [pickerMenu setDropDownItems:pickerDropDown];
     
@@ -151,6 +152,11 @@ IGLDropDownMenu *pickerMenu;
     //[self performSegueWithIdentifier:@"addOrEditSegue" sender:self];
 }
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:true];
+    self.searchBar.text = searchText;
+}
+
 #pragma mark - Search Functionality
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)sText{
@@ -172,14 +178,15 @@ IGLDropDownMenu *pickerMenu;
     [self.table reloadData];
 }
 
--(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
-    searchBar.text = @"";
-    searchText = @"";
-    searchIsEmpty = true;
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.view endEditing:true];
+    self.searchBar.text = searchText;
 }
 
+
+#pragma mark - DropDown Sorting
 -(void)dropDownMenu:(IGLDropDownMenu *)dropDownMenu selectedItemAtIndex:(NSInteger)index{
-    pickedData = pickerItem[index];
+    pickedData = pickerItem[index].text;
     if(index==0){
         [self sortAlphabetical];
     }else if (index==1){
@@ -187,10 +194,8 @@ IGLDropDownMenu *pickerMenu;
     }else{
         [self sortDateModified];
     }
-    NSLog(@"DFDFFD");
     
 }
-
 #pragma mark - Sorting Functions
 
 - (void)sortAlphabetical{
@@ -337,6 +342,7 @@ IGLDropDownMenu *pickerMenu;
 - (void)parallaxView:(APParallaxView *)view willChangeFrame:(CGRect)frame {
     // Do whatever you need to do to the parallaxView or your subview before its frame changes
     NSLog(@"parallaxView:willChangeFrame: %@", NSStringFromCGRect(frame));
+    [self.view endEditing:YES];
 }
 
 - (void)parallaxView:(APParallaxView *)view didChangeFrame:(CGRect)frame {

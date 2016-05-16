@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		22C8722722CF9B6637990E57 /* libPods-YNotesUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6469F771352C64C1554D0F9 /* libPods-YNotesUITests.a */; };
 		A350DA721CDBDFB8009A12ED /* ViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = A350DA711CDBDFB8009A12ED /* ViewControllerB.m */; };
+		A36AAB611CEA2DB6005D41F4 /* headerForTable.m in Sources */ = {isa = PBXBuildFile; fileRef = A36AAB601CEA2DB6005D41F4 /* headerForTable.m */; };
 		A39235B91CDCE36600E045F9 /* ConstantsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A39235B81CDCE36600E045F9 /* ConstantsClass.m */; };
 		A3B988591CDCF9B700DE1B9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B988581CDCF9B700DE1B9D /* main.m */; };
 		A3BA12BB1CD3940200AB76B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BA12BA1CD3940200AB76B4 /* AppDelegate.m */; };
@@ -46,6 +47,8 @@
 		76D9044A20416FF108CBD4F4 /* Pods-YNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNotes/Pods-YNotes.release.xcconfig"; sourceTree = "<group>"; };
 		A350DA701CDBDFB8009A12ED /* ViewControllerB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerB.h; sourceTree = "<group>"; };
 		A350DA711CDBDFB8009A12ED /* ViewControllerB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerB.m; sourceTree = "<group>"; };
+		A36AAB5F1CEA2DB6005D41F4 /* headerForTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headerForTable.h; sourceTree = "<group>"; };
+		A36AAB601CEA2DB6005D41F4 /* headerForTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = headerForTable.m; sourceTree = "<group>"; };
 		A39235B71CDCE36600E045F9 /* ConstantsClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsClass.h; sourceTree = "<group>"; };
 		A39235B81CDCE36600E045F9 /* ConstantsClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstantsClass.m; sourceTree = "<group>"; };
 		A3B988581CDCF9B700DE1B9D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				A3BA12B61CD3940100AB76B4 /* Supporting Files */,
 				A350DA701CDBDFB8009A12ED /* ViewControllerB.h */,
 				A350DA711CDBDFB8009A12ED /* ViewControllerB.m */,
+				A36AAB5F1CEA2DB6005D41F4 /* headerForTable.h */,
+				A36AAB601CEA2DB6005D41F4 /* headerForTable.m */,
 			);
 			path = YNotes;
 			sourceTree = "<group>";
@@ -457,6 +462,7 @@
 				A350DA721CDBDFB8009A12ED /* ViewControllerB.m in Sources */,
 				A39235B91CDCE36600E045F9 /* ConstantsClass.m in Sources */,
 				A3BA12BB1CD3940200AB76B4 /* AppDelegate.m in Sources */,
+				A36AAB611CEA2DB6005D41F4 /* headerForTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
