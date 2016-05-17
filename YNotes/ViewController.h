@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Note.h"
 #import "UIScrollView+APParallaxHeader.h"
 #import "IGLDropDownMenu.h"
 #import "IGLDropDownItem.h"

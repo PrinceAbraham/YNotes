@@ -10,11 +10,22 @@
 
 @implementation Note
 
+- (void)encodeWithCoder:(NSCoder *)aCoder{
+    [aCoder encodeObject:self.noteTitle forKey:@"PROPERTY_KEY"];
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    if(self = [super init]){
+        self.noteTitle = [aDecoder decodeObjectForKey:@"PROPERTY_KEY"];
+    }
+    return self;
+}
+
 //@synthesize noteTitle, noteMessage, noteCreated, noteModified;
 
--(void)setNoteTitle:(NSMutableString *)noteTitle{
+-(void)setNoteTitle:(NSMutableString *)Title{
     
-    _noteTitle = noteTitle;
+    _noteTitle = Title;
     
 }
 
@@ -50,5 +61,12 @@
 -(NSDate *)getNoteModified{
     return _noteModified;
 }
+
+-(NSMutableData *) changeToData:(Note *) n{
+    NSMutableData *msgData = [[NSMutableData alloc]init];
+    msgData = [[NSKeyedArchiver archivedDataWithRootObject:n]mutableCopy];
+    return msgData;
+}
+
 
 @end

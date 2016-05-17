@@ -27,7 +27,7 @@
 @implementation ViewControllerB
 
 
-@synthesize messageArr, titleArr , userFile, userDefaults,titleField, messageField, messageStringWAttachments, messageData, animatedDistance, date, nReminder, reminderTime, dateCreated, dateModified, totalNoteInfo, notesInfo, note;
+@synthesize messageArr, titleArr , userFile, userDefaults,titleField, messageField, messageStringWAttachments, messageData, animatedDistance, nReminder, reminderTime, dateCreated, dateModified, totalNoteInfo, notesInfo, note, noteData;
 
 bool isEditing = false, didEdit=false, reminderIsSet=false, tempCheckReminder=false;
 
@@ -40,6 +40,8 @@ NSAttributedString *tempAttributedString;
 NSMutableArray *stringTitleArr, *reminderList;
 
 EKCalendar *newCalendar;
+
+NSDate *date;
 
 EKAlarm *newAlarm;
 
@@ -55,6 +57,8 @@ NSDate *dateForCreationandModification;
     
     note= [[Note alloc]init];
     
+    noteData = [[NSData alloc]init];
+    
     userDefaults = [NSUserDefaults standardUserDefaults];
     
     stringTitleArr = [[NSMutableArray alloc]init];
@@ -66,6 +70,8 @@ NSDate *dateForCreationandModification;
     datePicker = [[UIDatePicker alloc]init];
     
     notesInfo = [[NSMutableArray alloc]init];
+    
+    date = [[NSDate alloc]init];
     
     self.eventStoreInstance = [[EKEventStore alloc]init];
     
@@ -542,119 +548,85 @@ NSDate *dateForCreationandModification;
 
 -(void) savingWithUniqueTitle{
     
-    NSInteger index=0;
-    
-    [note setNoteTitle:[titleField.text mutableCopy]];
-    
-    //[(NSMutableArray *) messageArr insertObject:messageData atIndex:index];
+    [note setNoteTitle:titleField.text];
     
     [note setNoteMessage:messageStringWAttachments];
     
     [self createDate];
     
-    [notesInfo insertObject:note atIndex:index];
-    
-    [self.view endEditing:true];
-    [titleField endEditing:true];
-    [userDefaults setObject:notesInfo forKey:userAllInfoKey];
-    
-    [userDefaults setObject:dateCreated forKey:userDateCreatedKey];
-    [userDefaults setObject:dateModified forKey:userDateModifiedKey];
-
     if(reminderIsSet){
         [self createReminder];
     }else{
         [self deleteReminder];
     }
+    noteData = [self changeToData:note];
+    [notesInfo insertObject:noteData atIndex:0];
+    //store in User Defaults
+    [userDefaults setObject:notesInfo forKey:userAllInfoKey];
+    [self.view endEditing:true];
     [self callDismiss];
+    
 }
 
 -(void) savingEditWithUnchangedTitle{
 
-    [note setNoteTitle:[titleField.text mutableCopy]];
-    [self modifyDate:indexForTable];
-    [self setNoteInfo: indexForTable];
-    [note setNoteMessage:messageStringWAttachments];
-    [self.view endEditing:true];
-    [notesInfo replaceObjectAtIndex:indexForTable withObject:note];
+    [self saveOrUpdateNote];
+    [notesInfo replaceObjectAtIndex:indexForTable withObject:noteData];
     //store in User Defaults
     [userDefaults setObject:notesInfo forKey:userAllInfoKey];
-    
-    if(reminderIsSet){
-        [self createReminder];
-    }else{
-        [self deleteReminder];
-    }
+    [self.view endEditing:true];
     [self callDismiss];
-    titleField.text = @"";
 }
 
 -(void) savingEditWithUniqueTitle{
-    //[totalNoteInfoArr removeObjectAtIndex:indexForTable];
-    [note setNoteTitle:[titleField.text mutableCopy]];
-    [note setNoteMessage:messageStringWAttachments];
-    [self modifyDate:indexForTable];
-    [self setNoteInfo:indexForTable];
-    [notesInfo replaceObjectAtIndex:indexForTable withObject:note];
+
+    [self saveOrUpdateNote];
+    
+    [notesInfo replaceObjectAtIndex:indexForTable withObject:noteData];
+    
     [userDefaults setObject:notesInfo forKey:userAllInfoKey];
-    [self.view endEditing:true];
-    [titleField endEditing:true];
-    if(reminderIsSet){
-        [self createReminder];
-    }else{
-        [self deleteReminder];
-    }
-    [self callDismiss];
 }
 -(void) overwriteMatchedWithEditing{
     int matchedInt = (int) [stringTitleArr indexOfObject:[titleField.text lowercaseString]];
-    messageData = [self getDataForAttributedString:messageStringWAttachments];
     
-    [note setNoteMessage:messageStringWAttachments];
-    
-    [note setNoteTitle:[titleField.text mutableCopy]];
-    [self modifyDate:matchedInt];
-    [self setNoteInfo:matchedInt];
+    [self saveOrUpdateNote];
     
     if(indexForTable!=matchedInt){
-        [messageArr removeObjectAtIndex:indexForTable];
-        [titleArr removeObjectAtIndex:indexForTable];
-        [dateModified removeObjectAtIndex:indexForTable];
         [notesInfo removeObjectAtIndex:indexForTable];
     }
-    [notesInfo replaceObjectAtIndex:matchedInt withObject:note];
+    [notesInfo replaceObjectAtIndex:matchedInt withObject:noteData];
+    
     [userDefaults setObject:notesInfo forKey:userAllInfoKey];
     
     [self.view endEditing:true];
-    if(reminderIsSet){
-        [self createReminder];
-    }else{
-        [self deleteReminder];
-    }
     [self callDismiss];
 }
 
 -(void) overwriteMatchedWithoutEditing{
     int matchedInt = (int) [stringTitleArr indexOfObject:[titleField.text lowercaseString]];
-    messageData = [self getDataForAttributedString:messageStringWAttachments];
-    [messageArr replaceObjectAtIndex:matchedInt withObject:messageData];
-    [note setNoteTitle:[titleField.text mutableCopy]];
-    [note setNoteMessage:messageStringWAttachments];
-    [self modifyDate:matchedInt];
-    [self setNoteInfo:matchedInt];
-    [notesInfo replaceObjectAtIndex:matchedInt withObject:note];
+    [self saveOrUpdateNote];
+    [notesInfo replaceObjectAtIndex:matchedInt withObject:noteData];
     [userDefaults setObject:notesInfo forKey:userAllInfoKey];
-    titleField.text = @"";
-    messageField.text = @"Add Message:";
-    messageField.textColor = [UIColor grayColor];
     [self.view endEditing:true];
+    [self callDismiss];
+}
+
+//All Calls for saving and editing are same except the index their storing
+-(void)saveOrUpdateNote{
+    
+    [note setNoteTitle:titleField.text];
+    
+    [note setNoteMessage:messageStringWAttachments];
+    
+    [self modifyDate];
     
     if(reminderIsSet){
         [self createReminder];
     }else{
         [self deleteReminder];
     }
-    [self callDismiss];
+    
+    noteData = [self changeToData:note];
 }
 
 -(void)createReminder{
@@ -695,7 +667,7 @@ NSDate *dateForCreationandModification;
 }
 
 -(void) createDate{
-    NSDate *date = [NSDate date];
+    date = [NSDate date];
     
     [note setNoteCreated:date];
     [note setNoteModified:date];
@@ -703,21 +675,19 @@ NSDate *dateForCreationandModification;
     //[dateCreated insertObject:date atIndex:0];
     //[dateModified insertObject:date atIndex:0];
 }
--(void) modifyDate:(NSInteger *) index{
+-(void) modifyDate{
     
-    NSDate *date = [NSDate date];
+    date = [NSDate date];
     
     [note setNoteModified:date];
     
     //[dateModified replaceObjectAtIndex:index withObject:date];
 
 }
-
--(void) setNoteInfo:(NSInteger *) index{
-    [totalNoteInfo setObject:[titleArr objectAtIndex:index] forKey:@"Title"];
-    [totalNoteInfo setObject:[messageArr objectAtIndex:index] forKey:@"Message"];
-    [totalNoteInfo setObject:[dateCreated objectAtIndex:index] forKey:@"Date Created"];
-    [totalNoteInfo setObject:[dateModified objectAtIndex:index] forKey:@"Date Modified"];
+-(NSMutableData *) changeToData:(Note *) n{
+    NSMutableData *msgData = [[NSMutableData alloc]init];
+    msgData = [[NSKeyedArchiver archivedDataWithRootObject:n]mutableCopy];
+    return msgData;
 }
 
 @end

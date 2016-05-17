@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YNotes/ViewControllerB.m"
-            timestampString = "484930304.832194"
+            timestampString = "485146192.033884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382"
+            startingLineNumber = "388"
+            endingLineNumber = "388"
             landmarkName = "-save:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YNotes/ViewControllerB.m"
-            timestampString = "484930304.832194"
+            timestampString = "485146192.033884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "581"
-            endingLineNumber = "581"
-            landmarkName = "-savingEditWithUnchangedTitle"
+            startingLineNumber = "652"
+            endingLineNumber = "652"
+            landmarkName = "-deleteReminder"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,29 +42,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YNotes/ViewControllerB.m"
-            timestampString = "484954122.093652"
+            timestampString = "485146192.033884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "680"
-            endingLineNumber = "680"
-            landmarkName = "-createReminder"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YNotes/ViewControllerB.m"
-            timestampString = "484930304.832194"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
             landmarkName = "-back:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__24-[ViewControllerB back:]_block_invoke_2"
+                  moduleName = "YNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Prince/Desktop/YNotes/YNotes/ViewControllerB.m"
+                  timestampString = "485146571.448852"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "282"
+                  endingLineNumber = "282"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.172"
+                  moduleName = "YNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Prince/Desktop/YNotes/YNotes/ViewControllerB.m"
+                  timestampString = "485146571.449096"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "282"
+                  endingLineNumber = "282"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.173"
+                  moduleName = "YNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Prince/Desktop/YNotes/YNotes/ViewControllerB.m"
+                  timestampString = "485146571.44933"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "282"
+                  endingLineNumber = "282"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,11 +105,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YNotes/ViewControllerB.m"
-            timestampString = "484930304.832194"
+            timestampString = "485146192.033884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "623"
-            endingLineNumber = "623"
+            startingLineNumber = "595"
+            endingLineNumber = "595"
             landmarkName = "-overwriteMatchedWithEditing"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,19 +121,66 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YNotes/ViewControllerB.m"
-            timestampString = "484930304.832194"
+            timestampString = "485146192.033884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "375"
-            endingLineNumber = "375"
+            startingLineNumber = "381"
+            endingLineNumber = "381"
             landmarkName = "-save:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__24-[ViewControllerB save:]_block_invoke_3"
+                  moduleName = "YNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Prince/Desktop/YNotes/YNotes/ViewControllerB.m"
+                  timestampString = "485146571.45251"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "381"
+                  endingLineNumber = "381"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.209"
+                  moduleName = "YNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Prince/Desktop/YNotes/YNotes/ViewControllerB.m"
+                  timestampString = "485146571.452719"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "381"
+                  endingLineNumber = "381"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.210"
+                  moduleName = "YNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Prince/Desktop/YNotes/YNotes/ViewControllerB.m"
+                  timestampString = "485146571.452926"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "381"
+                  endingLineNumber = "381"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YNotes/ViewController.m"
@@ -128,6 +206,86 @@
             startingLineNumber = "206"
             endingLineNumber = "206"
             landmarkName = "-sortDateCreated"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YNotes/ViewControllerB.m"
+            timestampString = "485146192.033884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "617"
+            endingLineNumber = "617"
+            landmarkName = "-saveOrUpdateNote"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YNotes/ViewControllerB.m"
+            timestampString = "485146192.033884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "551"
+            endingLineNumber = "551"
+            landmarkName = "-savingWithUniqueTitle"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YNotes/ViewControllerB.m"
+            timestampString = "485146192.033884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "672"
+            endingLineNumber = "672"
+            landmarkName = "-createDate"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YNotes/ViewControllerB.m"
+            timestampString = "485146192.033884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "566"
+            endingLineNumber = "566"
+            landmarkName = "-savingWithUniqueTitle"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YNotes/ViewControllerB.m"
+            timestampString = "485146192.033884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "562"
+            endingLineNumber = "562"
+            landmarkName = "-savingWithUniqueTitle"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

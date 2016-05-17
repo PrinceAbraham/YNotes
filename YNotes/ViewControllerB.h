@@ -39,7 +39,7 @@
 
 @property NSMutableData *messageData;
 
-@property NSDate *date;
+@property NSData *noteData;
 
 @property EKReminder *nReminder;
 

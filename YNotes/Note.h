@@ -28,5 +28,6 @@
 -(NSMutableAttributedString *) getNoteMessage;
 -(NSDate *)getNoteCreated;
 -(NSDate *)getNoteModified;
+-(NSMutableData *) changeToData:(Note *) n;
 
 @end
