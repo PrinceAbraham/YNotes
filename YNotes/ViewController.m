@@ -22,8 +22,6 @@
 
 @property EKEventStore *eStore;
 
-@property (weak, nonatomic) IBOutlet UIPickerView *picker;
-
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (weak, nonatomic) IBOutlet UIImageView *parralaximg;
@@ -32,14 +30,16 @@
 
 @implementation ViewController
 
-@synthesize desc, table, userDefaults, userFile, title,edit, eStore, picker, searchBar, parralaximg;
+@synthesize desc, table, userDefaults, userFile, title,edit, eStore, searchBar, parralaximg, initialDisplayArr;
 
 bool didBeganEditing=false, searchIsEmpty=true;
+
+Note *note;
 
 int currentIndex=0;
 NSString *pickedData;
 
-NSMutableArray *displayArr, *dateCreatedArr, *dateModifiedArr;
+NSMutableArray *notes, *displayArr, *dateCreatedArr, *dateModifiedArr;
 
 NSMutableArray *dict;
 
@@ -56,9 +56,16 @@ IGLDropDownMenu *pickerMenu;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    note = [[Note alloc]init];
+    
+    notes= [[NSMutableArray alloc]init];
+    
     title = [[NSMutableArray alloc] init];
     
     desc = [[NSMutableArray alloc] init];
+    
+    initialDisplayArr = [[NSMutableArray alloc] init];
     
     userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -94,22 +101,10 @@ IGLDropDownMenu *pickerMenu;
     [pickerItem[2] setText:@"Date Modified"];
     [pickerDropDown addObject:pickerItem[2]];
     
-    [pickerMenu setFrame:CGRectMake(0, 120, self.view.frame.size.width, 45)];
-    pickerMenu.menuText = @"       Sort";
-    //[pickerMenu setMenuIconImage:[UIImage imageNamed:@"sort.png"]];
-    pickerMenu.paddingLeft = self.view.frame.size.width/2.6;
-    pickerMenu.backgroundColor = [UIColor clearColor];
-    pickerMenu.type = IGLDropDownMenuTypeNormal;
-    pickerMenu.gutterY = 5;
-    pickerMenu.itemAnimationDelay = 0.1;
-    pickerMenu.menuButtonStatic = NO;
-    //pickerMenu.rotate = IGLDropDownMenuRotateRandom;
-    [pickerMenu setDropDownItems:pickerDropDown];
-    
     dict = [[NSMutableArray alloc]init];
     
     //User has info stored in the User Defaults
-    if([userDefaults objectForKey:userDefaultKey]!=nil){
+    if([userDefaults objectForKey:userAllInfoKey]!=nil){
         [self getInfo];
     }
     
@@ -117,21 +112,22 @@ IGLDropDownMenu *pickerMenu;
     [self.eStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
         NSLog(@"%@", error);
     }];
-    //searchText = @"";
-//    picker.delegate = self;
-//    picker.dataSource = self;
+    
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
+    
     searchBar.delegate = self;
     pickerMenu.delegate = self;
-//    picker.hidden = true;
-    [self.view addSubview:pickerMenu];
-    [pickerMenu reloadView];
+    //    picker.hidden = true;
     [self toggle:nil];
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    //Retrieves Data and Loads the Table
+    //Reloads the Table
     [self getInfo];
+    searchBar.text =@"";
     [self.table reloadData];
     if([pickedData isEqualToString:@"Alphabetical"]){
         [self sortAlphabetical];
@@ -211,10 +207,10 @@ IGLDropDownMenu *pickerMenu;
         for( int j=0; j < [dict count]; j++){
             NSLog(@"%d",j);
             //if the dates match and the title is unique
-            NSLog(@"%@ = %@",[dateCreatedArr objectAtIndex:i],[[dict objectAtIndex:j] objectForKey:@"Date Created"]);
-            if(([[dateCreatedArr objectAtIndex:i] isEqual: [[dict objectAtIndex:j] objectForKey:@"Date Created"]]) && ![displayArr containsObject:[[dict objectAtIndex:j] objectForKey:@"Title"]] && ([[[[dict objectAtIndex:j] objectForKey:@"Title"] lowercaseString] hasPrefix:[searchText lowercaseString]] || searchIsEmpty)){
-                [displayArr addObject: [[dict objectAtIndex:j] objectForKey:@"Title"]];
-                NSLog(@"%@", [[dict objectAtIndex:j] objectForKey:@"Title"]);
+            NSLog(@"%@ = %@",[dateCreatedArr objectAtIndex:i],[[dict objectAtIndex:j] noteCreated]);
+            if(([[dateCreatedArr objectAtIndex:i] isEqual: [[dict objectAtIndex:j] noteCreated]]) && ![displayArr containsObject:[[dict objectAtIndex:j] noteTitle]] && ([[[[dict objectAtIndex:j] noteTitle] lowercaseString] hasPrefix:[searchText lowercaseString]] || searchIsEmpty)){
+                [displayArr addObject: [[dict objectAtIndex:j] noteTitle]];
+                NSLog(@"%@", [[dict objectAtIndex:j] noteTitle]);
             }
         }
     }
@@ -225,8 +221,8 @@ IGLDropDownMenu *pickerMenu;
     [displayArr removeAllObjects];
     for(int i=0; i < [dict count]; i++){
         for( int j=0; j < [dict count]; j++){
-            if(([[dateModifiedArr objectAtIndex:i] isEqual: [[dict objectAtIndex:j] objectForKey:@"Date Modified"]]) && ![displayArr containsObject:[[dict objectAtIndex:j] objectForKey:@"Title"]] && ([[[[dict objectAtIndex:j] objectForKey:@"Title"]lowercaseString] hasPrefix:[searchText lowercaseString]] || searchIsEmpty)){
-                [displayArr addObject: [[dict objectAtIndex:j] objectForKey:@"Title"]];
+            if(([[dateModifiedArr objectAtIndex:i] isEqual: [[dict objectAtIndex:j] noteModified]]) && ![displayArr containsObject:[[dict objectAtIndex:j] noteTitle]] && ([[[[dict objectAtIndex:j] noteTitle]lowercaseString] hasPrefix:[searchText lowercaseString]] || searchIsEmpty)){
+                [displayArr addObject: [[dict objectAtIndex:j] noteTitle]];
             }
         }
     }
@@ -270,42 +266,27 @@ IGLDropDownMenu *pickerMenu;
     return cell;
 }
 
-#pragma mark - Picker functionality
-//- (IBAction)sortButtonAction:(id)sender {
-//    picker.hidden = !picker.hidden;
-//}
-//
-//-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-//    return 1;
-//}
-//-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-//    return 3;
-//}
-//
-//-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-//    return [pickerData objectAtIndex:row];
-//}
-//-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-//    pickedData = [pickerData objectAtIndex:row];
-//    if([pickedData isEqualToString:@"Alphabetical"]){
-//        [self sortAlphabetical];
-//    }else if ([pickedData isEqualToString:@"Date Created"]){
-//        [self sortDateCreated];
-//    }else{
-//        [self sortDateModified];
-//    }
-//    NSLog(@"%@", [pickerData objectAtIndex:row]);
-//}
-
 -(void) getInfo{
-    //NSLog(@"%@", [userDefaults objectForKey:userDefaultKey]);
-    userFile = [[userDefaults objectForKey:userDefaultKey]mutableCopy];//add mutable copy to retrieve properly. User default always returns immutable copy
-    title = [[userDefaults objectForKey:userTitleKey]mutableCopy];
-    desc = [[userDefaults objectForKey:userDescriptionKey]mutableCopy];
-    displayArr = [[userDefaults objectForKey:userTitleKey]mutableCopy];
-    dateCreatedArr = [[userDefaults objectForKey:userDateCreatedKey]mutableCopy];
-    dict = [[userDefaults objectForKey:userAllInfoKey]mutableCopy];
-    dateModifiedArr = [[userDefaults objectForKey:userDateModifiedKey]mutableCopy];
+    //add mutable copy to retrieve properly. User default always returns immutable copy
+    notes = [[userDefaults objectForKey:userAllInfoKey]mutableCopy];
+    
+    [dict removeAllObjects];
+    [displayArr removeAllObjects];
+    [desc removeAllObjects];
+    [dateCreatedArr removeAllObjects];
+    [dateModifiedArr removeAllObjects];
+    [initialDisplayArr removeAllObjects];
+    
+    for(int i=0; i< [notes count]; i++){
+        [dict addObject:[note decodeData:[notes objectAtIndex:i]]];
+        [initialDisplayArr addObject:[[dict objectAtIndex:i] noteTitle]];
+        [displayArr addObject:[[dict objectAtIndex:i] noteTitle]];
+        [desc addObject:[[dict objectAtIndex:i] noteMessage]];
+        [dateCreatedArr addObject:[[dict objectAtIndex:i] noteCreated]];
+        [dateModifiedArr addObject:[[dict objectAtIndex:i] noteModified]];
+    }
+//    displayArr = initialDisplayArr.copy;
+    title = displayArr;
 }
 
 //Sends info while the segue is prepared
@@ -316,17 +297,17 @@ IGLDropDownMenu *pickerMenu;
         
         ViewControllerB *vc = [segue destinationViewController];
         //Genius LOL
-        NSInteger *path = [title indexOfObject:[displayArr objectAtIndex:currentIndex]];
+        int path = [initialDisplayArr indexOfObject:[displayArr objectAtIndex:currentIndex]];
         vc.isEditing = true;
-        vc.titleString = [title objectAtIndex:path];
-        vc.messageData = [desc objectAtIndex:path];
+        vc.titleString = [initialDisplayArr objectAtIndex:path];
+        vc.messageStringWAttachments = [desc objectAtIndex:path];
         vc.indexForTable = path;
         
         NSPredicate *predicate = [eStore predicateForRemindersInCalendars:nil];
         //Checks for any reminder with the name == title
         [eStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *rem){
             for(EKReminder *reminder in rem){
-                if([reminder.title isEqualToString: [title objectAtIndex:path]]){
+                if([reminder.title isEqualToString: [initialDisplayArr objectAtIndex:path]]){
                     NSLog(@"matched");
                     vc.reminderIsSet = true;
                 }
@@ -356,14 +337,16 @@ IGLDropDownMenu *pickerMenu;
      *  or a parallaxView with an image.
      */
     if(parallaxWithView == NO) {
-        
+
         [self.table addParallaxWithView:parralaximg andHeight:240];
         
         parallaxWithView = YES;
     }
     else {
         // add parallax with image
-        [self.table addParallaxWithImage:[UIImage imageNamed:@"parralaxImg.jpg"] andHeight:160 andShadow:YES];
+        UIView *customView = [[UIView alloc] init];
+        [customView setFrame:CGRectMake(0, 0, 320, 160)];
+        [self.table addParallaxWithView:customView andHeight:160];
         parallaxWithView = NO;
         
         // Update the toggle button
@@ -378,6 +361,64 @@ IGLDropDownMenu *pickerMenu;
      */
     self.table.parallaxView.delegate = self;
     
+}
+
+- (void) orientationChanged:(NSNotification *)note
+{
+    [pickerMenu selectItemAtIndex:[pickerMenu selectedIndex]];
+    UIDevice * device = note.object;
+    switch(device.orientation)
+    {
+        case UIDeviceOrientationPortrait:
+            [pickerMenu setFrame:CGRectMake(0, 120, self.view.frame.size.width, 45)];
+            pickerMenu.menuText = @"       Sort";
+            //[pickerMenu setMenuIconImage:[UIImage imageNamed:@"sort.png"]];
+            pickerMenu.paddingLeft = self.view.frame.size.width/2.6;
+            pickerMenu.backgroundColor = [UIColor clearColor];
+            pickerMenu.type = IGLDropDownMenuTypeNormal;
+            pickerMenu.gutterY = 5;
+            pickerMenu.itemAnimationDelay = 0.05;
+            pickerMenu.menuButtonStatic = NO;
+            [pickerMenu setDropDownItems:pickerDropDown];
+            [self.view addSubview:pickerMenu];
+            [pickerMenu reloadView];
+            
+            break;
+            
+        case UIDeviceOrientationLandscapeLeft:
+            [pickerMenu setFrame:CGRectMake(0, 100, self.view.frame.size.width, 45)];
+            pickerMenu.menuText = @"       Sort";
+            //[pickerMenu setMenuIconImage:[UIImage imageNamed:@"sort.png"]];
+            pickerMenu.paddingLeft = self.view.frame.size.width/2.4;
+            pickerMenu.backgroundColor = [UIColor clearColor];
+            pickerMenu.type = IGLDropDownMenuTypeNormal;
+            pickerMenu.gutterY = 5;
+            pickerMenu.itemAnimationDelay = 0.05;
+            pickerMenu.menuButtonStatic = NO;
+            [pickerMenu setDropDownItems:pickerDropDown];
+            [self.view addSubview:pickerMenu];
+            [pickerMenu reloadView];
+            break;
+            
+        case UIDeviceOrientationLandscapeRight:
+            [pickerMenu setFrame:CGRectMake(0, 100, self.view.frame.size.width, 45)];
+            pickerMenu.menuText = @"       Sort";
+            //[pickerMenu setMenuIconImage:[UIImage imageNamed:@"sort.png"]];
+            pickerMenu.paddingLeft = self.view.frame.size.width/2.4;
+            pickerMenu.backgroundColor = [UIColor clearColor];
+            pickerMenu.type = IGLDropDownMenuTypeNormal;
+            pickerMenu.gutterY = 5;
+            pickerMenu.itemAnimationDelay = 0.05;
+            pickerMenu.menuButtonStatic = NO;
+            [pickerMenu setDropDownItems:pickerDropDown];
+            [self.view addSubview:pickerMenu];
+            [pickerMenu reloadView];
+            break;
+            
+        default:
+            
+            break;
+    };
 }
 
 @end

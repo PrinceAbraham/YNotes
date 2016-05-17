@@ -17,6 +17,8 @@
 @property NSMutableArray *desc;
 
 @property NSMutableArray *title;
+@property (nonatomic, strong) NSMutableArray *initialDisplayArr;
+
 
 @property NSMutableDictionary *userFile;
 

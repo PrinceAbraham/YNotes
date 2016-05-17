@@ -7,16 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ConstantsClass.h"
 
 @interface Note : NSObject
 
-@property (nonatomic, weak) NSMutableString *noteTitle;
+@property (nonatomic, copy) NSMutableString *noteTitle;
 
-@property (nonatomic, weak) NSMutableAttributedString *noteMessage;
+@property (nonatomic, copy) NSMutableAttributedString *noteMessage;
 
-@property (nonatomic, weak) NSDate *noteCreated;
+@property (nonatomic, copy) NSDate *noteCreated;
 
-@property (nonatomic, weak) NSDate *noteModified;
+@property (nonatomic, copy) NSDate *noteModified;
 
 
 -(void) setNoteTitle:(NSMutableString *)noteTitle;
@@ -29,5 +30,5 @@
 -(NSDate *)getNoteCreated;
 -(NSDate *)getNoteModified;
 -(NSMutableData *) changeToData:(Note *) n;
-
+-(Note *) decodeData:(NSMutableData *)data;
 @end

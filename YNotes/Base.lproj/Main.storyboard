@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -57,9 +57,6 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xIp-nD-FIm"/>
                                 </connections>
                             </searchBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="parralaxImg" translatesAutoresizingMaskIntoConstraints="NO" id="h5S-zX-Se6">
-                                <rect key="frame" x="-40" y="179" width="720" height="5"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9p-ch-w6L">
                                 <rect key="frame" x="549" y="35" width="28" height="28"/>
                                 <constraints>
@@ -72,9 +69,15 @@
                                     <segue destination="dXl-dn-kh4" kind="show" identifier="" id="F5x-YP-sOQ"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="parralaxImg" translatesAutoresizingMaskIntoConstraints="NO" id="h5S-zX-Se6">
+                                <rect key="frame" x="0.0" y="117" width="600" height="48"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="h5S-zX-Se6" firstAttribute="top" secondItem="ic6-oE-p21" secondAttribute="bottom" constant="3" id="0Li-iL-LrZ"/>
+                            <constraint firstItem="h5S-zX-Se6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="4q1-u0-jFy"/>
+                            <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="h5S-zX-Se6" secondAttribute="bottom" constant="8" id="6qi-lV-xaJ"/>
                             <constraint firstItem="ic6-oE-p21" firstAttribute="top" secondItem="gCr-jr-mdx" secondAttribute="bottom" id="8Ha-yB-Tcu"/>
                             <constraint firstItem="h5S-zX-Se6" firstAttribute="leading" secondItem="ic6-oE-p21" secondAttribute="leading" id="9FW-u0-m04"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="ic6-oE-p21" secondAttribute="bottom" constant="59" id="AUO-Mu-tf6"/>
@@ -88,15 +91,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="H9p-ch-w6L" secondAttribute="trailing" constant="3" id="Fba-MK-yLQ"/>
                             <constraint firstItem="gCr-jr-mdx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="G0p-zt-8Qn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gCr-jr-mdx" secondAttribute="trailing" constant="-20" id="GwU-Qw-DuN"/>
+                            <constraint firstItem="h5S-zX-Se6" firstAttribute="trailing" secondItem="ic6-oE-p21" secondAttribute="trailing" constant="80" id="IjO-AD-iom"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ttM-yO-C6w" secondAttribute="trailing" constant="-20" id="MkV-If-NGA"/>
-                            <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="h5S-zX-Se6" secondAttribute="bottom" constant="-11" id="Rpw-CR-AUx"/>
-                            <constraint firstItem="h5S-zX-Se6" firstAttribute="top" secondItem="ic6-oE-p21" secondAttribute="bottom" constant="65" id="S1h-0X-f3t"/>
                             <constraint firstItem="h5S-zX-Se6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="SNk-Ik-x1a"/>
+                            <constraint firstItem="h5S-zX-Se6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Sww-qU-0ir"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h5S-zX-Se6" secondAttribute="trailing" constant="-20" id="TIe-Bb-nzu"/>
+                            <constraint firstItem="h5S-zX-Se6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UIq-jW-aAA"/>
                             <constraint firstItem="ic6-oE-p21" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="UuP-5I-K0t"/>
-                            <constraint firstItem="h5S-zX-Se6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-60" id="Yjd-2v-olE"/>
                             <constraint firstItem="h5S-zX-Se6" firstAttribute="top" secondItem="ic6-oE-p21" secondAttribute="bottom" id="bDI-nr-eGg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ic6-oE-p21" secondAttribute="trailing" constant="-20" id="bIP-gq-piC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="h5S-zX-Se6" secondAttribute="trailing" constant="-100" id="m8K-9f-UCZ"/>
                             <constraint firstItem="h5S-zX-Se6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-60" id="md3-W4-0K9"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ofV-Fp-OTC"/>
                             <constraint firstItem="gCr-jr-mdx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="q3z-Rg-enQ"/>
@@ -104,16 +107,19 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="DVd-32-NZi"/>
-                                <exclude reference="DkG-ma-44e"/>
-                                <exclude reference="zYL-or-VHw"/>
                                 <exclude reference="9FW-u0-m04"/>
                                 <exclude reference="B4m-fS-ZV5"/>
                                 <exclude reference="C8y-Ox-3jt"/>
                                 <exclude reference="DIO-5v-766"/>
+                                <exclude reference="IjO-AD-iom"/>
                                 <exclude reference="SNk-Ik-x1a"/>
+                                <exclude reference="Sww-qU-0ir"/>
+                                <exclude reference="TIe-Bb-nzu"/>
                                 <exclude reference="bDI-nr-eGg"/>
                                 <exclude reference="md3-W4-0K9"/>
+                                <exclude reference="DVd-32-NZi"/>
+                                <exclude reference="DkG-ma-44e"/>
+                                <exclude reference="zYL-or-VHw"/>
                             </mask>
                         </variation>
                     </view>
@@ -399,7 +405,7 @@
         <image name="back" width="128" height="128"/>
         <image name="camera" width="128" height="128"/>
         <image name="deleteNote" width="128" height="128"/>
-        <image name="parralaxImg" width="1920" height="1080"/>
+        <image name="parralaxImg" width="2560" height="1600"/>
         <image name="reminderNotSelected" width="128" height="128"/>
         <image name="saveNote" width="128" height="128"/>
     </resources>

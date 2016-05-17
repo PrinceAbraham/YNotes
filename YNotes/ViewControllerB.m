@@ -51,6 +51,8 @@ NSString *tempStringCheckTIme;
 
 NSDate *dateForCreationandModification;
 
+NSMutableArray *arrayOfNoteOBJ;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
@@ -61,9 +63,11 @@ NSDate *dateForCreationandModification;
     
     userDefaults = [NSUserDefaults standardUserDefaults];
     
+    arrayOfNoteOBJ = [[NSMutableArray alloc]init];
+    
     stringTitleArr = [[NSMutableArray alloc]init];
     
-    messageStringWAttachments = [[NSMutableAttributedString alloc]init];
+    titleArr = [[NSMutableArray alloc]init];
     
     outputFormatter = [[NSDateFormatter alloc] init];
     
@@ -72,6 +76,8 @@ NSDate *dateForCreationandModification;
     notesInfo = [[NSMutableArray alloc]init];
     
     date = [[NSDate alloc]init];
+    
+    dateForCreationandModification = [[NSDate alloc]init];
     
     self.eventStoreInstance = [[EKEventStore alloc]init];
     
@@ -89,10 +95,6 @@ NSDate *dateForCreationandModification;
     [outputFormatter setDateStyle:NSDateFormatterShortStyle];
     [outputFormatter setTimeStyle:NSDateFormatterShortStyle];
     
-    //checks if theres a user defaults so that info could be retrived
-    if([userDefaults objectForKey:userAllInfoKey]!=nil){
-        [self getInfo];
-    }
     //set the delegate of the textview to self
     messageField.delegate = self;
     
@@ -102,13 +104,23 @@ NSDate *dateForCreationandModification;
         
         self.titleField.text = self.titleString;
         
-        //note.noteMessage =
-        self.messageField.attributedText = [self getAttributeForData: self.messageData];
-        messageStringWAttachments = self.messageField.attributedText;
+        messageStringWAttachments = self.messageStringWAttachments;
+        
+        self.messageField.attributedText = messageStringWAttachments;
+        
         isEditing = self.isEditing;
         reminderIsSet = self.reminderIsSet;
         indexForTable = self.indexForTable;
         tempAttributedString = messageStringWAttachments;
+    }else{
+        messageStringWAttachments = [[NSMutableAttributedString alloc]init];
+    }
+    
+    //checks if theres a user defaults so that info could be retrived
+    if([userDefaults objectForKey:userAllInfoKey]!=nil){
+        [self getInfo];
+        
+        dateForCreationandModification = [[note decodeData:[notesInfo objectAtIndex:indexForTable]] noteCreated];
     }
     
     //if a reminder is set
@@ -380,6 +392,8 @@ NSDate *dateForCreationandModification;
                                                                }
                                                            }];
     
+    [self.view endEditing:YES];
+    
     //If it's edting
     if(isEditing){
         //if titleArr and description is not empty
@@ -544,6 +558,11 @@ NSDate *dateForCreationandModification;
 -(void) getInfo{
 
     notesInfo = [[userDefaults objectForKey:userAllInfoKey]mutableCopy];
+
+    for(int i=0; i< [notesInfo count]; i++){
+        [arrayOfNoteOBJ addObject:[note decodeData:[notesInfo objectAtIndex:i]]];
+        [titleArr addObject:[[arrayOfNoteOBJ objectAtIndex:i] noteTitle]];
+    }
 }
 
 -(void) savingWithUniqueTitle{
@@ -559,7 +578,7 @@ NSDate *dateForCreationandModification;
     }else{
         [self deleteReminder];
     }
-    noteData = [self changeToData:note];
+    noteData = [note changeToData:note];
     [notesInfo insertObject:noteData atIndex:0];
     //store in User Defaults
     [userDefaults setObject:notesInfo forKey:userAllInfoKey];
@@ -585,16 +604,19 @@ NSDate *dateForCreationandModification;
     [notesInfo replaceObjectAtIndex:indexForTable withObject:noteData];
     
     [userDefaults setObject:notesInfo forKey:userAllInfoKey];
+    
+    [self callDismiss];
 }
 -(void) overwriteMatchedWithEditing{
     int matchedInt = (int) [stringTitleArr indexOfObject:[titleField.text lowercaseString]];
     
     [self saveOrUpdateNote];
     
+    [notesInfo replaceObjectAtIndex:matchedInt withObject:noteData];
+    
     if(indexForTable!=matchedInt){
         [notesInfo removeObjectAtIndex:indexForTable];
     }
-    [notesInfo replaceObjectAtIndex:matchedInt withObject:noteData];
     
     [userDefaults setObject:notesInfo forKey:userAllInfoKey];
     
@@ -626,7 +648,8 @@ NSDate *dateForCreationandModification;
         [self deleteReminder];
     }
     
-    noteData = [self changeToData:note];
+    noteData = [note changeToData:note];
+    
 }
 
 -(void)createReminder{
@@ -680,14 +703,9 @@ NSDate *dateForCreationandModification;
     date = [NSDate date];
     
     [note setNoteModified:date];
-    
+    [note setNoteCreated:dateForCreationandModification];
     //[dateModified replaceObjectAtIndex:index withObject:date];
 
-}
--(NSMutableData *) changeToData:(Note *) n{
-    NSMutableData *msgData = [[NSMutableData alloc]init];
-    msgData = [[NSKeyedArchiver archivedDataWithRootObject:n]mutableCopy];
-    return msgData;
 }
 
 @end

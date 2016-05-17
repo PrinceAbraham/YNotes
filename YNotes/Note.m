@@ -11,12 +11,18 @@
 @implementation Note
 
 - (void)encodeWithCoder:(NSCoder *)aCoder{
-    [aCoder encodeObject:self.noteTitle forKey:@"PROPERTY_KEY"];
+    [aCoder encodeObject:self.noteTitle forKey:TITLE_KEY];
+    [aCoder encodeObject:self.noteMessage forKey:MESSAGE_KEY];
+    [aCoder encodeObject:self.noteCreated forKey:DATE_CREATED_KEY];
+    [aCoder encodeObject:self.noteModified forKey:DATE_MODIFIED_KEY];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder{
     if(self = [super init]){
-        self.noteTitle = [aDecoder decodeObjectForKey:@"PROPERTY_KEY"];
+        self.noteTitle = [aDecoder decodeObjectForKey:TITLE_KEY];
+        self.noteMessage = [aDecoder decodeObjectForKey:MESSAGE_KEY];
+        self.noteCreated = [aDecoder decodeObjectForKey:DATE_CREATED_KEY];
+        self.noteModified = [aDecoder decodeObjectForKey:DATE_MODIFIED_KEY];
     }
     return self;
 }
@@ -68,5 +74,10 @@
     return msgData;
 }
 
+-(Note *) decodeData:(NSMutableData *)data{
+    Note *n = [[Note alloc]init];
+    n = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    return n;
+}
 
 @end
