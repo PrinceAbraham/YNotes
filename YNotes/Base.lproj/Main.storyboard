@@ -24,8 +24,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ttM-yO-C6w">
-                                <rect key="frame" x="0.0" y="173" width="600" height="427"/>
+                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleAspectFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ttM-yO-C6w">
+                                <rect key="frame" x="0.0" y="173" width="600" height="448"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wpy-sW-6lU">
@@ -69,63 +69,31 @@
                                     <segue destination="dXl-dn-kh4" kind="show" identifier="" id="F5x-YP-sOQ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="parralaxImg" translatesAutoresizingMaskIntoConstraints="NO" id="h5S-zX-Se6">
-                                <rect key="frame" x="-40" y="117" width="680" height="48"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="h5S-zX-Se6" firstAttribute="top" secondItem="ic6-oE-p21" secondAttribute="bottom" constant="3" id="0Li-iL-LrZ"/>
-                            <constraint firstItem="h5S-zX-Se6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="80" id="4q1-u0-jFy"/>
-                            <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="h5S-zX-Se6" secondAttribute="bottom" constant="8" id="6qi-lV-xaJ"/>
                             <constraint firstItem="ic6-oE-p21" firstAttribute="top" secondItem="gCr-jr-mdx" secondAttribute="bottom" id="8Ha-yB-Tcu"/>
-                            <constraint firstItem="h5S-zX-Se6" firstAttribute="leading" secondItem="ic6-oE-p21" secondAttribute="leading" id="9FW-u0-m04"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="ic6-oE-p21" secondAttribute="bottom" constant="59" id="AUO-Mu-tf6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="h5S-zX-Se6" secondAttribute="trailing" constant="-100" id="B4m-fS-ZV5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="h5S-zX-Se6" secondAttribute="trailing" constant="-20" id="C8y-Ox-3jt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ttM-yO-C6w" secondAttribute="bottom" id="D9c-kv-ENe"/>
                             <constraint firstItem="H9p-ch-w6L" firstAttribute="top" secondItem="gCr-jr-mdx" secondAttribute="bottom" constant="-35" id="DAX-o9-hgM"/>
-                            <constraint firstItem="h5S-zX-Se6" firstAttribute="trailing" secondItem="gCr-jr-mdx" secondAttribute="trailing" id="DIO-5v-766"/>
-                            <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="h5S-zX-Se6" secondAttribute="bottom" constant="2" id="DVd-32-NZi"/>
-                            <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="h5S-zX-Se6" secondAttribute="bottom" constant="-1" id="DkG-ma-44e"/>
                             <constraint firstAttribute="trailingMargin" secondItem="H9p-ch-w6L" secondAttribute="trailing" constant="3" id="Fba-MK-yLQ"/>
                             <constraint firstItem="gCr-jr-mdx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="G0p-zt-8Qn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gCr-jr-mdx" secondAttribute="trailing" constant="-20" id="GwU-Qw-DuN"/>
-                            <constraint firstItem="h5S-zX-Se6" firstAttribute="trailing" secondItem="ic6-oE-p21" secondAttribute="trailing" constant="80" id="IjO-AD-iom"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ttM-yO-C6w" secondAttribute="trailing" constant="-20" id="MkV-If-NGA"/>
-                            <constraint firstItem="h5S-zX-Se6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="SNk-Ik-x1a"/>
-                            <constraint firstItem="h5S-zX-Se6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Sww-qU-0ir"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="h5S-zX-Se6" secondAttribute="trailing" constant="-20" id="TIe-Bb-nzu"/>
-                            <constraint firstItem="h5S-zX-Se6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UIq-jW-aAA"/>
                             <constraint firstItem="ic6-oE-p21" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="UuP-5I-K0t"/>
-                            <constraint firstItem="h5S-zX-Se6" firstAttribute="top" secondItem="ic6-oE-p21" secondAttribute="bottom" id="bDI-nr-eGg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ic6-oE-p21" secondAttribute="trailing" constant="-20" id="bIP-gq-piC"/>
-                            <constraint firstItem="h5S-zX-Se6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-60" id="md3-W4-0K9"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ofV-Fp-OTC"/>
                             <constraint firstItem="gCr-jr-mdx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="q3z-Rg-enQ"/>
                             <constraint firstItem="ttM-yO-C6w" firstAttribute="top" secondItem="H9p-ch-w6L" secondAttribute="bottom" constant="11" id="zYL-or-VHw"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="9FW-u0-m04"/>
-                                <exclude reference="B4m-fS-ZV5"/>
-                                <exclude reference="C8y-Ox-3jt"/>
-                                <exclude reference="DIO-5v-766"/>
-                                <exclude reference="IjO-AD-iom"/>
-                                <exclude reference="SNk-Ik-x1a"/>
-                                <exclude reference="Sww-qU-0ir"/>
-                                <exclude reference="TIe-Bb-nzu"/>
-                                <exclude reference="bDI-nr-eGg"/>
-                                <exclude reference="md3-W4-0K9"/>
-                                <exclude reference="DVd-32-NZi"/>
-                                <exclude reference="DkG-ma-44e"/>
                                 <exclude reference="zYL-or-VHw"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="addOrSave" destination="H9p-ch-w6L" id="LVr-h0-i0e"/>
-                        <outlet property="parralaximg" destination="h5S-zX-Se6" id="LfL-yl-fME"/>
                         <outlet property="searchBar" destination="ic6-oE-p21" id="d67-Jr-sl6"/>
                         <outlet property="table" destination="ttM-yO-C6w" id="pij-5E-1a6"/>
                     </connections>
@@ -405,7 +373,6 @@
         <image name="back" width="128" height="128"/>
         <image name="camera" width="128" height="128"/>
         <image name="deleteNote" width="128" height="128"/>
-        <image name="parralaxImg" width="2560" height="1600"/>
         <image name="reminderNotSelected" width="128" height="128"/>
         <image name="saveNote" width="128" height="128"/>
     </resources>

@@ -12,7 +12,7 @@
 
 @import UIKit;
 
-@interface ViewController ()<APParallaxViewDelegate>{
+@interface ViewController (){
     BOOL parallaxWithView;
 }
 
@@ -336,16 +336,21 @@ IGLDropDownMenu *pickerMenu;
      *  or a parallaxView with an image.
      */
     if(parallaxWithView == NO) {
-
-        [self.table addParallaxWithView:parralaximg andHeight:240];
+        UIImageView *customView = [[UIImageView alloc] init];
+        [customView setFrame:CGRectMake(0, 0, 400, 240)];
+        customView.image = [UIImage imageNamed:@"parralaxImg.jpg"];
+        [customView setContentMode:UIViewContentModeScaleAspectFill];
+        [self.table addParallaxWithView:customView andHeight:240];
         
         parallaxWithView = YES;
     }
     else {
         // add parallax with image
-        UIView *customView = [[UIView alloc] init];
-        [customView setFrame:CGRectMake(0, 0, 320, 160)];
-        [self.table addParallaxWithView:parralaximg andHeight:160];
+        UIImageView *customView = [[UIImageView alloc] init];
+        [customView setFrame:CGRectMake(0, 0, 400, 160)];
+        customView.image = [UIImage imageNamed:@"parralaxImg.jpg"];
+        [customView setContentMode:UIViewContentModeScaleAspectFill];
+        [self.table addParallaxWithView:customView andHeight:160];
         parallaxWithView = NO;
         
         // Update the toggle button
@@ -360,7 +365,7 @@ IGLDropDownMenu *pickerMenu;
      */
     //self.table.parallaxView.delegate = self;
     
-    self.table.parallaxView.delegate = nil;
+    //self.table.parallaxView.delegate = nil;
 }
 
 - (void) orientationChanged:(NSNotification *)note
