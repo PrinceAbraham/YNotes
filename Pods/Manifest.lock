@@ -1,15 +1,21 @@
 PODS:
   - APParallaxHeader (0.1.6)
+  - BFPaperTableViewCell (2.3.3):
+    - UIColor+BFPaperColors
   - IGLDropDownMenu (1.5.0)
+  - UIColor+BFPaperColors (1.7.2)
 
 DEPENDENCIES:
   - APParallaxHeader
+  - BFPaperTableViewCell (~> 2.3.3)
   - IGLDropDownMenu
 
 SPEC CHECKSUMS:
   APParallaxHeader: 854bc48a2487ca12c702f8a236fec0d89cdac5c3
+  BFPaperTableViewCell: 71fbd5fc1b3479c0c8620dc121d31d2a6694b4a8
   IGLDropDownMenu: 1ce06c17b4846f784e2b610f90bd741ab2037f2c
+  UIColor+BFPaperColors: 03101fe6c10ed00c6daae7c26553f1de41500853
 
-PODFILE CHECKSUM: 32963269a8b7c490a1998b01cc9dfc1e333041d5
+PODFILE CHECKSUM: d51c83f1669f85fbec1a3b4353c8940010c1b08a
 
 COCOAPODS: 1.0.0

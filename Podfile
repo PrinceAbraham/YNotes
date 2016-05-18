@@ -8,6 +8,7 @@ target 'YNotes' do
   # Pods for YNotes
 pod 'APParallaxHeader'
 pod 'IGLDropDownMenu'
+pod 'BFPaperTableViewCell', '~> 2.3.3'
 
   target 'YNotesTests' do
     inherit! :search_paths

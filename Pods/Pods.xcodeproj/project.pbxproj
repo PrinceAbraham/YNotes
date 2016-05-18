@@ -7,89 +7,146 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		043479BEEFDA12CEC42B900E3E1DCAB3 /* IGLDropDownMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 773C1029DC0CDE1EF9E8810A01A04BEE /* IGLDropDownMenu-dummy.m */; };
-		091149D481BAF2CAFF8B50E6EFCAB921 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
+		043479BEEFDA12CEC42B900E3E1DCAB3 /* IGLDropDownMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA1759D85F95D74AA3C6334817C9543 /* IGLDropDownMenu-dummy.m */; };
 		2212BED18AC89CDC5B330E0AA4AE47D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
 		2D7511AE7895500790CC9B7D5E6187F4 /* Pods-YNotesTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4EB9E99F80C4CAF5C387DA3BDE0C98 /* Pods-YNotesTests-dummy.m */; };
-		3F5CFB23257180E8035F72344B71DFD5 /* IGLDropDownItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A2279F00D8A2606A2B5EF6E08468CC09 /* IGLDropDownItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5E6A2F14807DB59C84DFBB88AC3C654D /* IGLDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C2B878DF0DC3A660F0F86C8AC3E61 /* IGLDropDownMenu.m */; };
-		6970139DF66AD5EC7BAB7E72F03C3659 /* UIScrollView+APParallaxHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E8AC7A15DB2861A14171A99B7823C9E /* UIScrollView+APParallaxHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		69E01BC4A485179F7B47F842B6644828 /* IGLDropDownMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 81574623284B1402BA20C12C6CCE3785 /* IGLDropDownMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F5CFB23257180E8035F72344B71DFD5 /* IGLDropDownItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A1FCF31E7D8FE9C220FA332E0BE011A0 /* IGLDropDownItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F73803BF696AC6ACCE7F24E5087914F /* UIColor+BFPaperColors.h in Headers */ = {isa = PBXBuildFile; fileRef = C8F0C6ADCCDD7F86D2FAD1B1CF9FB2B2 /* UIColor+BFPaperColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5143B23C949888E0740DF80200A0A16C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
+		5E6A2F14807DB59C84DFBB88AC3C654D /* IGLDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DB48FAFC52C8DBC1ACCFB540828F2340 /* IGLDropDownMenu.m */; };
+		67F00120799E8EF9F9A538A7723C1E24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
+		6970139DF66AD5EC7BAB7E72F03C3659 /* UIScrollView+APParallaxHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 175C9C38CE4865804F3B490212CD13B7 /* UIScrollView+APParallaxHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69E01BC4A485179F7B47F842B6644828 /* IGLDropDownMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 82591CD6F90637AB6901906DA479A016 /* IGLDropDownMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E05B0BBDED47F6FF68526C78094356B /* UIColor+BFPaperColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E14F35E1CF26E4058E6DDDAE2FCA939 /* UIColor+BFPaperColors-dummy.m */; };
+		7171025EECA9DCE01D74FE201450C2CE /* BFPaperTableViewCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F44376B5896CC300E5687B17840A35 /* BFPaperTableViewCell-dummy.m */; };
 		7785FD5615566AE96CF1873255565808 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
-		8480858A7BA9ECA2EE7A5107D34F7183 /* APParallaxHeader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CECD2532E11B459D7D50A487EE15BB0 /* APParallaxHeader-dummy.m */; };
-		8B4419E6EE985E633DDD95327A2EF22D /* IGLDropDownItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E83A368DF007EF19955D94D2FC81BE /* IGLDropDownItem.m */; };
+		8480858A7BA9ECA2EE7A5107D34F7183 /* APParallaxHeader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C97C425E5514EF4E66A74BBD2301B76F /* APParallaxHeader-dummy.m */; };
+		8B4419E6EE985E633DDD95327A2EF22D /* IGLDropDownItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1F67E96F671A5D5ABECE3249971592 /* IGLDropDownItem.m */; };
 		8E97587F1C1520BDEC1F805EB5403E4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
 		A0ED24856F5B46FE17D2496F6A833F1A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */; };
-		E9A6CAD308EC7F78F474E74679454206 /* UIScrollView+APParallaxHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A09DA8AF65483CA4113150B8E6EDDB /* UIScrollView+APParallaxHeader.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		AA17C1D02CEB7FA5BC02C654FA6E2B21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
+		AA5B9FD37D1E361C9448FE5DD28B8120 /* BFPaperTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CEBC9707A7FE8CD34926D68DC86D02 /* BFPaperTableViewCell.m */; };
+		C9B6CBBDE16044470E631DF11AA86D2A /* Pods-YNotes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3DBD67AD8E7C062C7227FB72D64F39 /* Pods-YNotes-dummy.m */; };
+		CFABF8E41DE30F7BA8C8A07578069C5E /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E751413347068A3CAB2F1C9BCB6DBA86 /* UIColor+BFPaperColors.m */; };
+		E9A6CAD308EC7F78F474E74679454206 /* UIScrollView+APParallaxHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF0D5D64EAA0D9CAB5C03C3251986A5 /* UIScrollView+APParallaxHeader.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		EC49B6FCF12F4F5AB00B8EF8627871E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
-		F2E6334F82C43F9A322B612F878310B8 /* Pods-YNotes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3DBD67AD8E7C062C7227FB72D64F39 /* Pods-YNotes-dummy.m */; };
+		EE4AB1AE57149F5D6A0C5F057BA209FE /* BFPaperTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A53C637A5854164D44BF272FBBBEF3D0 /* BFPaperTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAEE204DD16EE49A5E80DFD75C84121B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 091D54A73E1E8BB182C9D7D245AF1C2F /* UIKit.framework */; };
 		FE29C920023D70D0136BA16A00336F82 /* Pods-YNotesUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B2DB26FB875182B1DA7764BDB12E78 /* Pods-YNotesUITests-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		24CA56475954C8F2236200314EFC24AD /* PBXContainerItemProxy */ = {
+		2964611C28EBAD779FA5AC917E50FB0D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5DF21164C6E1DC7DEE4CA35AD0FD7B25;
-			remoteInfo = APParallaxHeader;
+			remoteGlobalIDString = AA8B567933CA47B8D7C065AECA481215;
+			remoteInfo = "UIColor+BFPaperColors";
 		};
-		3374EA30578F6628F33694D8C818E3C9 /* PBXContainerItemProxy */ = {
+		2E9754B13908B5FA3C1F38B6D4CEA967 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 510FEA0B6E5372B57D692ADD3CD04F8C;
+			remoteInfo = BFPaperTableViewCell;
+		};
+		44183760FA9EB30CF56C7BA411FF8DEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA8B567933CA47B8D7C065AECA481215;
+			remoteInfo = "UIColor+BFPaperColors";
+		};
+		47930609CD3D803C3D5901FA2D96A746 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F2FC0AF0815B5D127E0AA79352D5EB6A;
 			remoteInfo = IGLDropDownMenu;
 		};
+		49F43EDE3398E05E74A2CD199DDD682B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DF21164C6E1DC7DEE4CA35AD0FD7B25;
+			remoteInfo = APParallaxHeader;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0805945308DE2BAAC23ED73E3C90430F /* Pods-YNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		091D54A73E1E8BB182C9D7D245AF1C2F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		0BB29657A19A8BD69E9F507B8AD11668 /* libIGLDropDownMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIGLDropDownMenu.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BC579A5AC0FF153C8137E394E957616 /* UIColor+BFPaperColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+BFPaperColors-prefix.pch"; sourceTree = "<group>"; };
 		0CE0B0C345E5B85DB4D0A98B5F58F221 /* Pods-YNotesTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YNotesTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		0DE278A2BABFC5279DFF902DEF63E880 /* libPods-YNotesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		123703DA4E8B76DFA306C30F1A3135EA /* Pods-YNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotes.debug.xcconfig"; sourceTree = "<group>"; };
-		14FEE89F9BBCAC3239429760D84CA170 /* APParallaxHeader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = APParallaxHeader.xcconfig; sourceTree = "<group>"; };
+		175C9C38CE4865804F3B490212CD13B7 /* UIScrollView+APParallaxHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+APParallaxHeader.h"; path = "APParallaxHeader/UIScrollView+APParallaxHeader.h"; sourceTree = "<group>"; };
+		1A7BF42BD650E30DA4CD316368CCD2DA /* APParallaxHeader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = APParallaxHeader.xcconfig; sourceTree = "<group>"; };
 		1C17FBF2289BFFC3348D4D87D24AA4EE /* Pods-YNotes-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotes-resources.sh"; sourceTree = "<group>"; };
-		21A09DA8AF65483CA4113150B8E6EDDB /* UIScrollView+APParallaxHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+APParallaxHeader.m"; path = "APParallaxHeader/UIScrollView+APParallaxHeader.m"; sourceTree = "<group>"; };
+		1E14F35E1CF26E4058E6DDDAE2FCA939 /* UIColor+BFPaperColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BFPaperColors-dummy.m"; sourceTree = "<group>"; };
 		23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		245E59F993ED9AE25D345BA9C5C52817 /* IGLDropDownMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IGLDropDownMenu.xcconfig; sourceTree = "<group>"; };
+		31CDAB7002411BD5E0C7BA3E6F2D8779 /* libPods-YNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35CEFF090D4590377ACEF907866E2192 /* Pods-YNotes-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YNotes-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3E8A3EB9DA364DCA67E975BD6B9FE46A /* libIGLDropDownMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIGLDropDownMenu.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F3F6ACE792E4680A867C7FEF218AFD5 /* BFPaperTableViewCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BFPaperTableViewCell-prefix.pch"; sourceTree = "<group>"; };
 		46B2DB26FB875182B1DA7764BDB12E78 /* Pods-YNotesUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YNotesUITests-dummy.m"; sourceTree = "<group>"; };
 		4C1B1BAD6BD8038EB1B79C6060C97C04 /* Pods-YNotes-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YNotes-acknowledgements.plist"; sourceTree = "<group>"; };
-		5A75701A1AD0B179D97EB2565AE03946 /* libPods-YNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E8AC7A15DB2861A14171A99B7823C9E /* UIScrollView+APParallaxHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+APParallaxHeader.h"; path = "APParallaxHeader/UIScrollView+APParallaxHeader.h"; sourceTree = "<group>"; };
 		63EB0AF1C483FE3DC35C980510EAF91B /* Pods-YNotes-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotes-frameworks.sh"; sourceTree = "<group>"; };
 		6630B1233D8AC9687853F40428B7A130 /* Pods-YNotesUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotesUITests-resources.sh"; sourceTree = "<group>"; };
 		693988991F3A665DDA9E49EC84B2C059 /* Pods-YNotesUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YNotesUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6CD569038BD113D898946AAD03826ABF /* libPods-YNotesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CECD2532E11B459D7D50A487EE15BB0 /* APParallaxHeader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "APParallaxHeader-dummy.m"; sourceTree = "<group>"; };
 		6E3DBD67AD8E7C062C7227FB72D64F39 /* Pods-YNotes-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YNotes-dummy.m"; sourceTree = "<group>"; };
-		73F5B313EB679C29220561D4A4502AF7 /* IGLDropDownMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IGLDropDownMenu.xcconfig; sourceTree = "<group>"; };
-		773C1029DC0CDE1EF9E8810A01A04BEE /* IGLDropDownMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IGLDropDownMenu-dummy.m"; sourceTree = "<group>"; };
+		71A862BCBA3C35E536BB358F45F1C96D /* libPods-YNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78F0CB2FC17F121B63A61A131AA49081 /* IGLDropDownMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IGLDropDownMenu-prefix.pch"; sourceTree = "<group>"; };
+		7BA1759D85F95D74AA3C6334817C9543 /* IGLDropDownMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IGLDropDownMenu-dummy.m"; sourceTree = "<group>"; };
 		7F4EB9E99F80C4CAF5C387DA3BDE0C98 /* Pods-YNotesTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YNotesTests-dummy.m"; sourceTree = "<group>"; };
-		7F9D8A07D440E73B7A558D34118C29C6 /* APParallaxHeader-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "APParallaxHeader-prefix.pch"; sourceTree = "<group>"; };
-		81574623284B1402BA20C12C6CCE3785 /* IGLDropDownMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGLDropDownMenu.h; path = IGLDropDownMenu/IGLDropDownMenu.h; sourceTree = "<group>"; };
+		82591CD6F90637AB6901906DA479A016 /* IGLDropDownMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGLDropDownMenu.h; path = IGLDropDownMenu/IGLDropDownMenu.h; sourceTree = "<group>"; };
+		8F955925C5A1AD28CCE83E1B0C67EE40 /* BFPaperTableViewCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BFPaperTableViewCell.xcconfig; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95461F8F1CC52FCAFC0070945434D3AA /* libPods-YNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E1BCFA49D09EBAA6891042EC50CFEB /* Pods-YNotesTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotesTests-resources.sh"; sourceTree = "<group>"; };
 		9B41211D47014841C430104813400948 /* Pods-YNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotes.release.xcconfig"; sourceTree = "<group>"; };
-		A2279F00D8A2606A2B5EF6E08468CC09 /* IGLDropDownItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGLDropDownItem.h; path = IGLDropDownMenu/IGLDropDownItem.h; sourceTree = "<group>"; };
+		A1FCF31E7D8FE9C220FA332E0BE011A0 /* IGLDropDownItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGLDropDownItem.h; path = IGLDropDownMenu/IGLDropDownItem.h; sourceTree = "<group>"; };
 		A4EF574BC3089EB476C641E499EB0F59 /* Pods-YNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A53C637A5854164D44BF272FBBBEF3D0 /* BFPaperTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFPaperTableViewCell.h; path = Classes/BFPaperTableViewCell.h; sourceTree = "<group>"; };
 		A6AC0A776C9D6061359A8919ABDF4098 /* Pods-YNotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A6CEBC9707A7FE8CD34926D68DC86D02 /* BFPaperTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFPaperTableViewCell.m; path = Classes/BFPaperTableViewCell.m; sourceTree = "<group>"; };
+		A6F44376B5896CC300E5687B17840A35 /* BFPaperTableViewCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BFPaperTableViewCell-dummy.m"; sourceTree = "<group>"; };
 		A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		A9E83A368DF007EF19955D94D2FC81BE /* IGLDropDownItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGLDropDownItem.m; path = IGLDropDownMenu/IGLDropDownItem.m; sourceTree = "<group>"; };
 		AC0CDBCED14A885156470D868C606CE4 /* Pods-YNotesTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotesTests-frameworks.sh"; sourceTree = "<group>"; };
+		B8515C2AFBDED9387466355D6FDEC63A /* APParallaxHeader-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "APParallaxHeader-prefix.pch"; sourceTree = "<group>"; };
 		C7429776B51BFC9F19345A26876623C7 /* Pods-YNotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotesUITests.release.xcconfig"; sourceTree = "<group>"; };
-		D4F073AA05BE64C2DC4C36DAE2234500 /* IGLDropDownMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IGLDropDownMenu-prefix.pch"; sourceTree = "<group>"; };
-		E91C2B878DF0DC3A660F0F86C8AC3E61 /* IGLDropDownMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGLDropDownMenu.m; path = IGLDropDownMenu/IGLDropDownMenu.m; sourceTree = "<group>"; };
+		C8F0C6ADCCDD7F86D2FAD1B1CF9FB2B2 /* UIColor+BFPaperColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+BFPaperColors.h"; path = "UIColor+BFPaperColors/UIColor+BFPaperColors.h"; sourceTree = "<group>"; };
+		C97C425E5514EF4E66A74BBD2301B76F /* APParallaxHeader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "APParallaxHeader-dummy.m"; sourceTree = "<group>"; };
+		CC1F67E96F671A5D5ABECE3249971592 /* IGLDropDownItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGLDropDownItem.m; path = IGLDropDownMenu/IGLDropDownItem.m; sourceTree = "<group>"; };
+		D26AF8E929E6983D9D32DFFFBD73BAF4 /* libUIColor+BFPaperColors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libUIColor+BFPaperColors.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB48FAFC52C8DBC1ACCFB540828F2340 /* IGLDropDownMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGLDropDownMenu.m; path = IGLDropDownMenu/IGLDropDownMenu.m; sourceTree = "<group>"; };
+		DB560D73FCA16BF67C90C306F37B19DE /* UIColor+BFPaperColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UIColor+BFPaperColors.xcconfig"; sourceTree = "<group>"; };
+		E751413347068A3CAB2F1C9BCB6DBA86 /* UIColor+BFPaperColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+BFPaperColors.m"; path = "UIColor+BFPaperColors/UIColor+BFPaperColors.m"; sourceTree = "<group>"; };
+		E87C82C69B19B3582302AC006CE125AF /* libBFPaperTableViewCell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBFPaperTableViewCell.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB7D46FD7852A2620CE65088F64496F /* Pods-YNotesUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotesUITests-frameworks.sh"; sourceTree = "<group>"; };
-		ED584E035CC58CE968B3C34D88D1C6E3 /* libAPParallaxHeader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAPParallaxHeader.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F594497FF96190423C010AA57CEA4D69 /* libAPParallaxHeader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAPParallaxHeader.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6713CEEDDF83A2805E620B0E75106B3 /* Pods-YNotesUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YNotesUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F9B57511A38F72441FD26341FF407928 /* Pods-YNotesTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YNotesTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FFF0D5D64EAA0D9CAB5C03C3251986A5 /* UIScrollView+APParallaxHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+APParallaxHeader.m"; path = "APParallaxHeader/UIScrollView+APParallaxHeader.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		16217E72C6510ABE84BAAA74A4FEB33E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA17C1D02CEB7FA5BC02C654FA6E2B21 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		540BE1F70168FD5644A51DEB6CED708D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67F00120799E8EF9F9A538A7723C1E24 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6D10CA73CAAAD66A4EB154AFC3B4EFC5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -116,11 +173,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D80579F59C2231CA0351850FB98D212 /* Frameworks */ = {
+		9DE5E72D33D9B7A2A97E220F0DD1DE90 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				091149D481BAF2CAFF8B50E6EFCAB921 /* Foundation.framework in Frameworks */,
+				5143B23C949888E0740DF80200A0A16C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +192,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		058A0F0A8D7BD1C7EBE29BFB1F1202FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3284A99DDF875FBD78905C663D404D05 /* APParallaxHeader */,
+				3A0DAA08F4CE14D2ED3B6E04B06708B0 /* BFPaperTableViewCell */,
+				64CBB18ADF4A891A0CA7584A21C212BD /* IGLDropDownMenu */,
+				A40786EA94ACAEA9AD4CEE8A983E3DDE /* UIColor+BFPaperColors */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		09686D0FB16B538FCEDC26ACAD688019 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,27 +221,47 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		25D7664586BDB47C72E7832521731031 /* Support Files */ = {
+		15042920A7BD216602F4ECE56CD6E1E5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				14FEE89F9BBCAC3239429760D84CA170 /* APParallaxHeader.xcconfig */,
-				6CECD2532E11B459D7D50A487EE15BB0 /* APParallaxHeader-dummy.m */,
-				7F9D8A07D440E73B7A558D34118C29C6 /* APParallaxHeader-prefix.pch */,
+				245E59F993ED9AE25D345BA9C5C52817 /* IGLDropDownMenu.xcconfig */,
+				7BA1759D85F95D74AA3C6334817C9543 /* IGLDropDownMenu-dummy.m */,
+				78F0CB2FC17F121B63A61A131AA49081 /* IGLDropDownMenu-prefix.pch */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/APParallaxHeader";
+			path = "../Target Support Files/IGLDropDownMenu";
 			sourceTree = "<group>";
 		};
-		4907814A3433BEFC000B9C623599B0E3 /* Products */ = {
+		3284A99DDF875FBD78905C663D404D05 /* APParallaxHeader */ = {
 			isa = PBXGroup;
 			children = (
-				ED584E035CC58CE968B3C34D88D1C6E3 /* libAPParallaxHeader.a */,
-				3E8A3EB9DA364DCA67E975BD6B9FE46A /* libIGLDropDownMenu.a */,
-				95461F8F1CC52FCAFC0070945434D3AA /* libPods-YNotes.a */,
-				5A75701A1AD0B179D97EB2565AE03946 /* libPods-YNotesTests.a */,
-				6CD569038BD113D898946AAD03826ABF /* libPods-YNotesUITests.a */,
+				175C9C38CE4865804F3B490212CD13B7 /* UIScrollView+APParallaxHeader.h */,
+				FFF0D5D64EAA0D9CAB5C03C3251986A5 /* UIScrollView+APParallaxHeader.m */,
+				F5D6D5F67882855AB1174A30437C94D2 /* Support Files */,
 			);
-			name = Products;
+			path = APParallaxHeader;
+			sourceTree = "<group>";
+		};
+		3A0DAA08F4CE14D2ED3B6E04B06708B0 /* BFPaperTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A53C637A5854164D44BF272FBBBEF3D0 /* BFPaperTableViewCell.h */,
+				A6CEBC9707A7FE8CD34926D68DC86D02 /* BFPaperTableViewCell.m */,
+				AF536A206D95DD7E8BECAC56B3B742E8 /* Support Files */,
+			);
+			path = BFPaperTableViewCell;
+			sourceTree = "<group>";
+		};
+		64CBB18ADF4A891A0CA7584A21C212BD /* IGLDropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A1FCF31E7D8FE9C220FA332E0BE011A0 /* IGLDropDownItem.h */,
+				CC1F67E96F671A5D5ABECE3249971592 /* IGLDropDownItem.m */,
+				82591CD6F90637AB6901906DA479A016 /* IGLDropDownMenu.h */,
+				DB48FAFC52C8DBC1ACCFB540828F2340 /* IGLDropDownMenu.m */,
+				15042920A7BD216602F4ECE56CD6E1E5 /* Support Files */,
+			);
+			path = IGLDropDownMenu;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -181,22 +269,45 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				ED02B374C90D762C1D0922714FA8ADDA /* Pods */,
-				4907814A3433BEFC000B9C623599B0E3 /* Products */,
+				058A0F0A8D7BD1C7EBE29BFB1F1202FF /* Pods */,
+				88670BBF3E38940ECD54066516F77BC2 /* Products */,
 				09686D0FB16B538FCEDC26ACAD688019 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		862BD8CACDADC9D472724C5FD48FDA92 /* IGLDropDownMenu */ = {
+		8377AFABB8CD1B4527F78A9F77462D7D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A2279F00D8A2606A2B5EF6E08468CC09 /* IGLDropDownItem.h */,
-				A9E83A368DF007EF19955D94D2FC81BE /* IGLDropDownItem.m */,
-				81574623284B1402BA20C12C6CCE3785 /* IGLDropDownMenu.h */,
-				E91C2B878DF0DC3A660F0F86C8AC3E61 /* IGLDropDownMenu.m */,
-				B217CEAE191EB0D5969A588561575278 /* Support Files */,
+				DB560D73FCA16BF67C90C306F37B19DE /* UIColor+BFPaperColors.xcconfig */,
+				1E14F35E1CF26E4058E6DDDAE2FCA939 /* UIColor+BFPaperColors-dummy.m */,
+				0BC579A5AC0FF153C8137E394E957616 /* UIColor+BFPaperColors-prefix.pch */,
 			);
-			path = IGLDropDownMenu;
+			name = "Support Files";
+			path = "../Target Support Files/UIColor+BFPaperColors";
+			sourceTree = "<group>";
+		};
+		88670BBF3E38940ECD54066516F77BC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F594497FF96190423C010AA57CEA4D69 /* libAPParallaxHeader.a */,
+				E87C82C69B19B3582302AC006CE125AF /* libBFPaperTableViewCell.a */,
+				0BB29657A19A8BD69E9F507B8AD11668 /* libIGLDropDownMenu.a */,
+				71A862BCBA3C35E536BB358F45F1C96D /* libPods-YNotes.a */,
+				31CDAB7002411BD5E0C7BA3E6F2D8779 /* libPods-YNotesTests.a */,
+				0DE278A2BABFC5279DFF902DEF63E880 /* libPods-YNotesUITests.a */,
+				D26AF8E929E6983D9D32DFFFBD73BAF4 /* libUIColor+BFPaperColors.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A40786EA94ACAEA9AD4CEE8A983E3DDE /* UIColor+BFPaperColors */ = {
+			isa = PBXGroup;
+			children = (
+				C8F0C6ADCCDD7F86D2FAD1B1CF9FB2B2 /* UIColor+BFPaperColors.h */,
+				E751413347068A3CAB2F1C9BCB6DBA86 /* UIColor+BFPaperColors.m */,
+				8377AFABB8CD1B4527F78A9F77462D7D /* Support Files */,
+			);
+			path = "UIColor+BFPaperColors";
 			sourceTree = "<group>";
 		};
 		ABC5F4DF87163109E5445D5F78A7498D /* Pods-YNotesTests */ = {
@@ -214,15 +325,15 @@
 			path = "Target Support Files/Pods-YNotesTests";
 			sourceTree = "<group>";
 		};
-		B217CEAE191EB0D5969A588561575278 /* Support Files */ = {
+		AF536A206D95DD7E8BECAC56B3B742E8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				73F5B313EB679C29220561D4A4502AF7 /* IGLDropDownMenu.xcconfig */,
-				773C1029DC0CDE1EF9E8810A01A04BEE /* IGLDropDownMenu-dummy.m */,
-				D4F073AA05BE64C2DC4C36DAE2234500 /* IGLDropDownMenu-prefix.pch */,
+				8F955925C5A1AD28CCE83E1B0C67EE40 /* BFPaperTableViewCell.xcconfig */,
+				A6F44376B5896CC300E5687B17840A35 /* BFPaperTableViewCell-dummy.m */,
+				3F3F6ACE792E4680A867C7FEF218AFD5 /* BFPaperTableViewCell-prefix.pch */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/IGLDropDownMenu";
+			path = "../Target Support Files/BFPaperTableViewCell";
 			sourceTree = "<group>";
 		};
 		B46D31FAFE6CFA53AAD814008684F1B7 /* Pods-YNotes */ = {
@@ -238,16 +349,6 @@
 			);
 			name = "Pods-YNotes";
 			path = "Target Support Files/Pods-YNotes";
-			sourceTree = "<group>";
-		};
-		BD7B5DBE66C70C3FF6FDA2CF41D64A37 /* APParallaxHeader */ = {
-			isa = PBXGroup;
-			children = (
-				5E8AC7A15DB2861A14171A99B7823C9E /* UIScrollView+APParallaxHeader.h */,
-				21A09DA8AF65483CA4113150B8E6EDDB /* UIScrollView+APParallaxHeader.m */,
-				25D7664586BDB47C72E7832521731031 /* Support Files */,
-			);
-			path = APParallaxHeader;
 			sourceTree = "<group>";
 		};
 		D11EF3DA3E022AD0BF85697BC9ED83B5 /* Pods-YNotesUITests */ = {
@@ -275,13 +376,15 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		ED02B374C90D762C1D0922714FA8ADDA /* Pods */ = {
+		F5D6D5F67882855AB1174A30437C94D2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BD7B5DBE66C70C3FF6FDA2CF41D64A37 /* APParallaxHeader */,
-				862BD8CACDADC9D472724C5FD48FDA92 /* IGLDropDownMenu */,
+				1A7BF42BD650E30DA4CD316368CCD2DA /* APParallaxHeader.xcconfig */,
+				C97C425E5514EF4E66A74BBD2301B76F /* APParallaxHeader-dummy.m */,
+				B8515C2AFBDED9387466355D6FDEC63A /* APParallaxHeader-prefix.pch */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/APParallaxHeader";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,12 +398,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		36565E68258DEE6263CE381613F9E50E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE4AB1AE57149F5D6A0C5F057BA209FE /* BFPaperTableViewCell.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		96023C241590581B11F61348300E430F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3F5CFB23257180E8035F72344B71DFD5 /* IGLDropDownItem.h in Headers */,
 				69E01BC4A485179F7B47F842B6644828 /* IGLDropDownMenu.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE2EC89666B76C882559E99314B8778B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F73803BF696AC6ACCE7F24E5087914F /* UIColor+BFPaperColors.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +439,7 @@
 			);
 			name = "Pods-YNotesUITests";
 			productName = "Pods-YNotesUITests";
-			productReference = 6CD569038BD113D898946AAD03826ABF /* libPods-YNotesUITests.a */;
+			productReference = 0DE278A2BABFC5279DFF902DEF63E880 /* libPods-YNotesUITests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		14CB0DD5E0A80D362DE05ED1ED0875C4 /* Pods-YNotesTests */ = {
@@ -336,7 +455,25 @@
 			);
 			name = "Pods-YNotesTests";
 			productName = "Pods-YNotesTests";
-			productReference = 5A75701A1AD0B179D97EB2565AE03946 /* libPods-YNotesTests.a */;
+			productReference = 31CDAB7002411BD5E0C7BA3E6F2D8779 /* libPods-YNotesTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		510FEA0B6E5372B57D692ADD3CD04F8C /* BFPaperTableViewCell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B34826D9270215E4AA78BA9BBFE9B8D /* Build configuration list for PBXNativeTarget "BFPaperTableViewCell" */;
+			buildPhases = (
+				24D2E6FA0768A2BB54042A7008F1AAFD /* Sources */,
+				16217E72C6510ABE84BAAA74A4FEB33E /* Frameworks */,
+				36565E68258DEE6263CE381613F9E50E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2572177C1EA6F0C56929F1040B4FD9A1 /* PBXTargetDependency */,
+			);
+			name = BFPaperTableViewCell;
+			productName = BFPaperTableViewCell;
+			productReference = E87C82C69B19B3582302AC006CE125AF /* libBFPaperTableViewCell.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		5DF21164C6E1DC7DEE4CA35AD0FD7B25 /* APParallaxHeader */ = {
@@ -353,25 +490,44 @@
 			);
 			name = APParallaxHeader;
 			productName = APParallaxHeader;
-			productReference = ED584E035CC58CE968B3C34D88D1C6E3 /* libAPParallaxHeader.a */;
+			productReference = F594497FF96190423C010AA57CEA4D69 /* libAPParallaxHeader.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		718B081053D64AAF615CDE17DC34B9F0 /* Pods-YNotes */ = {
+		733B991C1FCD86923915E2111EC8786E /* Pods-YNotes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DE7808D0C70D7E3B4F2B636EAEE56C2F /* Build configuration list for PBXNativeTarget "Pods-YNotes" */;
+			buildConfigurationList = 4F1A16B8D2CA63210EABDBD6A49722D0 /* Build configuration list for PBXNativeTarget "Pods-YNotes" */;
 			buildPhases = (
-				D915EDA4F7D38DFAFBE6C0162E7A47FE /* Sources */,
-				9D80579F59C2231CA0351850FB98D212 /* Frameworks */,
+				6D90D65DBD2357EEA08114C2DD9D4FED /* Sources */,
+				540BE1F70168FD5644A51DEB6CED708D /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E046D8D9D21CABD19CF57A853DF669C7 /* PBXTargetDependency */,
-				15DD5D290BD064B09E1DC031914D0570 /* PBXTargetDependency */,
+				1B70D53E3A9E5C896BCF60A1CF47DCDD /* PBXTargetDependency */,
+				3482E09B0A4323DE9F0F84227B077773 /* PBXTargetDependency */,
+				AEC3727CA2C8EA1AEB571BD43B530127 /* PBXTargetDependency */,
+				F22CF0E20E4FABA3CF03E7A6BED68673 /* PBXTargetDependency */,
 			);
 			name = "Pods-YNotes";
 			productName = "Pods-YNotes";
-			productReference = 95461F8F1CC52FCAFC0070945434D3AA /* libPods-YNotes.a */;
+			productReference = 71A862BCBA3C35E536BB358F45F1C96D /* libPods-YNotes.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AA8B567933CA47B8D7C065AECA481215 /* UIColor+BFPaperColors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACB70498638FB703F0F07326FB9BAAAB /* Build configuration list for PBXNativeTarget "UIColor+BFPaperColors" */;
+			buildPhases = (
+				3C66ABF1371168DFAAF5FBC7C006A500 /* Sources */,
+				9DE5E72D33D9B7A2A97E220F0DD1DE90 /* Frameworks */,
+				AE2EC89666B76C882559E99314B8778B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UIColor+BFPaperColors";
+			productName = "UIColor+BFPaperColors";
+			productReference = D26AF8E929E6983D9D32DFFFBD73BAF4 /* libUIColor+BFPaperColors.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		F2FC0AF0815B5D127E0AA79352D5EB6A /* IGLDropDownMenu */ = {
@@ -388,7 +544,7 @@
 			);
 			name = IGLDropDownMenu;
 			productName = IGLDropDownMenu;
-			productReference = 3E8A3EB9DA364DCA67E975BD6B9FE46A /* libIGLDropDownMenu.a */;
+			productReference = 0BB29657A19A8BD69E9F507B8AD11668 /* libIGLDropDownMenu.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -408,25 +564,53 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 4907814A3433BEFC000B9C623599B0E3 /* Products */;
+			productRefGroup = 88670BBF3E38940ECD54066516F77BC2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				5DF21164C6E1DC7DEE4CA35AD0FD7B25 /* APParallaxHeader */,
+				510FEA0B6E5372B57D692ADD3CD04F8C /* BFPaperTableViewCell */,
 				F2FC0AF0815B5D127E0AA79352D5EB6A /* IGLDropDownMenu */,
-				718B081053D64AAF615CDE17DC34B9F0 /* Pods-YNotes */,
+				733B991C1FCD86923915E2111EC8786E /* Pods-YNotes */,
 				14CB0DD5E0A80D362DE05ED1ED0875C4 /* Pods-YNotesTests */,
 				0BAD7FEE141F655668D5B12523823F3C /* Pods-YNotesUITests */,
+				AA8B567933CA47B8D7C065AECA481215 /* UIColor+BFPaperColors */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		24D2E6FA0768A2BB54042A7008F1AAFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7171025EECA9DCE01D74FE201450C2CE /* BFPaperTableViewCell-dummy.m in Sources */,
+				AA5B9FD37D1E361C9448FE5DD28B8120 /* BFPaperTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C66ABF1371168DFAAF5FBC7C006A500 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E05B0BBDED47F6FF68526C78094356B /* UIColor+BFPaperColors-dummy.m in Sources */,
+				CFABF8E41DE30F7BA8C8A07578069C5E /* UIColor+BFPaperColors.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B2B93EC072E056A7D87F2F5C4A3899F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2D7511AE7895500790CC9B7D5E6187F4 /* Pods-YNotesTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D90D65DBD2357EEA08114C2DD9D4FED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B6CBBDE16044470E631DF11AA86D2A /* Pods-YNotes-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,14 +632,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D915EDA4F7D38DFAFBE6C0162E7A47FE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F2E6334F82C43F9A322B612F878310B8 /* Pods-YNotes-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DBAF800D9CA0EBB27AF2E9BE4EBED372 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -468,32 +644,113 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		15DD5D290BD064B09E1DC031914D0570 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = IGLDropDownMenu;
-			target = F2FC0AF0815B5D127E0AA79352D5EB6A /* IGLDropDownMenu */;
-			targetProxy = 3374EA30578F6628F33694D8C818E3C9 /* PBXContainerItemProxy */;
-		};
-		E046D8D9D21CABD19CF57A853DF669C7 /* PBXTargetDependency */ = {
+		1B70D53E3A9E5C896BCF60A1CF47DCDD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = APParallaxHeader;
 			target = 5DF21164C6E1DC7DEE4CA35AD0FD7B25 /* APParallaxHeader */;
-			targetProxy = 24CA56475954C8F2236200314EFC24AD /* PBXContainerItemProxy */;
+			targetProxy = 49F43EDE3398E05E74A2CD199DDD682B /* PBXContainerItemProxy */;
+		};
+		2572177C1EA6F0C56929F1040B4FD9A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "UIColor+BFPaperColors";
+			target = AA8B567933CA47B8D7C065AECA481215 /* UIColor+BFPaperColors */;
+			targetProxy = 2964611C28EBAD779FA5AC917E50FB0D /* PBXContainerItemProxy */;
+		};
+		3482E09B0A4323DE9F0F84227B077773 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BFPaperTableViewCell;
+			target = 510FEA0B6E5372B57D692ADD3CD04F8C /* BFPaperTableViewCell */;
+			targetProxy = 2E9754B13908B5FA3C1F38B6D4CEA967 /* PBXContainerItemProxy */;
+		};
+		AEC3727CA2C8EA1AEB571BD43B530127 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IGLDropDownMenu;
+			target = F2FC0AF0815B5D127E0AA79352D5EB6A /* IGLDropDownMenu */;
+			targetProxy = 47930609CD3D803C3D5901FA2D96A746 /* PBXContainerItemProxy */;
+		};
+		F22CF0E20E4FABA3CF03E7A6BED68673 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "UIColor+BFPaperColors";
+			target = AA8B567933CA47B8D7C065AECA481215 /* UIColor+BFPaperColors */;
+			targetProxy = 44183760FA9EB30CF56C7BA411FF8DEA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0D2A001EBC6923D3064CF196DC8E0521 /* Release */ = {
+		203698A96A7B09C53BF7EF57F5A67590 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B41211D47014841C430104813400948 /* Pods-YNotes.release.xcconfig */;
+			baseConfigurationReference = DB560D73FCA16BF67C90C306F37B19DE /* UIColor+BFPaperColors.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/UIColor+BFPaperColors/UIColor+BFPaperColors-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		287D8FB9CC3876FE4C397EEADA9A8B28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F955925C5A1AD28CCE83E1B0C67EE40 /* BFPaperTableViewCell.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BFPaperTableViewCell/BFPaperTableViewCell-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2BAE98BB118B35115ECE097B2D8F3911 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F955925C5A1AD28CCE83E1B0C67EE40 /* BFPaperTableViewCell.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BFPaperTableViewCell/BFPaperTableViewCell-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3E2B97899B7221C8467F04401FD33320 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 123703DA4E8B76DFA306C30F1A3135EA /* Pods-YNotes.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -502,7 +759,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -544,7 +801,7 @@
 		};
 		47CA83DAADE60A651B78EC3D31DBD9C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14FEE89F9BBCAC3239429760D84CA170 /* APParallaxHeader.xcconfig */;
+			baseConfigurationReference = 1A7BF42BD650E30DA4CD316368CCD2DA /* APParallaxHeader.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -562,6 +819,27 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
+		};
+		50F31A22685692A7E32AC2B85E7EF65D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB560D73FCA16BF67C90C306F37B19DE /* UIColor+BFPaperColors.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/UIColor+BFPaperColors/UIColor+BFPaperColors-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
 		};
 		546D390F770A75A87235BA1B7691E993 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -647,27 +925,6 @@
 			};
 			name = Release;
 		};
-		837031AF0E8B21C6523CBE66EC0F43C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 123703DA4E8B76DFA306C30F1A3135EA /* Pods-YNotes.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		88B75650D2E36F3E831246CDEB2A4477 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A6AC0A776C9D6061359A8919ABDF4098 /* Pods-YNotesUITests.debug.xcconfig */;
@@ -710,9 +967,30 @@
 			};
 			name = Debug;
 		};
+		AE1146EA4CB70E7A6523CBCBA1EA914E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B41211D47014841C430104813400948 /* Pods-YNotes.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		DC8FFAD4729018DB882C2CBC7F985668 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14FEE89F9BBCAC3239429760D84CA170 /* APParallaxHeader.xcconfig */;
+			baseConfigurationReference = 1A7BF42BD650E30DA4CD316368CCD2DA /* APParallaxHeader.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -733,7 +1011,7 @@
 		};
 		F0A33D9538BA3D837B70382410C36253 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73F5B313EB679C29220561D4A4502AF7 /* IGLDropDownMenu.xcconfig */;
+			baseConfigurationReference = 245E59F993ED9AE25D345BA9C5C52817 /* IGLDropDownMenu.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -754,7 +1032,7 @@
 		};
 		FF7E0C3B297CCFB04F3545B2B3063D0A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73F5B313EB679C29220561D4A4502AF7 /* IGLDropDownMenu.xcconfig */;
+			baseConfigurationReference = 245E59F993ED9AE25D345BA9C5C52817 /* IGLDropDownMenu.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -785,11 +1063,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		4F1A16B8D2CA63210EABDBD6A49722D0 /* Build configuration list for PBXNativeTarget "Pods-YNotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E2B97899B7221C8467F04401FD33320 /* Debug */,
+				AE1146EA4CB70E7A6523CBCBA1EA914E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5E2B4774511D97F696E40838C3785669 /* Build configuration list for PBXNativeTarget "IGLDropDownMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0A33D9538BA3D837B70382410C36253 /* Debug */,
 				FF7E0C3B297CCFB04F3545B2B3063D0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B34826D9270215E4AA78BA9BBFE9B8D /* Build configuration list for PBXNativeTarget "BFPaperTableViewCell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BAE98BB118B35115ECE097B2D8F3911 /* Debug */,
+				287D8FB9CC3876FE4C397EEADA9A8B28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -803,20 +1099,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		ACB70498638FB703F0F07326FB9BAAAB /* Build configuration list for PBXNativeTarget "UIColor+BFPaperColors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				203698A96A7B09C53BF7EF57F5A67590 /* Debug */,
+				50F31A22685692A7E32AC2B85E7EF65D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C0ECB0CC03B74DA7A29CF3D7C6E9454C /* Build configuration list for PBXNativeTarget "Pods-YNotesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				944709E466099EF1AC6DAF3B4905EE4A /* Debug */,
 				72F8AF726C484D856C135917C19E791F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DE7808D0C70D7E3B4F2B636EAEE56C2F /* Build configuration list for PBXNativeTarget "Pods-YNotes" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				837031AF0E8B21C6523CBE66EC0F43C6 /* Debug */,
-				0D2A001EBC6923D3064CF196DC8E0521 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

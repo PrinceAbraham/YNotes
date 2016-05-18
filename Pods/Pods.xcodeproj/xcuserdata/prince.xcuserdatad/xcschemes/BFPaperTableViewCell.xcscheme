@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '733B991C1FCD86923915E2111EC8786E'
-               BlueprintName = 'Pods-YNotes'
+               BlueprintIdentifier = '510FEA0B6E5372B57D692ADD3CD04F8C'
+               BlueprintName = 'BFPaperTableViewCell'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-YNotes.a'>
+               BuildableName = 'libBFPaperTableViewCell.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

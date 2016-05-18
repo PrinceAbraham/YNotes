@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '733B991C1FCD86923915E2111EC8786E'
-               BlueprintName = 'Pods-YNotes'
+               BlueprintIdentifier = 'AA8B567933CA47B8D7C065AECA481215'
+               BlueprintName = 'UIColor+BFPaperColors'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-YNotes.a'>
+               BuildableName = 'libUIColor+BFPaperColors.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ViewControllerB.h"
 #import "ConstantsClass.h"
+#import "headerForTable.h"
 
 @import UIKit;
 
@@ -244,7 +245,7 @@ UIDevice * device;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     //Gets the index number of the selected table
-    currentIndex = indexPath.row;
+    currentIndex = indexPath.row-1;
     
     [self performSegueWithIdentifier:@"addOrEditSegue" sender:nil];
     
@@ -253,22 +254,34 @@ UIDevice * device;
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     //Sets the number of rows
-    return [displayArr count];
+    return [displayArr count]+1;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString *SimpleIdentifier = @"Simple Indentifier";
+    int i = indexPath.row;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SimpleIdentifier];
+    i--;
     
-    if(cell==nil){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SimpleIdentifier];
+    NSString *SimpleIdentifier = @"cell";
+    
+    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:SimpleIdentifier];
+    
+    //test
+    
+    NSString *SimpleIdentifierh = @"headerForTable";
+    
+    
+    headerForTable *hcell = (headerForTable *)[tableView dequeueReusableCellWithIdentifier:SimpleIdentifierh];
+    if(i>=0){
+        cell.textLabel.text = displayArr[i];
     }
     
-    cell.textLabel.text = displayArr[indexPath.row];
-    
-    return cell;
+    if (indexPath.row == 0) {
+        return hcell;
+    }else{
+        return cell;//
+    }
 }
 
 -(void) getInfo{
@@ -356,7 +369,6 @@ UIDevice * device;
         [customView setContentMode:UIViewContentModeScaleAspectFill];
         [self.table addParallaxWithView:customView andHeight:160];
             
-            [pickerMenu setFrame:CGRectMake(0, 120, self.view.frame.size.width, 45)];
             pickerMenu.menuText = @"       Sort";
             //[pickerMenu setMenuIconImage:[UIImage imageNamed:@"sort.png"]];
             pickerMenu.paddingLeft = self.view.frame.size.width/2.6;
@@ -366,6 +378,7 @@ UIDevice * device;
             pickerMenu.itemAnimationDelay = 0.05;
             pickerMenu.menuButtonStatic = NO;
             [pickerMenu setDropDownItems:pickerDropDown];
+            [pickerMenu setFrame:CGRectMake(0, 120, self.view.frame.size.width, 45)];
             [self.view addSubview:pickerMenu];
             [pickerMenu reloadView];
             break;
@@ -377,15 +390,14 @@ UIDevice * device;
             [customView setContentMode:UIViewContentModeScaleAspectFill];
             [self.table addParallaxWithView:customView andHeight:160];
             
-            [pickerMenu setFrame:CGRectMake(0, 100, self.view.frame.size.width, 45)];
             pickerMenu.menuText = @"       Sort";
-            //[pickerMenu setMenuIconImage:[UIImage imageNamed:@"sort.png"]];
             pickerMenu.paddingLeft = self.view.frame.size.width/2.28;
             pickerMenu.backgroundColor = [UIColor clearColor];
             pickerMenu.type = IGLDropDownMenuTypeNormal;
             pickerMenu.gutterY = 5;
             pickerMenu.itemAnimationDelay = 0.05;
             pickerMenu.menuButtonStatic = NO;
+            [pickerMenu setFrame:CGRectMake(0, 100, self.view.frame.size.width, 45)];
             [pickerMenu setDropDownItems:pickerDropDown];
             [self.view addSubview:pickerMenu];
             [pickerMenu reloadView];
@@ -398,9 +410,7 @@ UIDevice * device;
             [customView setContentMode:UIViewContentModeScaleAspectFill];
             [self.table addParallaxWithView:customView andHeight:160];
             
-            [pickerMenu setFrame:CGRectMake(0, 100, self.view.frame.size.width, 45)];
             pickerMenu.menuText = @"       Sort";
-            //[pickerMenu setMenuIconImage:[UIImage imageNamed:@"sort.png"]];
             pickerMenu.paddingLeft = self.view.frame.size.width/2.28;
             pickerMenu.backgroundColor = [UIColor clearColor];
             pickerMenu.type = IGLDropDownMenuTypeNormal;
@@ -408,6 +418,7 @@ UIDevice * device;
             pickerMenu.itemAnimationDelay = 0.05;
             pickerMenu.menuButtonStatic = NO;
             [pickerMenu setDropDownItems:pickerDropDown];
+            [pickerMenu setFrame:CGRectMake(0, 100, self.view.frame.size.width, 45)];
             [self.view addSubview:pickerMenu];
             [pickerMenu reloadView];
             break;
