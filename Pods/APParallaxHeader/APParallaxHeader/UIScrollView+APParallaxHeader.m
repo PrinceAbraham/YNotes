@@ -70,7 +70,7 @@ static char UIScrollViewParallaxView;
     }
     else
     {
-        APParallaxView *parallaxView = [[APParallaxView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, height)];
+        APParallaxView *parallaxView = [[APParallaxView alloc] initWithFrame:CGRectMake(0, 0, 680, height)];
         [parallaxView setClipsToBounds:YES];
         [view setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
         [parallaxView addSubview:view];
@@ -242,10 +242,13 @@ static char UIScrollViewParallaxView;
     
     if(self.state == APParallaxTrackingActive) {
         CGFloat yOffset = contentOffset.y*-1;
+        NSLog(@"%z", contentOffset);
         if ([self.delegate respondsToSelector:@selector(parallaxView:willChangeFrame:)]) {
             [self.delegate parallaxView:self willChangeFrame:self.frame];
         }
-        
+        if(yOffset <0){
+            yOffset =0;
+        }
         [self setFrame:CGRectMake(0, contentOffset.y, CGRectGetWidth(self.frame), yOffset)];
         
         if ([self.delegate respondsToSelector:@selector(parallaxView:didChangeFrame:)]) {

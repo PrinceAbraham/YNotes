@@ -121,7 +121,6 @@ IGLDropDownMenu *pickerMenu;
     pickerMenu.delegate = self;
     //    picker.hidden = true;
     [self toggle:nil];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -346,7 +345,7 @@ IGLDropDownMenu *pickerMenu;
         // add parallax with image
         UIView *customView = [[UIView alloc] init];
         [customView setFrame:CGRectMake(0, 0, 320, 160)];
-        [self.table addParallaxWithView:customView andHeight:160];
+        [self.table addParallaxWithView:parralaximg andHeight:160];
         parallaxWithView = NO;
         
         // Update the toggle button
@@ -359,8 +358,9 @@ IGLDropDownMenu *pickerMenu;
      *  frame of the parallaxView changes.
      *  Totally optional thou.
      */
-    self.table.parallaxView.delegate = self;
+    //self.table.parallaxView.delegate = self;
     
+    self.table.parallaxView.delegate = nil;
 }
 
 - (void) orientationChanged:(NSNotification *)note
