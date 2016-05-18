@@ -10,6 +10,8 @@
 #import "ViewControllerB.h"
 #import "ConstantsClass.h"
 #import "headerForTable.h"
+#import "BFPaperTableViewCell.h"
+#import "UIColor+BFPaperColors.h"
 
 @import UIKit;
 
@@ -261,6 +263,18 @@ UIDevice * device;
     
     int i = indexPath.row;
     
+    BFPaperTableViewCell *bfCell = [tableView dequeueReusableCellWithIdentifier:@"BFPaperCell"];
+    
+    bfCell.rippleFromTapLocation = NO; // Will always ripple from center if NO.
+    bfCell.tapCircleColor = [[UIColor paperColorLime] colorWithAlphaComponent:0.3f];
+    bfCell.backgroundFadeColor = [UIColor paperColorBlue];
+    //bfCell.backgroundColor = [UIColor redColor];
+    bfCell.letBackgroundLinger = NO;
+    bfCell.tapCircleDiameter = bfPaperTableViewCell_tapCircleDiameterSmall;
+    //bfCell.textLabel.text =@"What";
+    if (!bfCell) {
+        bfCell = [[BFPaperTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BFPaperCell"];
+    }
     i--;
     
     NSString *SimpleIdentifier = @"cell";
@@ -274,13 +288,13 @@ UIDevice * device;
     
     headerForTable *hcell = (headerForTable *)[tableView dequeueReusableCellWithIdentifier:SimpleIdentifierh];
     if(i>=0){
-        cell.textLabel.text = displayArr[i];
+        bfCell.textLabel.text = displayArr[i];
     }
     
     if (indexPath.row == 0) {
         return hcell;
     }else{
-        return cell;//
+        return bfCell;
     }
 }
 
