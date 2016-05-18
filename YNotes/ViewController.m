@@ -49,9 +49,13 @@ NSMutableString *searchText;
 
 NSMutableArray *pickerDropDown;
 
+UIImageView *customView;
+
 IGLDropDownItem *pickerItem[3];
 
 IGLDropDownMenu *pickerMenu;
+
+UIDevice * device;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -82,6 +86,8 @@ IGLDropDownMenu *pickerMenu;
     dateModifiedArr = [[NSMutableArray alloc]init];
     
     pickedData = [[NSString alloc]init];
+    
+    customView = [[UIImageView alloc] init];
     
     searchText = [[NSMutableString alloc] init];
     
@@ -120,11 +126,11 @@ IGLDropDownMenu *pickerMenu;
     searchBar.delegate = self;
     pickerMenu.delegate = self;
     //    picker.hidden = true;
-    [self toggle:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     //Reloads the Table
+    
     [self getInfo];
     searchBar.text =@"";
     [self.table reloadData];
@@ -330,51 +336,26 @@ IGLDropDownMenu *pickerMenu;
     NSLog(@"parallaxView:didChangeFrame: %@", NSStringFromCGRect(frame));
 }
 
-- (void)toggle:(id)sender {
-    /**
-     *  For demo purposes this view controller either adds a parallaxView with a custom view
-     *  or a parallaxView with an image.
-     */
-    if(parallaxWithView == NO) {
-        UIImageView *customView = [[UIImageView alloc] init];
-        [customView setFrame:CGRectMake(0, 0, 400, 240)];
-        customView.image = [UIImage imageNamed:@"parralaxImg.jpg"];
-        [customView setContentMode:UIViewContentModeScaleAspectFill];
-        [self.table addParallaxWithView:customView andHeight:240];
-        
-        parallaxWithView = YES;
-    }
-    else {
-        // add parallax with image
-        UIImageView *customView = [[UIImageView alloc] init];
-        [customView setFrame:CGRectMake(0, 0, 400, 160)];
-        customView.image = [UIImage imageNamed:@"parralaxImg.jpg"];
-        [customView setContentMode:UIViewContentModeScaleAspectFill];
-        [self.table addParallaxWithView:customView andHeight:160];
-        parallaxWithView = NO;
-        
-        // Update the toggle button
-        //        UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"with view" style:UIBarButtonItemStylePlain target:self action:@selector(toggle:)];
-        //        [self.navigationItem setRightBarButtonItem:barButton];
-    }
-    
-    /**
-     *  Setting a delegate for the parallaxView will allow you to get callbacks for when the
-     *  frame of the parallaxView changes.
-     *  Totally optional thou.
-     */
-    //self.table.parallaxView.delegate = self;
-    
-    //self.table.parallaxView.delegate = nil;
-}
 
 - (void) orientationChanged:(NSNotification *)note
 {
     [pickerMenu selectItemAtIndex:[pickerMenu selectedIndex]];
-    UIDevice * device = note.object;
+    
+    device = note.object;
+    
+    UIImageView *customView = [[UIImageView alloc] init];
+    
+    //[self toggle:nil];
+    
     switch(device.orientation)
     {
         case UIDeviceOrientationPortrait:
+    
+        [customView setFrame:CGRectMake(0, 0, 480, 160)];
+        customView.image = [UIImage imageNamed:@"parralaxImg.jpg"];
+        [customView setContentMode:UIViewContentModeScaleAspectFill];
+        [self.table addParallaxWithView:customView andHeight:160];
+            
             [pickerMenu setFrame:CGRectMake(0, 120, self.view.frame.size.width, 45)];
             pickerMenu.menuText = @"       Sort";
             //[pickerMenu setMenuIconImage:[UIImage imageNamed:@"sort.png"]];
@@ -387,14 +368,19 @@ IGLDropDownMenu *pickerMenu;
             [pickerMenu setDropDownItems:pickerDropDown];
             [self.view addSubview:pickerMenu];
             [pickerMenu reloadView];
-            
             break;
             
         case UIDeviceOrientationLandscapeLeft:
+
+            [customView setFrame:CGRectMake(0, 0, 680, 240)];
+            customView.image = [UIImage imageNamed:@"parralaxImg.jpg"];
+            [customView setContentMode:UIViewContentModeScaleAspectFill];
+            [self.table addParallaxWithView:customView andHeight:160];
+            
             [pickerMenu setFrame:CGRectMake(0, 100, self.view.frame.size.width, 45)];
             pickerMenu.menuText = @"       Sort";
             //[pickerMenu setMenuIconImage:[UIImage imageNamed:@"sort.png"]];
-            pickerMenu.paddingLeft = self.view.frame.size.width/2.4;
+            pickerMenu.paddingLeft = self.view.frame.size.width/2.28;
             pickerMenu.backgroundColor = [UIColor clearColor];
             pickerMenu.type = IGLDropDownMenuTypeNormal;
             pickerMenu.gutterY = 5;
@@ -406,10 +392,16 @@ IGLDropDownMenu *pickerMenu;
             break;
             
         case UIDeviceOrientationLandscapeRight:
+            
+            [customView setFrame:CGRectMake(0, 0, 680, 240)];
+            customView.image = [UIImage imageNamed:@"parralaxImg.jpg"];
+            [customView setContentMode:UIViewContentModeScaleAspectFill];
+            [self.table addParallaxWithView:customView andHeight:160];
+            
             [pickerMenu setFrame:CGRectMake(0, 100, self.view.frame.size.width, 45)];
             pickerMenu.menuText = @"       Sort";
             //[pickerMenu setMenuIconImage:[UIImage imageNamed:@"sort.png"]];
-            pickerMenu.paddingLeft = self.view.frame.size.width/2.4;
+            pickerMenu.paddingLeft = self.view.frame.size.width/2.28;
             pickerMenu.backgroundColor = [UIColor clearColor];
             pickerMenu.type = IGLDropDownMenuTypeNormal;
             pickerMenu.gutterY = 5;
