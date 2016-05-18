@@ -128,6 +128,8 @@ UIDevice * device;
     
     searchBar.delegate = self;
     pickerMenu.delegate = self;
+    self.table.backgroundColor= [UIColor paperColorGray];
+    self.view.backgroundColor = [UIColor paperColorGray50];
     //    picker.hidden = true;
 }
 
@@ -266,9 +268,9 @@ UIDevice * device;
     BFPaperTableViewCell *bfCell = [tableView dequeueReusableCellWithIdentifier:@"BFPaperCell"];
     
     bfCell.rippleFromTapLocation = NO; // Will always ripple from center if NO.
-    bfCell.tapCircleColor = [[UIColor paperColorLime] colorWithAlphaComponent:0.3f];
-    bfCell.backgroundFadeColor = [UIColor paperColorBlue];
-    //bfCell.backgroundColor = [UIColor redColor];
+    bfCell.tapCircleColor = [[UIColor paperColorGray] colorWithAlphaComponent:0.5f];
+    bfCell.backgroundFadeColor = [UIColor whiteColor];
+    bfCell.backgroundColor = [UIColor paperColorGray200];
     bfCell.letBackgroundLinger = NO;
     bfCell.tapCircleDiameter = bfPaperTableViewCell_tapCircleDiameterSmall;
     //bfCell.textLabel.text =@"What";
