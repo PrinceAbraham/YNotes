@@ -8,7 +8,7 @@
 
 #import "ViewControllerB.h"
 #import "ConstantsClass.h"
-
+#import "UIColor+BFPaperColors.h"
 
 
 @import UIKit;
@@ -157,6 +157,12 @@ NSMutableArray *arrayOfNoteOBJ;
     [self.eventStoreInstance requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
         
     }];
+//    CAGradientLayer *gradient = [CAGradientLayer layer];
+//    gradient.frame = self.view.bounds;
+//    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor paperColorDeepOrange] CGColor], (id)[[UIColor paperColorDeepOrange100] CGColor], nil];
+//    [self.view.layer insertSublayer:gradient atIndex:0];
+    
+    self.view.backgroundColor = [UIColor paperColorDeepOrange];
     
 }
 
