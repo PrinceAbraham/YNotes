@@ -22,6 +22,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *reminderTime;
 
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+
 @end
 
 @implementation ViewControllerB
@@ -56,6 +58,8 @@ NSMutableArray *arrayOfNoteOBJ;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
+    
+    messageField.layer.cornerRadius = 3.0f;
     
     note= [[Note alloc]init];
     
@@ -112,8 +116,12 @@ NSMutableArray *arrayOfNoteOBJ;
         reminderIsSet = self.reminderIsSet;
         indexForTable = self.indexForTable;
         tempAttributedString = messageStringWAttachments;
+        
+        _deleteButton.hidden = NO;
     }else{
+        _deleteButton.hidden = YES;
         messageStringWAttachments = [[NSMutableAttributedString alloc]init];
+        
     }
     
     //checks if theres a user defaults so that info could be retrived
@@ -162,7 +170,7 @@ NSMutableArray *arrayOfNoteOBJ;
 //    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor paperColorDeepOrange] CGColor], (id)[[UIColor paperColorDeepOrange100] CGColor], nil];
 //    [self.view.layer insertSublayer:gradient atIndex:0];
     
-    self.view.backgroundColor = myColor;
+    self.view.backgroundColor = [UIColor paperColorGray50];
     
 }
 

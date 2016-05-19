@@ -20,6 +20,7 @@
 		A3BA12C61CD3940200AB76B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3BA12C41CD3940200AB76B4 /* LaunchScreen.storyboard */; };
 		A3BA12D11CD3940200AB76B4 /* YNotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BA12D01CD3940200AB76B4 /* YNotesTests.m */; };
 		A3BA12DC1CD3940200AB76B4 /* YNotesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BA12DB1CD3940200AB76B4 /* YNotesUITests.m */; };
+		A3F215941CEE51E500405AE4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F215931CEE51E500405AE4 /* CoreText.framework */; };
 		A42A6C53EC7BCC0F54F3E101 /* libPods-YNotes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9646DFA460DF2A3610EE18B /* libPods-YNotes.a */; };
 		EDE8B53A66E8C542357B1C1B /* libPods-YNotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6A70A95C3F8ADC0DD1DEAC /* libPods-YNotesTests.a */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		A3BA12D71CD3940200AB76B4 /* YNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BA12DB1CD3940200AB76B4 /* YNotesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNotesUITests.m; sourceTree = "<group>"; };
 		A3BA12DD1CD3940200AB76B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3F215931CEE51E500405AE4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		C6469F771352C64C1554D0F9 /* libPods-YNotesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD73DF20C50B650C10E7314C /* Pods-YNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNotesTests/Pods-YNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E30ADE81DD8962C00C64D781 /* Pods-YNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNotes/Pods-YNotes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F215941CEE51E500405AE4 /* CoreText.framework in Frameworks */,
 				A42A6C53EC7BCC0F54F3E101 /* libPods-YNotes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +196,7 @@
 		F63EB77CC57F65EA95327A66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A3F215931CEE51E500405AE4 /* CoreText.framework */,
 				F9646DFA460DF2A3610EE18B /* libPods-YNotes.a */,
 				2E6A70A95C3F8ADC0DD1DEAC /* libPods-YNotesTests.a */,
 				C6469F771352C64C1554D0F9 /* libPods-YNotesUITests.a */,

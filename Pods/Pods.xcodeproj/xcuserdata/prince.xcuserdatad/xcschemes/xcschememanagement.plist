@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FlatUIKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IGLDropDownMenu.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,17 +67,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>733B991C1FCD86923915E2111EC8786E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>AA8B567933CA47B8D7C065AECA481215</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B212B311C0E676C92DDE9E1371470DED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>F2FC0AF0815B5D127E0AA79352D5EB6A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F6369DCF9EF8959EE460063E1C27CF48</key>
 		<dict>
 			<key>primary</key>
 			<true/>

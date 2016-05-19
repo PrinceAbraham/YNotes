@@ -9,6 +9,7 @@ target 'YNotes' do
 pod 'APParallaxHeader'
 pod 'IGLDropDownMenu'
 pod 'BFPaperTableViewCell', '~> 2.3.3'
+pod 'FlatUIKit'
 
   target 'YNotesTests' do
     inherit! :search_paths

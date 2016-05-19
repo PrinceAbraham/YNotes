@@ -7,35 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		043479BEEFDA12CEC42B900E3E1DCAB3 /* IGLDropDownMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA1759D85F95D74AA3C6334817C9543 /* IGLDropDownMenu-dummy.m */; };
-		2212BED18AC89CDC5B330E0AA4AE47D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
+		043479BEEFDA12CEC42B900E3E1DCAB3 /* IGLDropDownMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F2BA683F96D717D996573CDBD8DC76 /* IGLDropDownMenu-dummy.m */; };
+		0717D5268A710DA08863752F9B1D58E3 /* FUIAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 44D653FE1E5CBBF06AF778C2B4B90A73 /* FUIAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		080F4E9955E3238ACBF7841D59AD560C /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA1BACBA6AF2EE09E7EA0D2B97CAA35 /* UIColor+FlatUI.m */; };
+		093ACBFCEC27BAEBC6571605ECCBDE90 /* FlatUIKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B771A996CE4E57E72D9C304EF9C6B77 /* FlatUIKit-dummy.m */; };
+		11273E7B073B811C487CFE5CBD21A16B /* UIProgressView+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = FCA5694F8344D0B04A385245E19F14BF /* UIProgressView+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18DEAC8A6761C4F43C3C35F6226D2DA6 /* FUICellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4556348B013457482884B8867E267D /* FUICellBackgroundView.m */; };
+		2212BED18AC89CDC5B330E0AA4AE47D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68CB1D3DA0E719CA76BF65D46A0E32 /* Foundation.framework */; };
+		249745FDAA5F7CBE34583963221DE108 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68CB1D3DA0E719CA76BF65D46A0E32 /* Foundation.framework */; };
+		25BEC83518A3B6BEA9826E2CE8C83EDD /* UIImage+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8508303B1DC2694FEF10B068B0FAAA /* UIImage+FlatUI.m */; };
+		2710CCCBBA2934330AA6B0E93DF8B157 /* UIBarButtonItem+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B76EC8A6AAD269A6115F4DD640F1A4F /* UIBarButtonItem+FlatUI.m */; };
 		2D7511AE7895500790CC9B7D5E6187F4 /* Pods-YNotesTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4EB9E99F80C4CAF5C387DA3BDE0C98 /* Pods-YNotesTests-dummy.m */; };
-		3F5CFB23257180E8035F72344B71DFD5 /* IGLDropDownItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A1FCF31E7D8FE9C220FA332E0BE011A0 /* IGLDropDownItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4F73803BF696AC6ACCE7F24E5087914F /* UIColor+BFPaperColors.h in Headers */ = {isa = PBXBuildFile; fileRef = C8F0C6ADCCDD7F86D2FAD1B1CF9FB2B2 /* UIColor+BFPaperColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5143B23C949888E0740DF80200A0A16C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
-		5E6A2F14807DB59C84DFBB88AC3C654D /* IGLDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DB48FAFC52C8DBC1ACCFB540828F2340 /* IGLDropDownMenu.m */; };
-		67F00120799E8EF9F9A538A7723C1E24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
-		6970139DF66AD5EC7BAB7E72F03C3659 /* UIScrollView+APParallaxHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 175C9C38CE4865804F3B490212CD13B7 /* UIScrollView+APParallaxHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		69E01BC4A485179F7B47F842B6644828 /* IGLDropDownMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 82591CD6F90637AB6901906DA479A016 /* IGLDropDownMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E05B0BBDED47F6FF68526C78094356B /* UIColor+BFPaperColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E14F35E1CF26E4058E6DDDAE2FCA939 /* UIColor+BFPaperColors-dummy.m */; };
-		7171025EECA9DCE01D74FE201450C2CE /* BFPaperTableViewCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F44376B5896CC300E5687B17840A35 /* BFPaperTableViewCell-dummy.m */; };
-		7785FD5615566AE96CF1873255565808 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
-		8480858A7BA9ECA2EE7A5107D34F7183 /* APParallaxHeader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C97C425E5514EF4E66A74BBD2301B76F /* APParallaxHeader-dummy.m */; };
-		8B4419E6EE985E633DDD95327A2EF22D /* IGLDropDownItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1F67E96F671A5D5ABECE3249971592 /* IGLDropDownItem.m */; };
-		8E97587F1C1520BDEC1F805EB5403E4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
-		A0ED24856F5B46FE17D2496F6A833F1A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */; };
-		AA17C1D02CEB7FA5BC02C654FA6E2B21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
-		AA5B9FD37D1E361C9448FE5DD28B8120 /* BFPaperTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CEBC9707A7FE8CD34926D68DC86D02 /* BFPaperTableViewCell.m */; };
-		C9B6CBBDE16044470E631DF11AA86D2A /* Pods-YNotes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3DBD67AD8E7C062C7227FB72D64F39 /* Pods-YNotes-dummy.m */; };
-		CFABF8E41DE30F7BA8C8A07578069C5E /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E751413347068A3CAB2F1C9BCB6DBA86 /* UIColor+BFPaperColors.m */; };
-		E9A6CAD308EC7F78F474E74679454206 /* UIScrollView+APParallaxHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF0D5D64EAA0D9CAB5C03C3251986A5 /* UIScrollView+APParallaxHeader.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		EC49B6FCF12F4F5AB00B8EF8627871E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
-		EE4AB1AE57149F5D6A0C5F057BA209FE /* BFPaperTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A53C637A5854164D44BF272FBBBEF3D0 /* BFPaperTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FAEE204DD16EE49A5E80DFD75C84121B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 091D54A73E1E8BB182C9D7D245AF1C2F /* UIKit.framework */; };
+		31F701CC2A0099218A3FF5678E9474DC /* UIColor+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 92D97BD41A320DC266B6FA0C67F484DE /* UIColor+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3624E3389B8DB5DC5B2B8A27F6F18B5B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDEC88C6EF2924E7EE6531D7F53E4D59 /* CoreText.framework */; };
+		399D36BA6A252258C9B4F6A1D1277DDF /* UITableViewCell+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = D3BE55A3771AE4F5CF6006E3BF241A39 /* UITableViewCell+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EA49D6ACEA5A2E2DFF440FFFB11BA45 /* UISlider+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = F8C65A3AEFE316A8BD12F232E6B38473 /* UISlider+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F285D2638FA1530BF38F630B3D979B4 /* FUIPopoverBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 33448874C95663311ABD9CDBCC5ABBF4 /* FUIPopoverBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F5CFB23257180E8035F72344B71DFD5 /* IGLDropDownItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 830235FD80C792C226443EFE85603EC1 /* IGLDropDownItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41130A8498E958980CC3BCB7BDFD0569 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68CB1D3DA0E719CA76BF65D46A0E32 /* Foundation.framework */; };
+		4A152A9D7981B4EC54507FC74BADD1E0 /* FUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = E80151917F8616809F885BF303A9F865 /* FUISwitch.m */; };
+		4F73803BF696AC6ACCE7F24E5087914F /* UIColor+BFPaperColors.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E8627EA728EFA16AA0278A1912D2E27 /* UIColor+BFPaperColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5143B23C949888E0740DF80200A0A16C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68CB1D3DA0E719CA76BF65D46A0E32 /* Foundation.framework */; };
+		52B72E77201D310B23CA1A0047BB9849 /* UIStepper+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 87C2B95ABD3792F7BE759C494109DF0D /* UIStepper+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52E2331639908B06C7FA312702938155 /* UINavigationBar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 349263BB30D139EDC9B14914BA480976 /* UINavigationBar+FlatUI.m */; };
+		54D2C4C16B89272182615921176C0BE3 /* FUISegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = AD823DEA7CCA95ED54203DDD4B1EEB17 /* FUISegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		575BEC1A4DDB862014C3488B62E12AA9 /* NSString+Icons.m in Sources */ = {isa = PBXBuildFile; fileRef = 57563A37BA7C5F92406BBAED0F3EE729 /* NSString+Icons.m */; };
+		57BB805230967BC30E12059BF9C7B667 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF9550434131391A4BB0DD0365BD207 /* QuartzCore.framework */; };
+		5C1C9096979934B479255EEB6D92F095 /* UIBarButtonItem+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 636C5B8ECFB76CE2100A292F440D7870 /* UIBarButtonItem+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E6A2F14807DB59C84DFBB88AC3C654D /* IGLDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C25A8D46F8863522D729B8E08363C3AD /* IGLDropDownMenu.m */; };
+		6032197796E57BD5BC1E4F84138D1418 /* UINavigationBar+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F6BDE047DB2260B399A98B790B1B14D /* UINavigationBar+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6970139DF66AD5EC7BAB7E72F03C3659 /* UIScrollView+APParallaxHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 052CCD84BE3AB5470055382E67AF44EB /* UIScrollView+APParallaxHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69E01BC4A485179F7B47F842B6644828 /* IGLDropDownMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = B770D989F8626EE14368185A2729A2DD /* IGLDropDownMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6A4981177CD74BAE7E80FB436E0165E1 /* UIFont+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = CC0A19C7B88FCD87ADC2994E775740C5 /* UIFont+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E05B0BBDED47F6FF68526C78094356B /* UIColor+BFPaperColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 589743726325CE7939E3165F98FC281B /* UIColor+BFPaperColors-dummy.m */; };
+		6FEFC46987072C1C644E9FEE91B73556 /* FUIPopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4358C07C7D2852886DBA30CF02828F0 /* FUIPopoverBackgroundView.m */; };
+		7171025EECA9DCE01D74FE201450C2CE /* BFPaperTableViewCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D92038DDC12CBE61BA37F3D0C40181FF /* BFPaperTableViewCell-dummy.m */; };
+		7418ED72EC2C1FAB0EBCAEF7B433318A /* Pods-YNotes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3DBD67AD8E7C062C7227FB72D64F39 /* Pods-YNotes-dummy.m */; };
+		7785FD5615566AE96CF1873255565808 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68CB1D3DA0E719CA76BF65D46A0E32 /* Foundation.framework */; };
+		785C8F9F64D2E1BC83D771EBC1FB158C /* FUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 976E44293BC6512A2D820B9CC7B786E9 /* FUITextField.m */; };
+		7C7C4158317443D9EC143D4B4B1B502F /* UISlider+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DDEA318F44FD6CC703C327B6A10900 /* UISlider+FlatUI.m */; };
+		7FF0D746227F4936289927C5CEFEE935 /* FUITextField.h in Headers */ = {isa = PBXBuildFile; fileRef = F0ACF997FD36F255A5A39F5DEAEC7826 /* FUITextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8480858A7BA9ECA2EE7A5107D34F7183 /* APParallaxHeader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B716498A81F7A253068DD1C7FFEB1A4 /* APParallaxHeader-dummy.m */; };
+		89CC8E2FB823D0EB664DCE561414AEEF /* UIPopoverController+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE36E5A35B3D149887860276F61625F /* UIPopoverController+FlatUI.m */; };
+		8B4419E6EE985E633DDD95327A2EF22D /* IGLDropDownItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A593DF9B7992F150E96A48E5C462EA /* IGLDropDownItem.m */; };
+		8CD971D70DE88AD0347AF504550FCEB2 /* FUIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6ECC57726B633EE1ADECE43AC8ACE8 /* FUIButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8E97587F1C1520BDEC1F805EB5403E4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68CB1D3DA0E719CA76BF65D46A0E32 /* Foundation.framework */; };
+		9FC0B2A8E07A3A291D08F21B82DF59E2 /* UITableViewCell+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 701C10D189934374431C167E2A9F8865 /* UITableViewCell+FlatUI.m */; };
+		A0ED24856F5B46FE17D2496F6A833F1A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF9550434131391A4BB0DD0365BD207 /* QuartzCore.framework */; };
+		A69F1A5350055C09A1C6C3C8D9B6190F /* UIImage+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BB6A740E4DEBB5037BF1AA4BD6479B5 /* UIImage+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A89EDE90F9DC5282702F88B2336B84B7 /* FUICellBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ED8D458DB4FA07B34ACDE94C80292ED /* FUICellBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA17C1D02CEB7FA5BC02C654FA6E2B21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68CB1D3DA0E719CA76BF65D46A0E32 /* Foundation.framework */; };
+		AA5B9FD37D1E361C9448FE5DD28B8120 /* BFPaperTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C267FD50A05EF0C7EF4AF4A984D8DC76 /* BFPaperTableViewCell.m */; };
+		AF83A4E5B8DBAEEDDD033E23982006A6 /* UIToolbar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6298F824D95D4064060F03E852C96581 /* UIToolbar+FlatUI.m */; };
+		B237D2670C8EB7BC364EB56A65476B1E /* FlatUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AE9A935AB98EA01A30750ED21E3C313 /* FlatUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4666F1334456F8D0870AF8DCEFD1668 /* FUIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F9188A13D65CD39258544747D7CE19 /* FUIAlertView.m */; };
+		B6006B2D14402C36F767A8054B59F361 /* UIFont+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5A2C7019D808E05508706E79DFBEE7 /* UIFont+FlatUI.m */; };
+		BE91D0A40D8DBED99D5A3B45DB380203 /* FUISwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = FA593B6137FDA0F8784BE07B7C61BE11 /* FUISwitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C241B6DE56A77A00F60A76835656AA12 /* UIProgressView+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 894A4359878EB5EF300C39010AE571E6 /* UIProgressView+FlatUI.m */; };
+		CF6AE2BED97EC49BB1B20F0E904EEEFF /* UIPopoverController+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7608769C4CD2131B494C9B5CFEBEA1 /* UIPopoverController+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFABF8E41DE30F7BA8C8A07578069C5E /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FECFA21F23CB0CFE81ADE9B3272F8B /* UIColor+BFPaperColors.m */; };
+		D7774EAA08CF408AEB1D0F43D03CC039 /* UIStepper+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 337FB148ECFE512A4945A28DDA2CCA0C /* UIStepper+FlatUI.m */; };
+		D8042B827B8D2B542105A0CB82A98A6A /* FUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E197F518EBA6AE8177467BA76A5905 /* FUIButton.m */; };
+		E3E1AE98A76ECA4B9F445B94DA38DD4B /* UITabBar+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 264F777B33F7E0B6274B5816EFBAB955 /* UITabBar+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9A6CAD308EC7F78F474E74679454206 /* UIScrollView+APParallaxHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9C0E79830BDE2CDECFA68BBBEDC047 /* UIScrollView+APParallaxHeader.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		EC49B6FCF12F4F5AB00B8EF8627871E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68CB1D3DA0E719CA76BF65D46A0E32 /* Foundation.framework */; };
+		EE4AB1AE57149F5D6A0C5F057BA209FE /* BFPaperTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 66B8E7172AF67876004558701CC61E91 /* BFPaperTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF82A556BBBDCD54E254F7BFA726C75F /* UITabBar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = DE82B45ADDB672972E7E97C439DC4BA0 /* UITabBar+FlatUI.m */; };
+		F28DC6565805FB635C0FDF95288C1145 /* NSString+Icons.h in Headers */ = {isa = PBXBuildFile; fileRef = EC444F2703CFBACC3EE2758374A199E2 /* NSString+Icons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7B4C42C73BDE7FF637123CF49E3A48E /* FUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1233D2B7171D00E4581BF1A8BF5D8 /* FUISegmentedControl.m */; };
+		FAEE204DD16EE49A5E80DFD75C84121B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6B226BCC287AD2905D591A5951BFC9 /* UIKit.framework */; };
+		FC8582DE15C3777433181825EF60543A /* UIToolbar+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AC2E7708C159B46A12BCFC0DCCADE87 /* UIToolbar+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE29C920023D70D0136BA16A00336F82 /* Pods-YNotesUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B2DB26FB875182B1DA7764BDB12E78 /* Pods-YNotesUITests-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0255C6641D43B56C4ECAF9EAD5281057 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2FC0AF0815B5D127E0AA79352D5EB6A;
+			remoteInfo = IGLDropDownMenu;
+		};
 		2964611C28EBAD779FA5AC917E50FB0D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -43,91 +95,142 @@
 			remoteGlobalIDString = AA8B567933CA47B8D7C065AECA481215;
 			remoteInfo = "UIColor+BFPaperColors";
 		};
-		2E9754B13908B5FA3C1F38B6D4CEA967 /* PBXContainerItemProxy */ = {
+		2F7F9B760190749C21E5B6167112B49B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 510FEA0B6E5372B57D692ADD3CD04F8C;
 			remoteInfo = BFPaperTableViewCell;
 		};
-		44183760FA9EB30CF56C7BA411FF8DEA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AA8B567933CA47B8D7C065AECA481215;
-			remoteInfo = "UIColor+BFPaperColors";
-		};
-		47930609CD3D803C3D5901FA2D96A746 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F2FC0AF0815B5D127E0AA79352D5EB6A;
-			remoteInfo = IGLDropDownMenu;
-		};
-		49F43EDE3398E05E74A2CD199DDD682B /* PBXContainerItemProxy */ = {
+		6C5455F74C33B8C4AEBDC53FCD73CBC1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5DF21164C6E1DC7DEE4CA35AD0FD7B25;
 			remoteInfo = APParallaxHeader;
 		};
+		902F5F23FC82B0D0A01AA585C63F1983 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA8B567933CA47B8D7C065AECA481215;
+			remoteInfo = "UIColor+BFPaperColors";
+		};
+		E7D87B15E3A19C1B65906510FF970660 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6369DCF9EF8959EE460063E1C27CF48;
+			remoteInfo = FlatUIKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		052CCD84BE3AB5470055382E67AF44EB /* UIScrollView+APParallaxHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+APParallaxHeader.h"; path = "APParallaxHeader/UIScrollView+APParallaxHeader.h"; sourceTree = "<group>"; };
 		0805945308DE2BAAC23ED73E3C90430F /* Pods-YNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotesTests.release.xcconfig"; sourceTree = "<group>"; };
-		091D54A73E1E8BB182C9D7D245AF1C2F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		0BB29657A19A8BD69E9F507B8AD11668 /* libIGLDropDownMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIGLDropDownMenu.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0BC579A5AC0FF153C8137E394E957616 /* UIColor+BFPaperColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+BFPaperColors-prefix.pch"; sourceTree = "<group>"; };
+		0B716498A81F7A253068DD1C7FFEB1A4 /* APParallaxHeader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "APParallaxHeader-dummy.m"; sourceTree = "<group>"; };
 		0CE0B0C345E5B85DB4D0A98B5F58F221 /* Pods-YNotesTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YNotesTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		0DE278A2BABFC5279DFF902DEF63E880 /* libPods-YNotesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ED8DCCA24A61C7880250DF84BB80A73 /* Lato-Italic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Lato-Italic.ttf"; path = "Resources/Lato-Italic.ttf"; sourceTree = "<group>"; };
 		123703DA4E8B76DFA306C30F1A3135EA /* Pods-YNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotes.debug.xcconfig"; sourceTree = "<group>"; };
-		175C9C38CE4865804F3B490212CD13B7 /* UIScrollView+APParallaxHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+APParallaxHeader.h"; path = "APParallaxHeader/UIScrollView+APParallaxHeader.h"; sourceTree = "<group>"; };
-		1A7BF42BD650E30DA4CD316368CCD2DA /* APParallaxHeader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = APParallaxHeader.xcconfig; sourceTree = "<group>"; };
+		17E733EA959EC92959A278849EB60C62 /* UIColor+BFPaperColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+BFPaperColors-prefix.pch"; sourceTree = "<group>"; };
 		1C17FBF2289BFFC3348D4D87D24AA4EE /* Pods-YNotes-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotes-resources.sh"; sourceTree = "<group>"; };
-		1E14F35E1CF26E4058E6DDDAE2FCA939 /* UIColor+BFPaperColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BFPaperColors-dummy.m"; sourceTree = "<group>"; };
-		23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		245E59F993ED9AE25D345BA9C5C52817 /* IGLDropDownMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IGLDropDownMenu.xcconfig; sourceTree = "<group>"; };
-		31CDAB7002411BD5E0C7BA3E6F2D8779 /* libPods-YNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F7608769C4CD2131B494C9B5CFEBEA1 /* UIPopoverController+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIPopoverController+FlatUI.h"; path = "Classes/ios/UIPopoverController+FlatUI.h"; sourceTree = "<group>"; };
+		23C95E0FE699224FCBBDEB504AF49ED2 /* Lato-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "Resources/Lato-Bold.ttf"; sourceTree = "<group>"; };
+		2551367186F48F8FF4EFD40F8DA2DD90 /* Lato-Light.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "Resources/Lato-Light.ttf"; sourceTree = "<group>"; };
+		264F777B33F7E0B6274B5816EFBAB955 /* UITabBar+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITabBar+FlatUI.h"; path = "Classes/ios/UITabBar+FlatUI.h"; sourceTree = "<group>"; };
+		295445BA5EEFDF1D0A21DBCFE5B86953 /* libIGLDropDownMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIGLDropDownMenu.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AE9A935AB98EA01A30750ED21E3C313 /* FlatUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlatUIKit.h; path = Classes/ios/FlatUIKit.h; sourceTree = "<group>"; };
+		30143F118C3D6B17306E6FA8BFD10FD6 /* libBFPaperTableViewCell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBFPaperTableViewCell.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		33448874C95663311ABD9CDBCC5ABBF4 /* FUIPopoverBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUIPopoverBackgroundView.h; path = Classes/ios/FUIPopoverBackgroundView.h; sourceTree = "<group>"; };
+		337FB148ECFE512A4945A28DDA2CCA0C /* UIStepper+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIStepper+FlatUI.m"; path = "Classes/ios/UIStepper+FlatUI.m"; sourceTree = "<group>"; };
+		349263BB30D139EDC9B14914BA480976 /* UINavigationBar+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+FlatUI.m"; path = "Classes/ios/UINavigationBar+FlatUI.m"; sourceTree = "<group>"; };
 		35CEFF090D4590377ACEF907866E2192 /* Pods-YNotes-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YNotes-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3F3F6ACE792E4680A867C7FEF218AFD5 /* BFPaperTableViewCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BFPaperTableViewCell-prefix.pch"; sourceTree = "<group>"; };
+		385E1F41148F4E0899B282641C933AD9 /* APParallaxHeader-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "APParallaxHeader-prefix.pch"; sourceTree = "<group>"; };
+		3AC2E7708C159B46A12BCFC0DCCADE87 /* UIToolbar+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIToolbar+FlatUI.h"; path = "Classes/ios/UIToolbar+FlatUI.h"; sourceTree = "<group>"; };
+		3BAD96DF6125B3308A28681300DADA2E /* Lato-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "Resources/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		3E8627EA728EFA16AA0278A1912D2E27 /* UIColor+BFPaperColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+BFPaperColors.h"; path = "UIColor+BFPaperColors/UIColor+BFPaperColors.h"; sourceTree = "<group>"; };
+		44D653FE1E5CBBF06AF778C2B4B90A73 /* FUIAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUIAlertView.h; path = Classes/ios/FUIAlertView.h; sourceTree = "<group>"; };
 		46B2DB26FB875182B1DA7764BDB12E78 /* Pods-YNotesUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YNotesUITests-dummy.m"; sourceTree = "<group>"; };
+		4AC1233D2B7171D00E4581BF1A8BF5D8 /* FUISegmentedControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUISegmentedControl.m; path = Classes/ios/FUISegmentedControl.m; sourceTree = "<group>"; };
+		4B771A996CE4E57E72D9C304EF9C6B77 /* FlatUIKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FlatUIKit-dummy.m"; sourceTree = "<group>"; };
 		4C1B1BAD6BD8038EB1B79C6060C97C04 /* Pods-YNotes-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YNotes-acknowledgements.plist"; sourceTree = "<group>"; };
+		563BA09AB8C92714AFCC822F8C47317F /* flat-ui-icons-regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "flat-ui-icons-regular.ttf"; path = "Resources/flat-ui-icons-regular.ttf"; sourceTree = "<group>"; };
+		57563A37BA7C5F92406BBAED0F3EE729 /* NSString+Icons.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+Icons.m"; path = "Classes/ios/NSString+Icons.m"; sourceTree = "<group>"; };
+		589743726325CE7939E3165F98FC281B /* UIColor+BFPaperColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BFPaperColors-dummy.m"; sourceTree = "<group>"; };
+		5B76EC8A6AAD269A6115F4DD640F1A4F /* UIBarButtonItem+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+FlatUI.m"; path = "Classes/ios/UIBarButtonItem+FlatUI.m"; sourceTree = "<group>"; };
+		6298F824D95D4064060F03E852C96581 /* UIToolbar+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIToolbar+FlatUI.m"; path = "Classes/ios/UIToolbar+FlatUI.m"; sourceTree = "<group>"; };
+		636C5B8ECFB76CE2100A292F440D7870 /* UIBarButtonItem+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+FlatUI.h"; path = "Classes/ios/UIBarButtonItem+FlatUI.h"; sourceTree = "<group>"; };
 		63EB0AF1C483FE3DC35C980510EAF91B /* Pods-YNotes-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotes-frameworks.sh"; sourceTree = "<group>"; };
 		6630B1233D8AC9687853F40428B7A130 /* Pods-YNotesUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotesUITests-resources.sh"; sourceTree = "<group>"; };
+		66B8E7172AF67876004558701CC61E91 /* BFPaperTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFPaperTableViewCell.h; path = Classes/BFPaperTableViewCell.h; sourceTree = "<group>"; };
+		67EC11318B814E4086D71AD07503E91E /* libFlatUIKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFlatUIKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		693988991F3A665DDA9E49EC84B2C059 /* Pods-YNotesUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YNotesUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6BF9550434131391A4BB0DD0365BD207 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		6C9C0E79830BDE2CDECFA68BBBEDC047 /* UIScrollView+APParallaxHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+APParallaxHeader.m"; path = "APParallaxHeader/UIScrollView+APParallaxHeader.m"; sourceTree = "<group>"; };
 		6E3DBD67AD8E7C062C7227FB72D64F39 /* Pods-YNotes-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YNotes-dummy.m"; sourceTree = "<group>"; };
-		71A862BCBA3C35E536BB358F45F1C96D /* libPods-YNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		78F0CB2FC17F121B63A61A131AA49081 /* IGLDropDownMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IGLDropDownMenu-prefix.pch"; sourceTree = "<group>"; };
-		7BA1759D85F95D74AA3C6334817C9543 /* IGLDropDownMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IGLDropDownMenu-dummy.m"; sourceTree = "<group>"; };
+		701C10D189934374431C167E2A9F8865 /* UITableViewCell+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+FlatUI.m"; path = "Classes/ios/UITableViewCell+FlatUI.m"; sourceTree = "<group>"; };
+		7A45D9CC7C23283F8C4EDDF10C494E6B /* IGLDropDownMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IGLDropDownMenu.xcconfig; sourceTree = "<group>"; };
 		7F4EB9E99F80C4CAF5C387DA3BDE0C98 /* Pods-YNotesTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YNotesTests-dummy.m"; sourceTree = "<group>"; };
-		82591CD6F90637AB6901906DA479A016 /* IGLDropDownMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGLDropDownMenu.h; path = IGLDropDownMenu/IGLDropDownMenu.h; sourceTree = "<group>"; };
-		8F955925C5A1AD28CCE83E1B0C67EE40 /* BFPaperTableViewCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BFPaperTableViewCell.xcconfig; sourceTree = "<group>"; };
+		7F6BDE047DB2260B399A98B790B1B14D /* UINavigationBar+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+FlatUI.h"; path = "Classes/ios/UINavigationBar+FlatUI.h"; sourceTree = "<group>"; };
+		80DDEA318F44FD6CC703C327B6A10900 /* UISlider+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UISlider+FlatUI.m"; path = "Classes/ios/UISlider+FlatUI.m"; sourceTree = "<group>"; };
+		830235FD80C792C226443EFE85603EC1 /* IGLDropDownItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGLDropDownItem.h; path = IGLDropDownMenu/IGLDropDownItem.h; sourceTree = "<group>"; };
+		846D349649008F54BC2A7A9D8E6F967B /* libAPParallaxHeader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAPParallaxHeader.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		87C2B95ABD3792F7BE759C494109DF0D /* UIStepper+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIStepper+FlatUI.h"; path = "Classes/ios/UIStepper+FlatUI.h"; sourceTree = "<group>"; };
+		894A4359878EB5EF300C39010AE571E6 /* UIProgressView+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+FlatUI.m"; path = "Classes/ios/UIProgressView+FlatUI.m"; sourceTree = "<group>"; };
+		8BB6A740E4DEBB5037BF1AA4BD6479B5 /* UIImage+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+FlatUI.h"; path = "Classes/ios/UIImage+FlatUI.h"; sourceTree = "<group>"; };
+		9152649840D7E5AFC33D6638E83F45CA /* libPods-YNotesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		926C21D9E64C1AF7A8646F638091D390 /* UIColor+BFPaperColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UIColor+BFPaperColors.xcconfig"; sourceTree = "<group>"; };
+		92D97BD41A320DC266B6FA0C67F484DE /* UIColor+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+FlatUI.h"; path = "Classes/ios/UIColor+FlatUI.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		976E44293BC6512A2D820B9CC7B786E9 /* FUITextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUITextField.m; path = Classes/ios/FUITextField.m; sourceTree = "<group>"; };
 		98E1BCFA49D09EBAA6891042EC50CFEB /* Pods-YNotesTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotesTests-resources.sh"; sourceTree = "<group>"; };
 		9B41211D47014841C430104813400948 /* Pods-YNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotes.release.xcconfig"; sourceTree = "<group>"; };
-		A1FCF31E7D8FE9C220FA332E0BE011A0 /* IGLDropDownItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGLDropDownItem.h; path = IGLDropDownMenu/IGLDropDownItem.h; sourceTree = "<group>"; };
+		9B6B226BCC287AD2905D591A5951BFC9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		9ED8D458DB4FA07B34ACDE94C80292ED /* FUICellBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUICellBackgroundView.h; path = Classes/ios/FUICellBackgroundView.h; sourceTree = "<group>"; };
+		A4358C07C7D2852886DBA30CF02828F0 /* FUIPopoverBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUIPopoverBackgroundView.m; path = Classes/ios/FUIPopoverBackgroundView.m; sourceTree = "<group>"; };
 		A4EF574BC3089EB476C641E499EB0F59 /* Pods-YNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A53C637A5854164D44BF272FBBBEF3D0 /* BFPaperTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFPaperTableViewCell.h; path = Classes/BFPaperTableViewCell.h; sourceTree = "<group>"; };
 		A6AC0A776C9D6061359A8919ABDF4098 /* Pods-YNotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A6CEBC9707A7FE8CD34926D68DC86D02 /* BFPaperTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFPaperTableViewCell.m; path = Classes/BFPaperTableViewCell.m; sourceTree = "<group>"; };
-		A6F44376B5896CC300E5687B17840A35 /* BFPaperTableViewCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BFPaperTableViewCell-dummy.m"; sourceTree = "<group>"; };
-		A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A79176D8638678AF137D274652AD83A5 /* libPods-YNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0CDBCED14A885156470D868C606CE4 /* Pods-YNotesTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotesTests-frameworks.sh"; sourceTree = "<group>"; };
-		B8515C2AFBDED9387466355D6FDEC63A /* APParallaxHeader-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "APParallaxHeader-prefix.pch"; sourceTree = "<group>"; };
+		AD823DEA7CCA95ED54203DDD4B1EEB17 /* FUISegmentedControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUISegmentedControl.h; path = Classes/ios/FUISegmentedControl.h; sourceTree = "<group>"; };
+		AE4D3AE33005F5CD67568576FF6D5DC7 /* libPods-YNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE6ECC57726B633EE1ADECE43AC8ACE8 /* FUIButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUIButton.h; path = Classes/ios/FUIButton.h; sourceTree = "<group>"; };
+		AF15BCB7D8313CE01E83DB8F643241F4 /* IGLDropDownMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IGLDropDownMenu-prefix.pch"; sourceTree = "<group>"; };
+		B4E197F518EBA6AE8177467BA76A5905 /* FUIButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUIButton.m; path = Classes/ios/FUIButton.m; sourceTree = "<group>"; };
+		B770D989F8626EE14368185A2729A2DD /* IGLDropDownMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGLDropDownMenu.h; path = IGLDropDownMenu/IGLDropDownMenu.h; sourceTree = "<group>"; };
+		BCE36E5A35B3D149887860276F61625F /* UIPopoverController+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIPopoverController+FlatUI.m"; path = "Classes/ios/UIPopoverController+FlatUI.m"; sourceTree = "<group>"; };
+		C25A8D46F8863522D729B8E08363C3AD /* IGLDropDownMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGLDropDownMenu.m; path = IGLDropDownMenu/IGLDropDownMenu.m; sourceTree = "<group>"; };
+		C267FD50A05EF0C7EF4AF4A984D8DC76 /* BFPaperTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFPaperTableViewCell.m; path = Classes/BFPaperTableViewCell.m; sourceTree = "<group>"; };
+		C5FECFA21F23CB0CFE81ADE9B3272F8B /* UIColor+BFPaperColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+BFPaperColors.m"; path = "UIColor+BFPaperColors/UIColor+BFPaperColors.m"; sourceTree = "<group>"; };
 		C7429776B51BFC9F19345A26876623C7 /* Pods-YNotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YNotesUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C8F0C6ADCCDD7F86D2FAD1B1CF9FB2B2 /* UIColor+BFPaperColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+BFPaperColors.h"; path = "UIColor+BFPaperColors/UIColor+BFPaperColors.h"; sourceTree = "<group>"; };
-		C97C425E5514EF4E66A74BBD2301B76F /* APParallaxHeader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "APParallaxHeader-dummy.m"; sourceTree = "<group>"; };
-		CC1F67E96F671A5D5ABECE3249971592 /* IGLDropDownItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGLDropDownItem.m; path = IGLDropDownMenu/IGLDropDownItem.m; sourceTree = "<group>"; };
-		D26AF8E929E6983D9D32DFFFBD73BAF4 /* libUIColor+BFPaperColors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libUIColor+BFPaperColors.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB48FAFC52C8DBC1ACCFB540828F2340 /* IGLDropDownMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGLDropDownMenu.m; path = IGLDropDownMenu/IGLDropDownMenu.m; sourceTree = "<group>"; };
-		DB560D73FCA16BF67C90C306F37B19DE /* UIColor+BFPaperColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UIColor+BFPaperColors.xcconfig"; sourceTree = "<group>"; };
-		E751413347068A3CAB2F1C9BCB6DBA86 /* UIColor+BFPaperColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+BFPaperColors.m"; path = "UIColor+BFPaperColors/UIColor+BFPaperColors.m"; sourceTree = "<group>"; };
-		E87C82C69B19B3582302AC006CE125AF /* libBFPaperTableViewCell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBFPaperTableViewCell.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7F2BA683F96D717D996573CDBD8DC76 /* IGLDropDownMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IGLDropDownMenu-dummy.m"; sourceTree = "<group>"; };
+		C9F181D93406E4D230E3A543599B46A6 /* BFPaperTableViewCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BFPaperTableViewCell.xcconfig; sourceTree = "<group>"; };
+		CA4556348B013457482884B8867E267D /* FUICellBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUICellBackgroundView.m; path = Classes/ios/FUICellBackgroundView.m; sourceTree = "<group>"; };
+		CC0A19C7B88FCD87ADC2994E775740C5 /* UIFont+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+FlatUI.h"; path = "Classes/ios/UIFont+FlatUI.h"; sourceTree = "<group>"; };
+		CD8508303B1DC2694FEF10B068B0FAAA /* UIImage+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FlatUI.m"; path = "Classes/ios/UIImage+FlatUI.m"; sourceTree = "<group>"; };
+		CF16F7751CE75919B7040A5D2F7101D9 /* FlatUIKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlatUIKit-prefix.pch"; sourceTree = "<group>"; };
+		D3BE55A3771AE4F5CF6006E3BF241A39 /* UITableViewCell+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+FlatUI.h"; path = "Classes/ios/UITableViewCell+FlatUI.h"; sourceTree = "<group>"; };
+		D6A593DF9B7992F150E96A48E5C462EA /* IGLDropDownItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGLDropDownItem.m; path = IGLDropDownMenu/IGLDropDownItem.m; sourceTree = "<group>"; };
+		D92038DDC12CBE61BA37F3D0C40181FF /* BFPaperTableViewCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BFPaperTableViewCell-dummy.m"; sourceTree = "<group>"; };
+		DA1FB673152803844C9F24B4FD0A32FE /* libUIColor+BFPaperColors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libUIColor+BFPaperColors.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB5A2C7019D808E05508706E79DFBEE7 /* UIFont+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+FlatUI.m"; path = "Classes/ios/UIFont+FlatUI.m"; sourceTree = "<group>"; };
+		DBA1BACBA6AF2EE09E7EA0D2B97CAA35 /* UIColor+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+FlatUI.m"; path = "Classes/ios/UIColor+FlatUI.m"; sourceTree = "<group>"; };
+		DDEC88C6EF2924E7EE6531D7F53E4D59 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		DE82B45ADDB672972E7E97C439DC4BA0 /* UITabBar+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITabBar+FlatUI.m"; path = "Classes/ios/UITabBar+FlatUI.m"; sourceTree = "<group>"; };
+		E2987C3F7117895671F7AEB11FC3DD0D /* BFPaperTableViewCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BFPaperTableViewCell-prefix.pch"; sourceTree = "<group>"; };
+		E80151917F8616809F885BF303A9F865 /* FUISwitch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUISwitch.m; path = Classes/ios/FUISwitch.m; sourceTree = "<group>"; };
+		E81F7D2F681F415133A2B4F84840F75E /* FlatUIKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlatUIKit.xcconfig; sourceTree = "<group>"; };
+		EA68CB1D3DA0E719CA76BF65D46A0E32 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EA97FE51D45DAFD591143B8EC8F9E18A /* APParallaxHeader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = APParallaxHeader.xcconfig; sourceTree = "<group>"; };
 		EBB7D46FD7852A2620CE65088F64496F /* Pods-YNotesUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YNotesUITests-frameworks.sh"; sourceTree = "<group>"; };
-		F594497FF96190423C010AA57CEA4D69 /* libAPParallaxHeader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAPParallaxHeader.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC444F2703CFBACC3EE2758374A199E2 /* NSString+Icons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+Icons.h"; path = "Classes/ios/NSString+Icons.h"; sourceTree = "<group>"; };
+		F0ACF997FD36F255A5A39F5DEAEC7826 /* FUITextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUITextField.h; path = Classes/ios/FUITextField.h; sourceTree = "<group>"; };
+		F2F9188A13D65CD39258544747D7CE19 /* FUIAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUIAlertView.m; path = Classes/ios/FUIAlertView.m; sourceTree = "<group>"; };
 		F6713CEEDDF83A2805E620B0E75106B3 /* Pods-YNotesUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YNotesUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F8C65A3AEFE316A8BD12F232E6B38473 /* UISlider+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UISlider+FlatUI.h"; path = "Classes/ios/UISlider+FlatUI.h"; sourceTree = "<group>"; };
 		F9B57511A38F72441FD26341FF407928 /* Pods-YNotesTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YNotesTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		FFF0D5D64EAA0D9CAB5C03C3251986A5 /* UIScrollView+APParallaxHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+APParallaxHeader.m"; path = "APParallaxHeader/UIScrollView+APParallaxHeader.m"; sourceTree = "<group>"; };
+		FA593B6137FDA0F8784BE07B7C61BE11 /* FUISwitch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUISwitch.h; path = Classes/ios/FUISwitch.h; sourceTree = "<group>"; };
+		FCA5694F8344D0B04A385245E19F14BF /* UIProgressView+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+FlatUI.h"; path = "Classes/ios/UIProgressView+FlatUI.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,11 +242,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		540BE1F70168FD5644A51DEB6CED708D /* Frameworks */ = {
+		351F76C61B2DDDC5EEAE39243581C454 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67F00120799E8EF9F9A538A7723C1E24 /* Foundation.framework in Frameworks */,
+				249745FDAA5F7CBE34583963221DE108 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +284,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A782FF5228DA11BC23911D48B548C394 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3624E3389B8DB5DC5B2B8A27F6F18B5B /* CoreText.framework in Frameworks */,
+				41130A8498E958980CC3BCB7BDFD0569 /* Foundation.framework in Frameworks */,
+				57BB805230967BC30E12059BF9C7B667 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB228CC5EE24DC180FF9D7B3961398D0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -192,17 +305,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		058A0F0A8D7BD1C7EBE29BFB1F1202FF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3284A99DDF875FBD78905C663D404D05 /* APParallaxHeader */,
-				3A0DAA08F4CE14D2ED3B6E04B06708B0 /* BFPaperTableViewCell */,
-				64CBB18ADF4A891A0CA7584A21C212BD /* IGLDropDownMenu */,
-				A40786EA94ACAEA9AD4CEE8A983E3DDE /* UIColor+BFPaperColors */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		09686D0FB16B538FCEDC26ACAD688019 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,101 +315,158 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DFDE779C6E5D3445E0CB8CCB8D424449 /* iOS */,
+				9880118C168553BFC1AEC05049869368 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		15042920A7BD216602F4ECE56CD6E1E5 /* Support Files */ = {
+		27B88C1C839DA2849E3DD13E692478B1 /* UIColor+BFPaperColors */ = {
 			isa = PBXGroup;
 			children = (
-				245E59F993ED9AE25D345BA9C5C52817 /* IGLDropDownMenu.xcconfig */,
-				7BA1759D85F95D74AA3C6334817C9543 /* IGLDropDownMenu-dummy.m */,
-				78F0CB2FC17F121B63A61A131AA49081 /* IGLDropDownMenu-prefix.pch */,
+				3E8627EA728EFA16AA0278A1912D2E27 /* UIColor+BFPaperColors.h */,
+				C5FECFA21F23CB0CFE81ADE9B3272F8B /* UIColor+BFPaperColors.m */,
+				776D1533AEDF20713CE98FC56FF5CF21 /* Support Files */,
+			);
+			path = "UIColor+BFPaperColors";
+			sourceTree = "<group>";
+		};
+		2FFCC8B936A1D4040168E9A3849CBB78 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7EA20022AF0EC5FB076CC05F157CC2DD /* APParallaxHeader */,
+				5F652569C79FE39152EE09C9AE023C58 /* BFPaperTableViewCell */,
+				BF8CBDB245EC3510AD22C21F8D25808F /* FlatUIKit */,
+				5761D4D4A62135A63916BC0388204E78 /* IGLDropDownMenu */,
+				27B88C1C839DA2849E3DD13E692478B1 /* UIColor+BFPaperColors */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		32AA4098D6BF230EE07EAEAAD4BE780A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA97FE51D45DAFD591143B8EC8F9E18A /* APParallaxHeader.xcconfig */,
+				0B716498A81F7A253068DD1C7FFEB1A4 /* APParallaxHeader-dummy.m */,
+				385E1F41148F4E0899B282641C933AD9 /* APParallaxHeader-prefix.pch */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/IGLDropDownMenu";
+			path = "../Target Support Files/APParallaxHeader";
 			sourceTree = "<group>";
 		};
-		3284A99DDF875FBD78905C663D404D05 /* APParallaxHeader */ = {
+		39614612707CC4BED9E672D68FF8CA2C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				175C9C38CE4865804F3B490212CD13B7 /* UIScrollView+APParallaxHeader.h */,
-				FFF0D5D64EAA0D9CAB5C03C3251986A5 /* UIScrollView+APParallaxHeader.m */,
-				F5D6D5F67882855AB1174A30437C94D2 /* Support Files */,
+				C9F181D93406E4D230E3A543599B46A6 /* BFPaperTableViewCell.xcconfig */,
+				D92038DDC12CBE61BA37F3D0C40181FF /* BFPaperTableViewCell-dummy.m */,
+				E2987C3F7117895671F7AEB11FC3DD0D /* BFPaperTableViewCell-prefix.pch */,
 			);
-			path = APParallaxHeader;
+			name = "Support Files";
+			path = "../Target Support Files/BFPaperTableViewCell";
 			sourceTree = "<group>";
 		};
-		3A0DAA08F4CE14D2ED3B6E04B06708B0 /* BFPaperTableViewCell */ = {
+		5761D4D4A62135A63916BC0388204E78 /* IGLDropDownMenu */ = {
 			isa = PBXGroup;
 			children = (
-				A53C637A5854164D44BF272FBBBEF3D0 /* BFPaperTableViewCell.h */,
-				A6CEBC9707A7FE8CD34926D68DC86D02 /* BFPaperTableViewCell.m */,
-				AF536A206D95DD7E8BECAC56B3B742E8 /* Support Files */,
+				830235FD80C792C226443EFE85603EC1 /* IGLDropDownItem.h */,
+				D6A593DF9B7992F150E96A48E5C462EA /* IGLDropDownItem.m */,
+				B770D989F8626EE14368185A2729A2DD /* IGLDropDownMenu.h */,
+				C25A8D46F8863522D729B8E08363C3AD /* IGLDropDownMenu.m */,
+				7FEC0DE4F213F9B7515493F0110918F1 /* Support Files */,
+			);
+			path = IGLDropDownMenu;
+			sourceTree = "<group>";
+		};
+		5F652569C79FE39152EE09C9AE023C58 /* BFPaperTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				66B8E7172AF67876004558701CC61E91 /* BFPaperTableViewCell.h */,
+				C267FD50A05EF0C7EF4AF4A984D8DC76 /* BFPaperTableViewCell.m */,
+				39614612707CC4BED9E672D68FF8CA2C /* Support Files */,
 			);
 			path = BFPaperTableViewCell;
 			sourceTree = "<group>";
 		};
-		64CBB18ADF4A891A0CA7584A21C212BD /* IGLDropDownMenu */ = {
+		6F3548BAA8A5A045920605D8A506646D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A1FCF31E7D8FE9C220FA332E0BE011A0 /* IGLDropDownItem.h */,
-				CC1F67E96F671A5D5ABECE3249971592 /* IGLDropDownItem.m */,
-				82591CD6F90637AB6901906DA479A016 /* IGLDropDownMenu.h */,
-				DB48FAFC52C8DBC1ACCFB540828F2340 /* IGLDropDownMenu.m */,
-				15042920A7BD216602F4ECE56CD6E1E5 /* Support Files */,
+				846D349649008F54BC2A7A9D8E6F967B /* libAPParallaxHeader.a */,
+				30143F118C3D6B17306E6FA8BFD10FD6 /* libBFPaperTableViewCell.a */,
+				67EC11318B814E4086D71AD07503E91E /* libFlatUIKit.a */,
+				295445BA5EEFDF1D0A21DBCFE5B86953 /* libIGLDropDownMenu.a */,
+				A79176D8638678AF137D274652AD83A5 /* libPods-YNotes.a */,
+				AE4D3AE33005F5CD67568576FF6D5DC7 /* libPods-YNotesTests.a */,
+				9152649840D7E5AFC33D6638E83F45CA /* libPods-YNotesUITests.a */,
+				DA1FB673152803844C9F24B4FD0A32FE /* libUIColor+BFPaperColors.a */,
 			);
-			path = IGLDropDownMenu;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		776D1533AEDF20713CE98FC56FF5CF21 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				926C21D9E64C1AF7A8646F638091D390 /* UIColor+BFPaperColors.xcconfig */,
+				589743726325CE7939E3165F98FC281B /* UIColor+BFPaperColors-dummy.m */,
+				17E733EA959EC92959A278849EB60C62 /* UIColor+BFPaperColors-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/UIColor+BFPaperColors";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				058A0F0A8D7BD1C7EBE29BFB1F1202FF /* Pods */,
-				88670BBF3E38940ECD54066516F77BC2 /* Products */,
+				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
+				2FFCC8B936A1D4040168E9A3849CBB78 /* Pods */,
+				6F3548BAA8A5A045920605D8A506646D /* Products */,
 				09686D0FB16B538FCEDC26ACAD688019 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8377AFABB8CD1B4527F78A9F77462D7D /* Support Files */ = {
+		7EA20022AF0EC5FB076CC05F157CC2DD /* APParallaxHeader */ = {
 			isa = PBXGroup;
 			children = (
-				DB560D73FCA16BF67C90C306F37B19DE /* UIColor+BFPaperColors.xcconfig */,
-				1E14F35E1CF26E4058E6DDDAE2FCA939 /* UIColor+BFPaperColors-dummy.m */,
-				0BC579A5AC0FF153C8137E394E957616 /* UIColor+BFPaperColors-prefix.pch */,
+				052CCD84BE3AB5470055382E67AF44EB /* UIScrollView+APParallaxHeader.h */,
+				6C9C0E79830BDE2CDECFA68BBBEDC047 /* UIScrollView+APParallaxHeader.m */,
+				32AA4098D6BF230EE07EAEAAD4BE780A /* Support Files */,
+			);
+			path = APParallaxHeader;
+			sourceTree = "<group>";
+		};
+		7FEC0DE4F213F9B7515493F0110918F1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7A45D9CC7C23283F8C4EDDF10C494E6B /* IGLDropDownMenu.xcconfig */,
+				C7F2BA683F96D717D996573CDBD8DC76 /* IGLDropDownMenu-dummy.m */,
+				AF15BCB7D8313CE01E83DB8F643241F4 /* IGLDropDownMenu-prefix.pch */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/UIColor+BFPaperColors";
+			path = "../Target Support Files/IGLDropDownMenu";
 			sourceTree = "<group>";
 		};
-		88670BBF3E38940ECD54066516F77BC2 /* Products */ = {
+		9880118C168553BFC1AEC05049869368 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F594497FF96190423C010AA57CEA4D69 /* libAPParallaxHeader.a */,
-				E87C82C69B19B3582302AC006CE125AF /* libBFPaperTableViewCell.a */,
-				0BB29657A19A8BD69E9F507B8AD11668 /* libIGLDropDownMenu.a */,
-				71A862BCBA3C35E536BB358F45F1C96D /* libPods-YNotes.a */,
-				31CDAB7002411BD5E0C7BA3E6F2D8779 /* libPods-YNotesTests.a */,
-				0DE278A2BABFC5279DFF902DEF63E880 /* libPods-YNotesUITests.a */,
-				D26AF8E929E6983D9D32DFFFBD73BAF4 /* libUIColor+BFPaperColors.a */,
+				DDEC88C6EF2924E7EE6531D7F53E4D59 /* CoreText.framework */,
+				EA68CB1D3DA0E719CA76BF65D46A0E32 /* Foundation.framework */,
+				6BF9550434131391A4BB0DD0365BD207 /* QuartzCore.framework */,
+				9B6B226BCC287AD2905D591A5951BFC9 /* UIKit.framework */,
 			);
-			name = Products;
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		A40786EA94ACAEA9AD4CEE8A983E3DDE /* UIColor+BFPaperColors */ = {
+		A09608B68DAF3E815CDC98D75C192AB7 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C8F0C6ADCCDD7F86D2FAD1B1CF9FB2B2 /* UIColor+BFPaperColors.h */,
-				E751413347068A3CAB2F1C9BCB6DBA86 /* UIColor+BFPaperColors.m */,
-				8377AFABB8CD1B4527F78A9F77462D7D /* Support Files */,
+				E81F7D2F681F415133A2B4F84840F75E /* FlatUIKit.xcconfig */,
+				4B771A996CE4E57E72D9C304EF9C6B77 /* FlatUIKit-dummy.m */,
+				CF16F7751CE75919B7040A5D2F7101D9 /* FlatUIKit-prefix.pch */,
 			);
-			path = "UIColor+BFPaperColors";
+			name = "Support Files";
+			path = "../Target Support Files/FlatUIKit";
 			sourceTree = "<group>";
 		};
 		ABC5F4DF87163109E5445D5F78A7498D /* Pods-YNotesTests */ = {
@@ -325,17 +484,6 @@
 			path = "Target Support Files/Pods-YNotesTests";
 			sourceTree = "<group>";
 		};
-		AF536A206D95DD7E8BECAC56B3B742E8 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8F955925C5A1AD28CCE83E1B0C67EE40 /* BFPaperTableViewCell.xcconfig */,
-				A6F44376B5896CC300E5687B17840A35 /* BFPaperTableViewCell-dummy.m */,
-				3F3F6ACE792E4680A867C7FEF218AFD5 /* BFPaperTableViewCell-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/BFPaperTableViewCell";
-			sourceTree = "<group>";
-		};
 		B46D31FAFE6CFA53AAD814008684F1B7 /* Pods-YNotes */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +497,56 @@
 			);
 			name = "Pods-YNotes";
 			path = "Target Support Files/Pods-YNotes";
+			sourceTree = "<group>";
+		};
+		BF8CBDB245EC3510AD22C21F8D25808F /* FlatUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				2AE9A935AB98EA01A30750ED21E3C313 /* FlatUIKit.h */,
+				44D653FE1E5CBBF06AF778C2B4B90A73 /* FUIAlertView.h */,
+				F2F9188A13D65CD39258544747D7CE19 /* FUIAlertView.m */,
+				AE6ECC57726B633EE1ADECE43AC8ACE8 /* FUIButton.h */,
+				B4E197F518EBA6AE8177467BA76A5905 /* FUIButton.m */,
+				9ED8D458DB4FA07B34ACDE94C80292ED /* FUICellBackgroundView.h */,
+				CA4556348B013457482884B8867E267D /* FUICellBackgroundView.m */,
+				33448874C95663311ABD9CDBCC5ABBF4 /* FUIPopoverBackgroundView.h */,
+				A4358C07C7D2852886DBA30CF02828F0 /* FUIPopoverBackgroundView.m */,
+				AD823DEA7CCA95ED54203DDD4B1EEB17 /* FUISegmentedControl.h */,
+				4AC1233D2B7171D00E4581BF1A8BF5D8 /* FUISegmentedControl.m */,
+				FA593B6137FDA0F8784BE07B7C61BE11 /* FUISwitch.h */,
+				E80151917F8616809F885BF303A9F865 /* FUISwitch.m */,
+				F0ACF997FD36F255A5A39F5DEAEC7826 /* FUITextField.h */,
+				976E44293BC6512A2D820B9CC7B786E9 /* FUITextField.m */,
+				EC444F2703CFBACC3EE2758374A199E2 /* NSString+Icons.h */,
+				57563A37BA7C5F92406BBAED0F3EE729 /* NSString+Icons.m */,
+				636C5B8ECFB76CE2100A292F440D7870 /* UIBarButtonItem+FlatUI.h */,
+				5B76EC8A6AAD269A6115F4DD640F1A4F /* UIBarButtonItem+FlatUI.m */,
+				92D97BD41A320DC266B6FA0C67F484DE /* UIColor+FlatUI.h */,
+				DBA1BACBA6AF2EE09E7EA0D2B97CAA35 /* UIColor+FlatUI.m */,
+				CC0A19C7B88FCD87ADC2994E775740C5 /* UIFont+FlatUI.h */,
+				DB5A2C7019D808E05508706E79DFBEE7 /* UIFont+FlatUI.m */,
+				8BB6A740E4DEBB5037BF1AA4BD6479B5 /* UIImage+FlatUI.h */,
+				CD8508303B1DC2694FEF10B068B0FAAA /* UIImage+FlatUI.m */,
+				7F6BDE047DB2260B399A98B790B1B14D /* UINavigationBar+FlatUI.h */,
+				349263BB30D139EDC9B14914BA480976 /* UINavigationBar+FlatUI.m */,
+				1F7608769C4CD2131B494C9B5CFEBEA1 /* UIPopoverController+FlatUI.h */,
+				BCE36E5A35B3D149887860276F61625F /* UIPopoverController+FlatUI.m */,
+				FCA5694F8344D0B04A385245E19F14BF /* UIProgressView+FlatUI.h */,
+				894A4359878EB5EF300C39010AE571E6 /* UIProgressView+FlatUI.m */,
+				F8C65A3AEFE316A8BD12F232E6B38473 /* UISlider+FlatUI.h */,
+				80DDEA318F44FD6CC703C327B6A10900 /* UISlider+FlatUI.m */,
+				87C2B95ABD3792F7BE759C494109DF0D /* UIStepper+FlatUI.h */,
+				337FB148ECFE512A4945A28DDA2CCA0C /* UIStepper+FlatUI.m */,
+				264F777B33F7E0B6274B5816EFBAB955 /* UITabBar+FlatUI.h */,
+				DE82B45ADDB672972E7E97C439DC4BA0 /* UITabBar+FlatUI.m */,
+				D3BE55A3771AE4F5CF6006E3BF241A39 /* UITableViewCell+FlatUI.h */,
+				701C10D189934374431C167E2A9F8865 /* UITableViewCell+FlatUI.m */,
+				3AC2E7708C159B46A12BCFC0DCCADE87 /* UIToolbar+FlatUI.h */,
+				6298F824D95D4064060F03E852C96581 /* UIToolbar+FlatUI.m */,
+				D4E1DB354471B0A86222B2748E1DEC2D /* Resources */,
+				A09608B68DAF3E815CDC98D75C192AB7 /* Support Files */,
+			);
+			path = FlatUIKit;
 			sourceTree = "<group>";
 		};
 		D11EF3DA3E022AD0BF85697BC9ED83B5 /* Pods-YNotesUITests */ = {
@@ -366,25 +564,16 @@
 			path = "Target Support Files/Pods-YNotesUITests";
 			sourceTree = "<group>";
 		};
-		DFDE779C6E5D3445E0CB8CCB8D424449 /* iOS */ = {
+		D4E1DB354471B0A86222B2748E1DEC2D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */,
-				23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */,
-				091D54A73E1E8BB182C9D7D245AF1C2F /* UIKit.framework */,
+				563BA09AB8C92714AFCC822F8C47317F /* flat-ui-icons-regular.ttf */,
+				23C95E0FE699224FCBBDEB504AF49ED2 /* Lato-Bold.ttf */,
+				0ED8DCCA24A61C7880250DF84BB80A73 /* Lato-Italic.ttf */,
+				2551367186F48F8FF4EFD40F8DA2DD90 /* Lato-Light.ttf */,
+				3BAD96DF6125B3308A28681300DADA2E /* Lato-Regular.ttf */,
 			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		F5D6D5F67882855AB1174A30437C94D2 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1A7BF42BD650E30DA4CD316368CCD2DA /* APParallaxHeader.xcconfig */,
-				C97C425E5514EF4E66A74BBD2301B76F /* APParallaxHeader-dummy.m */,
-				B8515C2AFBDED9387466355D6FDEC63A /* APParallaxHeader-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/APParallaxHeader";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,6 +592,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE4AB1AE57149F5D6A0C5F057BA209FE /* BFPaperTableViewCell.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2BA95766B58D6BD67BB71278BE28DB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B237D2670C8EB7BC364EB56A65476B1E /* FlatUIKit.h in Headers */,
+				0717D5268A710DA08863752F9B1D58E3 /* FUIAlertView.h in Headers */,
+				8CD971D70DE88AD0347AF504550FCEB2 /* FUIButton.h in Headers */,
+				A89EDE90F9DC5282702F88B2336B84B7 /* FUICellBackgroundView.h in Headers */,
+				3F285D2638FA1530BF38F630B3D979B4 /* FUIPopoverBackgroundView.h in Headers */,
+				54D2C4C16B89272182615921176C0BE3 /* FUISegmentedControl.h in Headers */,
+				BE91D0A40D8DBED99D5A3B45DB380203 /* FUISwitch.h in Headers */,
+				7FF0D746227F4936289927C5CEFEE935 /* FUITextField.h in Headers */,
+				F28DC6565805FB635C0FDF95288C1145 /* NSString+Icons.h in Headers */,
+				5C1C9096979934B479255EEB6D92F095 /* UIBarButtonItem+FlatUI.h in Headers */,
+				31F701CC2A0099218A3FF5678E9474DC /* UIColor+FlatUI.h in Headers */,
+				6A4981177CD74BAE7E80FB436E0165E1 /* UIFont+FlatUI.h in Headers */,
+				A69F1A5350055C09A1C6C3C8D9B6190F /* UIImage+FlatUI.h in Headers */,
+				6032197796E57BD5BC1E4F84138D1418 /* UINavigationBar+FlatUI.h in Headers */,
+				CF6AE2BED97EC49BB1B20F0E904EEEFF /* UIPopoverController+FlatUI.h in Headers */,
+				11273E7B073B811C487CFE5CBD21A16B /* UIProgressView+FlatUI.h in Headers */,
+				3EA49D6ACEA5A2E2DFF440FFFB11BA45 /* UISlider+FlatUI.h in Headers */,
+				52B72E77201D310B23CA1A0047BB9849 /* UIStepper+FlatUI.h in Headers */,
+				E3E1AE98A76ECA4B9F445B94DA38DD4B /* UITabBar+FlatUI.h in Headers */,
+				399D36BA6A252258C9B4F6A1D1277DDF /* UITableViewCell+FlatUI.h in Headers */,
+				FC8582DE15C3777433181825EF60543A /* UIToolbar+FlatUI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +656,7 @@
 			);
 			name = "Pods-YNotesUITests";
 			productName = "Pods-YNotesUITests";
-			productReference = 0DE278A2BABFC5279DFF902DEF63E880 /* libPods-YNotesUITests.a */;
+			productReference = 9152649840D7E5AFC33D6638E83F45CA /* libPods-YNotesUITests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		14CB0DD5E0A80D362DE05ED1ED0875C4 /* Pods-YNotesTests */ = {
@@ -455,7 +672,7 @@
 			);
 			name = "Pods-YNotesTests";
 			productName = "Pods-YNotesTests";
-			productReference = 31CDAB7002411BD5E0C7BA3E6F2D8779 /* libPods-YNotesTests.a */;
+			productReference = AE4D3AE33005F5CD67568576FF6D5DC7 /* libPods-YNotesTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		510FEA0B6E5372B57D692ADD3CD04F8C /* BFPaperTableViewCell */ = {
@@ -473,7 +690,7 @@
 			);
 			name = BFPaperTableViewCell;
 			productName = BFPaperTableViewCell;
-			productReference = E87C82C69B19B3582302AC006CE125AF /* libBFPaperTableViewCell.a */;
+			productReference = 30143F118C3D6B17306E6FA8BFD10FD6 /* libBFPaperTableViewCell.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		5DF21164C6E1DC7DEE4CA35AD0FD7B25 /* APParallaxHeader */ = {
@@ -490,27 +707,7 @@
 			);
 			name = APParallaxHeader;
 			productName = APParallaxHeader;
-			productReference = F594497FF96190423C010AA57CEA4D69 /* libAPParallaxHeader.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		733B991C1FCD86923915E2111EC8786E /* Pods-YNotes */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4F1A16B8D2CA63210EABDBD6A49722D0 /* Build configuration list for PBXNativeTarget "Pods-YNotes" */;
-			buildPhases = (
-				6D90D65DBD2357EEA08114C2DD9D4FED /* Sources */,
-				540BE1F70168FD5644A51DEB6CED708D /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1B70D53E3A9E5C896BCF60A1CF47DCDD /* PBXTargetDependency */,
-				3482E09B0A4323DE9F0F84227B077773 /* PBXTargetDependency */,
-				AEC3727CA2C8EA1AEB571BD43B530127 /* PBXTargetDependency */,
-				F22CF0E20E4FABA3CF03E7A6BED68673 /* PBXTargetDependency */,
-			);
-			name = "Pods-YNotes";
-			productName = "Pods-YNotes";
-			productReference = 71A862BCBA3C35E536BB358F45F1C96D /* libPods-YNotes.a */;
+			productReference = 846D349649008F54BC2A7A9D8E6F967B /* libAPParallaxHeader.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		AA8B567933CA47B8D7C065AECA481215 /* UIColor+BFPaperColors */ = {
@@ -527,7 +724,28 @@
 			);
 			name = "UIColor+BFPaperColors";
 			productName = "UIColor+BFPaperColors";
-			productReference = D26AF8E929E6983D9D32DFFFBD73BAF4 /* libUIColor+BFPaperColors.a */;
+			productReference = DA1FB673152803844C9F24B4FD0A32FE /* libUIColor+BFPaperColors.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B212B311C0E676C92DDE9E1371470DED /* Pods-YNotes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7412F67E002D5D3ABB5D8B79CEEEBD7A /* Build configuration list for PBXNativeTarget "Pods-YNotes" */;
+			buildPhases = (
+				A317211F1C018E3DD8075D7A9648F258 /* Sources */,
+				351F76C61B2DDDC5EEAE39243581C454 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C952D285542D82AD1012A0FBADFCED0F /* PBXTargetDependency */,
+				5CB4C6A2541ED0CDAF22653E1BCB30F6 /* PBXTargetDependency */,
+				20FA980B1C296C978C5C373A354965E9 /* PBXTargetDependency */,
+				0BD865AD498A15B0C0F55B4E4DD94A65 /* PBXTargetDependency */,
+				B823AD95CD6EA814CBF9E7028008646C /* PBXTargetDependency */,
+			);
+			name = "Pods-YNotes";
+			productName = "Pods-YNotes";
+			productReference = A79176D8638678AF137D274652AD83A5 /* libPods-YNotes.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		F2FC0AF0815B5D127E0AA79352D5EB6A /* IGLDropDownMenu */ = {
@@ -544,7 +762,24 @@
 			);
 			name = IGLDropDownMenu;
 			productName = IGLDropDownMenu;
-			productReference = 0BB29657A19A8BD69E9F507B8AD11668 /* libIGLDropDownMenu.a */;
+			productReference = 295445BA5EEFDF1D0A21DBCFE5B86953 /* libIGLDropDownMenu.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F6369DCF9EF8959EE460063E1C27CF48 /* FlatUIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F93AB4256533EDC607B3933769A29EF0 /* Build configuration list for PBXNativeTarget "FlatUIKit" */;
+			buildPhases = (
+				FDB8EF51E71E825D468BC82DCACC5FA4 /* Sources */,
+				A782FF5228DA11BC23911D48B548C394 /* Frameworks */,
+				7F2BA95766B58D6BD67BB71278BE28DB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlatUIKit;
+			productName = FlatUIKit;
+			productReference = 67EC11318B814E4086D71AD07503E91E /* libFlatUIKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -564,14 +799,15 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 88670BBF3E38940ECD54066516F77BC2 /* Products */;
+			productRefGroup = 6F3548BAA8A5A045920605D8A506646D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				5DF21164C6E1DC7DEE4CA35AD0FD7B25 /* APParallaxHeader */,
 				510FEA0B6E5372B57D692ADD3CD04F8C /* BFPaperTableViewCell */,
+				F6369DCF9EF8959EE460063E1C27CF48 /* FlatUIKit */,
 				F2FC0AF0815B5D127E0AA79352D5EB6A /* IGLDropDownMenu */,
-				733B991C1FCD86923915E2111EC8786E /* Pods-YNotes */,
+				B212B311C0E676C92DDE9E1371470DED /* Pods-YNotes */,
 				14CB0DD5E0A80D362DE05ED1ED0875C4 /* Pods-YNotesTests */,
 				0BAD7FEE141F655668D5B12523823F3C /* Pods-YNotesUITests */,
 				AA8B567933CA47B8D7C065AECA481215 /* UIColor+BFPaperColors */,
@@ -606,14 +842,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D90D65DBD2357EEA08114C2DD9D4FED /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C9B6CBBDE16044470E631DF11AA86D2A /* Pods-YNotes-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A0E36E434B19489C851C75C81E08CB67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -632,6 +860,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A317211F1C018E3DD8075D7A9648F258 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7418ED72EC2C1FAB0EBCAEF7B433318A /* Pods-YNotes-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBAF800D9CA0EBB27AF2E9BE4EBED372 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -641,14 +877,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FDB8EF51E71E825D468BC82DCACC5FA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				093ACBFCEC27BAEBC6571605ECCBDE90 /* FlatUIKit-dummy.m in Sources */,
+				B4666F1334456F8D0870AF8DCEFD1668 /* FUIAlertView.m in Sources */,
+				D8042B827B8D2B542105A0CB82A98A6A /* FUIButton.m in Sources */,
+				18DEAC8A6761C4F43C3C35F6226D2DA6 /* FUICellBackgroundView.m in Sources */,
+				6FEFC46987072C1C644E9FEE91B73556 /* FUIPopoverBackgroundView.m in Sources */,
+				F7B4C42C73BDE7FF637123CF49E3A48E /* FUISegmentedControl.m in Sources */,
+				4A152A9D7981B4EC54507FC74BADD1E0 /* FUISwitch.m in Sources */,
+				785C8F9F64D2E1BC83D771EBC1FB158C /* FUITextField.m in Sources */,
+				575BEC1A4DDB862014C3488B62E12AA9 /* NSString+Icons.m in Sources */,
+				2710CCCBBA2934330AA6B0E93DF8B157 /* UIBarButtonItem+FlatUI.m in Sources */,
+				080F4E9955E3238ACBF7841D59AD560C /* UIColor+FlatUI.m in Sources */,
+				B6006B2D14402C36F767A8054B59F361 /* UIFont+FlatUI.m in Sources */,
+				25BEC83518A3B6BEA9826E2CE8C83EDD /* UIImage+FlatUI.m in Sources */,
+				52E2331639908B06C7FA312702938155 /* UINavigationBar+FlatUI.m in Sources */,
+				89CC8E2FB823D0EB664DCE561414AEEF /* UIPopoverController+FlatUI.m in Sources */,
+				C241B6DE56A77A00F60A76835656AA12 /* UIProgressView+FlatUI.m in Sources */,
+				7C7C4158317443D9EC143D4B4B1B502F /* UISlider+FlatUI.m in Sources */,
+				D7774EAA08CF408AEB1D0F43D03CC039 /* UIStepper+FlatUI.m in Sources */,
+				EF82A556BBBDCD54E254F7BFA726C75F /* UITabBar+FlatUI.m in Sources */,
+				9FC0B2A8E07A3A291D08F21B82DF59E2 /* UITableViewCell+FlatUI.m in Sources */,
+				AF83A4E5B8DBAEEDDD033E23982006A6 /* UIToolbar+FlatUI.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1B70D53E3A9E5C896BCF60A1CF47DCDD /* PBXTargetDependency */ = {
+		0BD865AD498A15B0C0F55B4E4DD94A65 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = APParallaxHeader;
-			target = 5DF21164C6E1DC7DEE4CA35AD0FD7B25 /* APParallaxHeader */;
-			targetProxy = 49F43EDE3398E05E74A2CD199DDD682B /* PBXContainerItemProxy */;
+			name = IGLDropDownMenu;
+			target = F2FC0AF0815B5D127E0AA79352D5EB6A /* IGLDropDownMenu */;
+			targetProxy = 0255C6641D43B56C4ECAF9EAD5281057 /* PBXContainerItemProxy */;
+		};
+		20FA980B1C296C978C5C373A354965E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FlatUIKit;
+			target = F6369DCF9EF8959EE460063E1C27CF48 /* FlatUIKit */;
+			targetProxy = E7D87B15E3A19C1B65906510FF970660 /* PBXContainerItemProxy */;
 		};
 		2572177C1EA6F0C56929F1040B4FD9A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -656,30 +926,51 @@
 			target = AA8B567933CA47B8D7C065AECA481215 /* UIColor+BFPaperColors */;
 			targetProxy = 2964611C28EBAD779FA5AC917E50FB0D /* PBXContainerItemProxy */;
 		};
-		3482E09B0A4323DE9F0F84227B077773 /* PBXTargetDependency */ = {
+		5CB4C6A2541ED0CDAF22653E1BCB30F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BFPaperTableViewCell;
 			target = 510FEA0B6E5372B57D692ADD3CD04F8C /* BFPaperTableViewCell */;
-			targetProxy = 2E9754B13908B5FA3C1F38B6D4CEA967 /* PBXContainerItemProxy */;
+			targetProxy = 2F7F9B760190749C21E5B6167112B49B /* PBXContainerItemProxy */;
 		};
-		AEC3727CA2C8EA1AEB571BD43B530127 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = IGLDropDownMenu;
-			target = F2FC0AF0815B5D127E0AA79352D5EB6A /* IGLDropDownMenu */;
-			targetProxy = 47930609CD3D803C3D5901FA2D96A746 /* PBXContainerItemProxy */;
-		};
-		F22CF0E20E4FABA3CF03E7A6BED68673 /* PBXTargetDependency */ = {
+		B823AD95CD6EA814CBF9E7028008646C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "UIColor+BFPaperColors";
 			target = AA8B567933CA47B8D7C065AECA481215 /* UIColor+BFPaperColors */;
-			targetProxy = 44183760FA9EB30CF56C7BA411FF8DEA /* PBXContainerItemProxy */;
+			targetProxy = 902F5F23FC82B0D0A01AA585C63F1983 /* PBXContainerItemProxy */;
+		};
+		C952D285542D82AD1012A0FBADFCED0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = APParallaxHeader;
+			target = 5DF21164C6E1DC7DEE4CA35AD0FD7B25 /* APParallaxHeader */;
+			targetProxy = 6C5455F74C33B8C4AEBDC53FCD73CBC1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1205E6CA53D3031F8B9ADD11FD151238 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E81F7D2F681F415133A2B4F84840F75E /* FlatUIKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FlatUIKit/FlatUIKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		203698A96A7B09C53BF7EF57F5A67590 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB560D73FCA16BF67C90C306F37B19DE /* UIColor+BFPaperColors.xcconfig */;
+			baseConfigurationReference = 926C21D9E64C1AF7A8646F638091D390 /* UIColor+BFPaperColors.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -700,7 +991,7 @@
 		};
 		287D8FB9CC3876FE4C397EEADA9A8B28 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F955925C5A1AD28CCE83E1B0C67EE40 /* BFPaperTableViewCell.xcconfig */;
+			baseConfigurationReference = C9F181D93406E4D230E3A543599B46A6 /* BFPaperTableViewCell.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -721,7 +1012,7 @@
 		};
 		2BAE98BB118B35115ECE097B2D8F3911 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F955925C5A1AD28CCE83E1B0C67EE40 /* BFPaperTableViewCell.xcconfig */;
+			baseConfigurationReference = C9F181D93406E4D230E3A543599B46A6 /* BFPaperTableViewCell.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -740,22 +1031,22 @@
 			};
 			name = Debug;
 		};
-		3E2B97899B7221C8467F04401FD33320 /* Debug */ = {
+		338204EF8D87BF109B8DE9DE85249DB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 123703DA4E8B76DFA306C30F1A3135EA /* Pods-YNotes.debug.xcconfig */;
+			baseConfigurationReference = E81F7D2F681F415133A2B4F84840F75E /* FlatUIKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
+				GCC_PREFIX_HEADER = "Target Support Files/FlatUIKit/FlatUIKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -801,7 +1092,7 @@
 		};
 		47CA83DAADE60A651B78EC3D31DBD9C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A7BF42BD650E30DA4CD316368CCD2DA /* APParallaxHeader.xcconfig */;
+			baseConfigurationReference = EA97FE51D45DAFD591143B8EC8F9E18A /* APParallaxHeader.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -822,7 +1113,7 @@
 		};
 		50F31A22685692A7E32AC2B85E7EF65D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB560D73FCA16BF67C90C306F37B19DE /* UIColor+BFPaperColors.xcconfig */;
+			baseConfigurationReference = 926C21D9E64C1AF7A8646F638091D390 /* UIColor+BFPaperColors.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -861,6 +1152,27 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
+		};
+		54B9689CE4B2C6B587FD575199EE83A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 123703DA4E8B76DFA306C30F1A3135EA /* Pods-YNotes.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
 		};
 		5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -946,6 +1258,27 @@
 			};
 			name = Debug;
 		};
+		943C451FB06B8B95A5D5D2B5127BD112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B41211D47014841C430104813400948 /* Pods-YNotes.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		944709E466099EF1AC6DAF3B4905EE4A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A4EF574BC3089EB476C641E499EB0F59 /* Pods-YNotesTests.debug.xcconfig */;
@@ -967,30 +1300,9 @@
 			};
 			name = Debug;
 		};
-		AE1146EA4CB70E7A6523CBCBA1EA914E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B41211D47014841C430104813400948 /* Pods-YNotes.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		DC8FFAD4729018DB882C2CBC7F985668 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A7BF42BD650E30DA4CD316368CCD2DA /* APParallaxHeader.xcconfig */;
+			baseConfigurationReference = EA97FE51D45DAFD591143B8EC8F9E18A /* APParallaxHeader.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1011,7 +1323,7 @@
 		};
 		F0A33D9538BA3D837B70382410C36253 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 245E59F993ED9AE25D345BA9C5C52817 /* IGLDropDownMenu.xcconfig */;
+			baseConfigurationReference = 7A45D9CC7C23283F8C4EDDF10C494E6B /* IGLDropDownMenu.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1032,7 +1344,7 @@
 		};
 		FF7E0C3B297CCFB04F3545B2B3063D0A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 245E59F993ED9AE25D345BA9C5C52817 /* IGLDropDownMenu.xcconfig */;
+			baseConfigurationReference = 7A45D9CC7C23283F8C4EDDF10C494E6B /* IGLDropDownMenu.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1063,20 +1375,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4F1A16B8D2CA63210EABDBD6A49722D0 /* Build configuration list for PBXNativeTarget "Pods-YNotes" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3E2B97899B7221C8467F04401FD33320 /* Debug */,
-				AE1146EA4CB70E7A6523CBCBA1EA914E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		5E2B4774511D97F696E40838C3785669 /* Build configuration list for PBXNativeTarget "IGLDropDownMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0A33D9538BA3D837B70382410C36253 /* Debug */,
 				FF7E0C3B297CCFB04F3545B2B3063D0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7412F67E002D5D3ABB5D8B79CEEEBD7A /* Build configuration list for PBXNativeTarget "Pods-YNotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54B9689CE4B2C6B587FD575199EE83A4 /* Debug */,
+				943C451FB06B8B95A5D5D2B5127BD112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1122,6 +1434,15 @@
 			buildConfigurations = (
 				88B75650D2E36F3E831246CDEB2A4477 /* Debug */,
 				546D390F770A75A87235BA1B7691E993 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F93AB4256533EDC607B3933769A29EF0 /* Build configuration list for PBXNativeTarget "FlatUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				338204EF8D87BF109B8DE9DE85249DB6 /* Debug */,
+				1205E6CA53D3031F8B9ADD11FD151238 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

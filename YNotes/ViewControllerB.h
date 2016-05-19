@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <EventKit/EventKit.h>
 #import "Note.h"
-
+#import "FlatUIKit.h"
 
 @interface ViewControllerB : UIViewController <UITextViewDelegate, UIImagePickerControllerDelegate>
 
@@ -25,7 +25,7 @@
 
 @property (nonatomic, weak) NSUserDefaults *userDefaults;
 
-@property (weak, nonatomic) IBOutlet UITextField *titleField;
+@property (weak, nonatomic) IBOutlet FUITextField *titleField;
 
 @property bool isEditing, reminderIsSet;
 

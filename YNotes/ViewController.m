@@ -27,13 +27,12 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
-@property (weak, nonatomic) IBOutlet UIImageView *parralaximg;
 
 @end
 
 @implementation ViewController
 
-@synthesize desc, table, userDefaults, userFile, title,edit, eStore, searchBar, parralaximg, initialDisplayArr;
+@synthesize desc, table, userDefaults, userFile, title,edit, eStore, searchBar, initialDisplayArr;
 
 bool didBeganEditing=false, searchIsEmpty=true;
 
@@ -65,6 +64,7 @@ headerForTable *tHeader;
 NSDateFormatter *dateFormatter;
 
 NSMutableString *dateAndTimeString;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -154,8 +154,9 @@ NSMutableString *dateAndTimeString;
 //    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor paperColorDeepOrange] CGColor], (id)[[UIColor paperColorGray50] CGColor], nil];
 //    [self.view.layer insertSublayer:gradient atIndex:0];
     
-    self.view.backgroundColor = myColor;
+    //self.view.backgroundColor = [UIColor paperColorGray50];
     //    picker.hidden = true;
+    searchBar.searchBarStyle = UISearchBarIconSearch;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -433,7 +434,7 @@ NSMutableString *dateAndTimeString;
             pickerMenu.itemAnimationDelay = 0.05;
             pickerMenu.menuButtonStatic = NO;
             [pickerMenu setDropDownItems:pickerDropDown];
-            [pickerMenu setFrame:CGRectMake(0, 120, self.view.frame.size.width, 45)];
+            [pickerMenu setFrame:CGRectMake(5, 113, self.view.frame.size.width-10, 35)];
             [self.view addSubview:pickerMenu];
             [pickerMenu reloadView];
             break;
@@ -453,7 +454,7 @@ NSMutableString *dateAndTimeString;
             pickerMenu.gutterY = 5;
             pickerMenu.itemAnimationDelay = 0.05;
             pickerMenu.menuButtonStatic = NO;
-            [pickerMenu setFrame:CGRectMake(0, 100, self.view.frame.size.width, 45)];
+            [pickerMenu setFrame:CGRectMake(6, 93, self.view.frame.size.width-16, 35)];
             [pickerMenu setDropDownItems:pickerDropDown];
             [self.view addSubview:pickerMenu];
             [pickerMenu reloadView];
@@ -475,7 +476,7 @@ NSMutableString *dateAndTimeString;
             pickerMenu.itemAnimationDelay = 0.05;
             pickerMenu.menuButtonStatic = NO;
             [pickerMenu setDropDownItems:pickerDropDown];
-            [pickerMenu setFrame:CGRectMake(0, 100, self.view.frame.size.width, 45)];
+            [pickerMenu setFrame:CGRectMake(6, 93, self.view.frame.size.width-16, 35)];
             [self.view addSubview:pickerMenu];
             [pickerMenu reloadView];
             break;
