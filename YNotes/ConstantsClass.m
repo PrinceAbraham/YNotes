@@ -26,4 +26,10 @@ CGFloat const MAXIMUM_SCROLL_FRACTION = 0.8;
 //static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 216;
 CGFloat const PORTRAIT_KEYBOARD_HEIGHT = 264;
 CGFloat const LANDSCAPE_KEYBOARD_HEIGHT = 162;
+//UIColor const UI_MAIN_COLOR = [UIColor colorWithRed:1/255.0 green:168/255.0 blue:188/255.0 alpha:1];
+
++(UIColor *)Get_UI_MAIN_COLOR {
+   return [UIColor colorWithRed:1/255.0 green:168/255.0 blue:188/255.0 alpha:.8];
+}
+
 @end

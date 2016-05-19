@@ -162,7 +162,7 @@ NSMutableArray *arrayOfNoteOBJ;
 //    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor paperColorDeepOrange] CGColor], (id)[[UIColor paperColorDeepOrange100] CGColor], nil];
 //    [self.view.layer insertSublayer:gradient atIndex:0];
     
-    self.view.backgroundColor = [UIColor paperColorDeepOrange];
+    self.view.backgroundColor = myColor;
     
 }
 

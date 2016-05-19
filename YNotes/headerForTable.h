@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface headerForTable : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *headerDateLabel;
 
 @end

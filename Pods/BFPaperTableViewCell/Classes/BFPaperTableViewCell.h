@@ -81,4 +81,9 @@ extern const CGFloat bfPaperTableViewCell_tapCircleDiameterDefault;
 
 /** A UIBezierPath you can set to override the mask path of the ripples and background fade. Set this if you have a custom path for your cell. If this is nil, BFPaperTableViewCell will try its best to provide a correct mask. Default is nil. */
 @property UIBezierPath *maskPath;
+
+@property (weak, nonatomic) IBOutlet UILabel *tLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *dTimeLabel;
+
 @end

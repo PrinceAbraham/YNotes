@@ -44,7 +44,7 @@ static char UIScrollViewParallaxView;
     }
     else
     {
-        APParallaxView *view = [[APParallaxView alloc] initWithFrame:CGRectMake(0, 0, 680, height) andShadow:shadow];
+        APParallaxView *view = [[APParallaxView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, height) andShadow:shadow];
         [view setClipsToBounds:YES];
         [view.imageView setImage:image];
         
@@ -71,7 +71,7 @@ static char UIScrollViewParallaxView;
     }
     else
     {
-        APParallaxView *parallaxView = [[APParallaxView alloc] initWithFrame:CGRectMake(0, 0, 680, height)];
+        APParallaxView *parallaxView = [[APParallaxView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, height)];
         [parallaxView setClipsToBounds:YES];
         [view setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
         [parallaxView addSubview:view];

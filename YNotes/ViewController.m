@@ -60,6 +60,12 @@ IGLDropDownMenu *pickerMenu;
 
 UIDevice * device;
 
+headerForTable *tHeader;
+
+NSDateFormatter *dateFormatter;
+
+NSMutableString *dateAndTimeString;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -94,11 +100,13 @@ UIDevice * device;
     
     searchText = [[NSMutableString alloc] init];
     
+    dateFormatter = [[NSDateFormatter alloc] init];
+    
+    dateAndTimeString = [[NSMutableString alloc]init];
+    
     UIImage *I = [UIImage imageNamed:@"parralaxImg.jpg"];
     
     NSDictionary * d = [self mainColorsInImage:I detail:1];
-    
-    UIColor *c = [UIColor colorWithRed:0.494118 green:0.258824 blue:0.121569 alpha:1];
     
     pickedData = @"Alphabetical";
     pickerItem[0] = [[IGLDropDownItem alloc]init];
@@ -132,6 +140,10 @@ UIDevice * device;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
     
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    
+    
     searchBar.delegate = self;
     pickerMenu.delegate = self;
     self.table.backgroundColor= [UIColor paperColorGray50];
@@ -142,7 +154,7 @@ UIDevice * device;
 //    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor paperColorDeepOrange] CGColor], (id)[[UIColor paperColorGray50] CGColor], nil];
 //    [self.view.layer insertSublayer:gradient atIndex:0];
     
-    self.view.backgroundColor = [UIColor paperColorDeepOrange];
+    self.view.backgroundColor = myColor;
     //    picker.hidden = true;
 }
 
@@ -218,7 +230,7 @@ UIDevice * device;
 #pragma mark - Sorting Functions
 
 - (void)sortAlphabetical{
-    
+    tHeader.headerDateLabel = @"asdasd";
     [displayArr sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     [self.table reloadData];
 }
@@ -286,8 +298,8 @@ UIDevice * device;
     bfCell.backgroundColor = [UIColor paperColorGray200];
     bfCell.letBackgroundLinger = NO;
     bfCell.tapCircleDiameter = bfPaperTableViewCell_tapCircleDiameterSmall;
-    bfCell.textLabel.textColor = [UIColor paperColorDeepOrange];
-    bfCell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:20.0];
+    bfCell.tLabel.textColor = myColor;
+    bfCell.dTimeLabel.textColor = myColor;
     //bfCell.textLabel.text =@"What";
     if (!bfCell) {
         bfCell = [[BFPaperTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BFPaperCell"];
@@ -305,7 +317,18 @@ UIDevice * device;
     
     headerForTable *hcell = (headerForTable *)[tableView dequeueReusableCellWithIdentifier:SimpleIdentifierh];
     if(i>=0){
-        bfCell.textLabel.text = displayArr[i];
+        bfCell.tLabel.text = displayArr[i];
+        dateAndTimeString = [dateFormatter stringFromDate:dateCreatedArr[i]];
+        if(![pickedData isEqualToString:@"Alphabetical"]){
+            bfCell.dTimeLabel.text = dateAndTimeString;
+        }else{
+            bfCell.dTimeLabel.text = @"";
+        }
+    }
+    if(![pickedData isEqualToString:@"Alphabetical"]){
+        hcell.headerDateLabel.text = pickedData;
+    }else{
+         hcell.headerDateLabel.text = @"";
     }
     
     if (indexPath.row == 0) {
@@ -396,7 +419,7 @@ UIDevice * device;
     {
         case UIDeviceOrientationPortrait:
         [pickerMenu selectItemAtIndex:[pickerMenu selectedIndex]];
-        [customView setFrame:CGRectMake(0, 0, 480, 160)];
+        [customView setFrame:CGRectMake(0, 0, 480, 240)];
         customView.image = [UIImage imageNamed:@"parralaxImg.jpg"];
         [customView setContentMode:UIViewContentModeScaleAspectFill];
         [self.table addParallaxWithView:customView andHeight:160];
