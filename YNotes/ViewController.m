@@ -141,7 +141,7 @@ NSMutableString *dateAndTimeString;
                                              selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
     
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
     
     
     searchBar.delegate = self;
@@ -154,7 +154,7 @@ NSMutableString *dateAndTimeString;
 //    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor paperColorDeepOrange] CGColor], (id)[[UIColor paperColorGray50] CGColor], nil];
 //    [self.view.layer insertSublayer:gradient atIndex:0];
     
-    //self.view.backgroundColor = [UIColor paperColorGray50];
+    self.view.backgroundColor =  headerColor;
     //    picker.hidden = true;
     searchBar.searchBarStyle = UISearchBarIconSearch;
 }
@@ -294,13 +294,13 @@ NSMutableString *dateAndTimeString;
     BFPaperTableViewCell *bfCell = [tableView dequeueReusableCellWithIdentifier:@"BFPaperCell"];
     
     bfCell.rippleFromTapLocation = NO; // Will always ripple from center if NO.
-    bfCell.tapCircleColor = [[UIColor paperColorDeepOrange] colorWithAlphaComponent:0.5f];
+    bfCell.tapCircleColor = [headerColor colorWithAlphaComponent:0.5f];
     bfCell.backgroundFadeColor = [UIColor whiteColor];
     bfCell.backgroundColor = [UIColor paperColorGray200];
     bfCell.letBackgroundLinger = NO;
     bfCell.tapCircleDiameter = bfPaperTableViewCell_tapCircleDiameterSmall;
-    bfCell.tLabel.textColor = myColor;
-    bfCell.dTimeLabel.textColor = myColor;
+    bfCell.tLabel.textColor = headerColor;
+    bfCell.dTimeLabel.textColor = headerColor;
     //bfCell.textLabel.text =@"What";
     if (!bfCell) {
         bfCell = [[BFPaperTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BFPaperCell"];
@@ -414,18 +414,17 @@ NSMutableString *dateAndTimeString;
     
     //[self toggle:nil];
     
-    [pickerMenu reloadView];
-    
     switch(device.orientation)
     {
         case UIDeviceOrientationPortrait:
+        [pickerMenu reloadView];
         [pickerMenu selectItemAtIndex:[pickerMenu selectedIndex]];
-        [customView setFrame:CGRectMake(0, 0, 480, 240)];
+        [customView setFrame:CGRectMake(0, 0, 400, 240)];
         customView.image = [UIImage imageNamed:@"parralaxImg.jpg"];
         [customView setContentMode:UIViewContentModeScaleAspectFill];
         [self.table addParallaxWithView:customView andHeight:160];
             
-            pickerMenu.menuText = @"       Sort";
+            pickerMenu.menuText =pickedData;
             //[pickerMenu setMenuIconImage:[UIImage imageNamed:@"sort.png"]];
             pickerMenu.paddingLeft = self.view.frame.size.width/2.6;
             pickerMenu.backgroundColor = [UIColor clearColor];
@@ -434,27 +433,28 @@ NSMutableString *dateAndTimeString;
             pickerMenu.itemAnimationDelay = 0.05;
             pickerMenu.menuButtonStatic = NO;
             [pickerMenu setDropDownItems:pickerDropDown];
-            [pickerMenu setFrame:CGRectMake(5, 113, self.view.frame.size.width-10, 35)];
+            [pickerMenu setFrame:CGRectMake(0, 120, self.view.frame.size.width, 35)];
             [self.view addSubview:pickerMenu];
             [pickerMenu reloadView];
             break;
             
         case UIDeviceOrientationLandscapeLeft:
-
+            
+            [pickerMenu reloadView];
             [pickerMenu selectItemAtIndex:[pickerMenu selectedIndex]];
             [customView setFrame:CGRectMake(0, 0, 680, 240)];
             customView.image = [UIImage imageNamed:@"parralaxImg.jpg"];
             [customView setContentMode:UIViewContentModeScaleAspectFill];
             [self.table addParallaxWithView:customView andHeight:160];
             
-            pickerMenu.menuText = @"       Sort";
+            pickerMenu.menuText =pickedData;
             pickerMenu.paddingLeft = self.view.frame.size.width/2.28;
             pickerMenu.backgroundColor = [UIColor clearColor];
             pickerMenu.type = IGLDropDownMenuTypeNormal;
             pickerMenu.gutterY = 5;
             pickerMenu.itemAnimationDelay = 0.05;
             pickerMenu.menuButtonStatic = NO;
-            [pickerMenu setFrame:CGRectMake(6, 93, self.view.frame.size.width-16, 35)];
+            [pickerMenu setFrame:CGRectMake(0, 100, self.view.frame.size.width, 35)];
             [pickerMenu setDropDownItems:pickerDropDown];
             [self.view addSubview:pickerMenu];
             [pickerMenu reloadView];
@@ -467,8 +467,9 @@ NSMutableString *dateAndTimeString;
             [customView setContentMode:UIViewContentModeScaleAspectFill];
             [self.table addParallaxWithView:customView andHeight:160];
             
+            [pickerMenu reloadView];
             [pickerMenu selectItemAtIndex:[pickerMenu selectedIndex]];
-            pickerMenu.menuText = @"       Sort";
+            pickerMenu.menuText =pickedData;
             pickerMenu.paddingLeft = self.view.frame.size.width/2.28;
             pickerMenu.backgroundColor = [UIColor clearColor];
             pickerMenu.type = IGLDropDownMenuTypeNormal;
@@ -476,7 +477,7 @@ NSMutableString *dateAndTimeString;
             pickerMenu.itemAnimationDelay = 0.05;
             pickerMenu.menuButtonStatic = NO;
             [pickerMenu setDropDownItems:pickerDropDown];
-            [pickerMenu setFrame:CGRectMake(6, 93, self.view.frame.size.width-16, 35)];
+            [pickerMenu setFrame:CGRectMake(0, 100, self.view.frame.size.width, 35)];
             [self.view addSubview:pickerMenu];
             [pickerMenu reloadView];
             break;

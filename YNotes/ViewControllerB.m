@@ -170,7 +170,7 @@ NSMutableArray *arrayOfNoteOBJ;
 //    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor paperColorDeepOrange] CGColor], (id)[[UIColor paperColorDeepOrange100] CGColor], nil];
 //    [self.view.layer insertSublayer:gradient atIndex:0];
     
-    self.view.backgroundColor = [UIColor paperColorGray50];
+    self.view.backgroundColor = [UIColor paperColorGray200];
     
 }
 
@@ -269,7 +269,7 @@ NSMutableArray *arrayOfNoteOBJ;
 
 -(void) textViewDidChange:(UITextView *)textView{
     //Keeps the font and size consistant
-    messageField.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:24.0];
+    messageField.font = [UIFont fontWithName:@"Helvetica" size:24.0];
     
     //Keeps a track of attributeText in messageField
     messageStringWAttachments = messageField.attributedText;
