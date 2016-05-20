@@ -86,4 +86,6 @@ extern const CGFloat bfPaperTableViewCell_tapCircleDiameterDefault;
 
 @property (weak, nonatomic) IBOutlet UILabel *dTimeLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
 @end

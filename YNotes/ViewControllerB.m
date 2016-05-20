@@ -96,7 +96,7 @@ NSMutableArray *arrayOfNoteOBJ;
     nReminder =  [EKReminder reminderWithEventStore:self.eventStoreInstance];
     
     //Formats the date and time format for the label
-    [outputFormatter setDateStyle:NSDateFormatterShortStyle];
+    [outputFormatter setDateStyle:NSDateFormatterLongStyle];
     [outputFormatter setTimeStyle:NSDateFormatterShortStyle];
     
     //set the delegate of the textview to self
@@ -165,10 +165,6 @@ NSMutableArray *arrayOfNoteOBJ;
     [self.eventStoreInstance requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
         
     }];
-//    CAGradientLayer *gradient = [CAGradientLayer layer];
-//    gradient.frame = self.view.bounds;
-//    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor paperColorDeepOrange] CGColor], (id)[[UIColor paperColorDeepOrange100] CGColor], nil];
-//    [self.view.layer insertSublayer:gradient atIndex:0];
     
     self.view.backgroundColor = [UIColor paperColorGray200];
     
@@ -331,9 +327,9 @@ NSMutableArray *arrayOfNoteOBJ;
                                           if(matchedInt==indexForTable){
                                               [self overwriteMatchedWithEditing];
                                           }else{
-                                          [overwriteController addAction:cancel];
-                                          [overwriteController addAction:okForOverWrite];
-                                          [self presentViewController:overwriteController animated:YES completion:nil];
+                                              [overwriteController addAction:cancel];
+                                              [overwriteController addAction:okForOverWrite];
+                                              [self presentViewController:overwriteController animated:YES completion:nil];
                                           }
                                       }
                                   }];
@@ -422,10 +418,10 @@ NSMutableArray *arrayOfNoteOBJ;
                     if(matchedInt == indexForTable){
                         [self overwriteMatchedWithEditing];
                     }else{
-                    //overwrite alert
-                    [overwriteController addAction:cancel];
-                    [overwriteController addAction:okForOverWrite];
-                    [self presentViewController:overwriteController animated:YES completion:nil];
+                        //overwrite alert
+                        [overwriteController addAction:cancel];
+                        [overwriteController addAction:okForOverWrite];
+                        [self presentViewController:overwriteController animated:YES completion:nil];
                     }
                 }
             }
@@ -460,21 +456,18 @@ NSMutableArray *arrayOfNoteOBJ;
     
     if(isEditing){
         //[desc removeObjectAtIndex:currentIndex];
-        
-        [userFile removeObjectForKey:[titleArr objectAtIndex:indexForTable]];
-        
-        [titleArr removeObjectAtIndex:indexForTable];
-        [messageArr removeObjectAtIndex:indexForTable];
-        
-        //[userFile setValue:[desc objectAtIndex:currentIndex] forKeyPath:[title objectAtIndex:currentIndex]];
-        
-        [userDefaults setObject:userFile forKey:userDefaultKey];
-        [userDefaults setObject:titleArr forKey:userTitleKey];
-        [userDefaults setObject:messageArr forKey:userDescriptionKey];
-        isEditing = false;
-        
-        [self deleteReminder];
-        
+        if([notesInfo count]!=0){
+            [notesInfo removeObjectAtIndex:indexForTable];
+            [userDefaults setObject:notesInfo forKey:userAllInfoKey];
+            
+            isEditing = false;
+            
+            [self deleteReminder];
+        }
+       if([notesInfo count]<= 0){
+           NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+            [userDefaults removePersistentDomainForName:appDomain];
+        }
         [self callDismiss];
     }
     
@@ -570,9 +563,9 @@ NSMutableArray *arrayOfNoteOBJ;
     
 }
 -(void) getInfo{
-
+    
     notesInfo = [[userDefaults objectForKey:userAllInfoKey]mutableCopy];
-
+    
     for(int i=0; i< [notesInfo count]; i++){
         [arrayOfNoteOBJ addObject:[note decodeData:[notesInfo objectAtIndex:i]]];
         [titleArr addObject:[[arrayOfNoteOBJ objectAtIndex:i] noteTitle]];
@@ -592,7 +585,13 @@ NSMutableArray *arrayOfNoteOBJ;
     }else{
         [self deleteReminder];
     }
+//    noteData = [note changeToData:note];
+//    if(![notesInfo count]==0){
+//        
+//    }
+    
     noteData = [note changeToData:note];
+    
     [notesInfo insertObject:noteData atIndex:0];
     //store in User Defaults
     [userDefaults setObject:notesInfo forKey:userAllInfoKey];
@@ -602,7 +601,7 @@ NSMutableArray *arrayOfNoteOBJ;
 }
 
 -(void) savingEditWithUnchangedTitle{
-
+    
     [self saveOrUpdateNote];
     [notesInfo replaceObjectAtIndex:indexForTable withObject:noteData];
     //store in User Defaults
@@ -612,7 +611,7 @@ NSMutableArray *arrayOfNoteOBJ;
 }
 
 -(void) savingEditWithUniqueTitle{
-
+    
     [self saveOrUpdateNote];
     
     [notesInfo replaceObjectAtIndex:indexForTable withObject:noteData];
@@ -719,7 +718,7 @@ NSMutableArray *arrayOfNoteOBJ;
     [note setNoteModified:date];
     [note setNoteCreated:dateForCreationandModification];
     //[dateModified replaceObjectAtIndex:index withObject:date];
-
+    
 }
 
 @end

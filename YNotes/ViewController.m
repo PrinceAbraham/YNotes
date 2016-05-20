@@ -63,7 +63,11 @@ headerForTable *tHeader;
 
 NSDateFormatter *dateFormatter;
 
+NSDateFormatter *timeFormatter;
+
 NSMutableString *dateAndTimeString;
+
+NSMutableString *timeString;
 
 
 - (void)viewDidLoad {
@@ -102,7 +106,11 @@ NSMutableString *dateAndTimeString;
     
     dateFormatter = [[NSDateFormatter alloc] init];
     
+    timeFormatter = [[NSDateFormatter alloc] init];
+    
     dateAndTimeString = [[NSMutableString alloc]init];
+    
+    timeString = [[NSMutableString alloc]init];
     
     UIImage *I = [UIImage imageNamed:@"parralaxImg.jpg"];
     
@@ -140,8 +148,8 @@ NSMutableString *dateAndTimeString;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
     
-    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    [timeFormatter setTimeStyle:NSDateFormatterMediumStyle];
     
     
     searchBar.delegate = self;
@@ -275,9 +283,8 @@ NSMutableString *dateAndTimeString;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     //Gets the index number of the selected table
-    currentIndex = indexPath.row-1;
-    
-    [self performSegueWithIdentifier:@"addOrEditSegue" sender:nil];
+        currentIndex = indexPath.row-1;
+        [self performSegueWithIdentifier:@"addOrEditSegue" sender:nil];
     
 }
 
@@ -285,6 +292,14 @@ NSMutableString *dateAndTimeString;
     
     //Sets the number of rows
     return [displayArr count]+1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row==0){
+        return 44;
+    }else{
+       return 91;
+    }
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -301,17 +316,12 @@ NSMutableString *dateAndTimeString;
     bfCell.tapCircleDiameter = bfPaperTableViewCell_tapCircleDiameterSmall;
     bfCell.tLabel.textColor = headerColor;
     bfCell.dTimeLabel.textColor = headerColor;
+    bfCell.timeLabel.textColor = headerColor;
     //bfCell.textLabel.text =@"What";
     if (!bfCell) {
         bfCell = [[BFPaperTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BFPaperCell"];
     }
     i--;
-//    
-//    NSString *SimpleIdentifier = @"cell";
-//    
-//    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:SimpleIdentifier];
-    
-    //test
     
     NSString *SimpleIdentifierh = @"headerForTable";
     
@@ -320,10 +330,13 @@ NSMutableString *dateAndTimeString;
     if(i>=0){
         bfCell.tLabel.text = displayArr[i];
         dateAndTimeString = [dateFormatter stringFromDate:dateCreatedArr[i]];
+        timeString = [timeFormatter stringFromDate:dateCreatedArr[i]];
         if(![pickedData isEqualToString:@"Alphabetical"]){
             bfCell.dTimeLabel.text = dateAndTimeString;
+            bfCell.timeLabel.text = timeString;
         }else{
             bfCell.dTimeLabel.text = @"";
+            bfCell.timeLabel.text = @"";
         }
     }
     if(![pickedData isEqualToString:@"Alphabetical"]){
@@ -358,7 +371,7 @@ NSMutableString *dateAndTimeString;
         [dateCreatedArr addObject:[[dict objectAtIndex:i] noteCreated]];
         [dateModifiedArr addObject:[[dict objectAtIndex:i] noteModified]];
     }
-//    displayArr = initialDisplayArr.copy;
+    
     title = displayArr;
 }
 
@@ -482,9 +495,9 @@ NSMutableString *dateAndTimeString;
             [pickerMenu reloadView];
             break;
             
-        default:
-            
-            break;
+//            default:
+//            
+//            break;
     };
 }
 
